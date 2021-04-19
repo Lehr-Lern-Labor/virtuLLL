@@ -17,8 +17,7 @@ class ParticipantAvatarView extends AvatarView {
     standingDownRightAnimation;
     currentAnimation;
     walking = false;
-    isVisible;
-    forename;
+    username;
     isModerator;
     isOwnAvatar;
 
@@ -47,17 +46,8 @@ class ParticipantAvatarView extends AvatarView {
         this.initSpriteAnimation();
 
         this.currentAnimation = this.standingDownRightAnimation;
-     
-        ctx_avatar.font = "1em sans-serif";
-
-        //calculate maximum number of forename characters that can be drawn without being to big for rectangel
-        let maxNameLength = forename.length;
-        while (ctx_avatar.measureText(forename.slice(0, maxNameLength)).width > Settings.AVATAR_WIDTH * 1.5) 
-            maxNameLength--;
-        
-        this.forename = forename.slice(0, maxNameLength);
-         
-        this.isVisible = isVisible;
+        this.username = username;
+        super.setVisibility(isVisible);
         this.isModerator = isModerator;
         this.isOwnAvatar = isOwnAvatar;
 
@@ -82,24 +72,6 @@ class ParticipantAvatarView extends AvatarView {
      */
     setId(participantId) {
         this.participantId = participantId;
-    }
-
-    /**
-     * Gets visibility
-     * 
-     * @return {boolean} true if visible, otherwise false
-     */
-    getVisibility() {
-        return this.isVisible;
-    }
-
-    /**
-     * Sets visibility
-     * 
-     * @param {boolean} visible true if visible, otherwise false
-     */
-    setVisibility(visible) {
-        this.isVisible = visible;
     }
 
     /**
@@ -162,7 +134,7 @@ class ParticipantAvatarView extends AvatarView {
      * Draws participant avatar
      */
     draw() {
-        if (this.isVisible) {
+        if (super.isVisible()) {
 
             let cordX = super.getGridPosition().getCordX();
             let cordY = super.getGridPosition().getCordY();
@@ -199,7 +171,7 @@ class ParticipantAvatarView extends AvatarView {
      * Called if participant avatar is clicked
      */
     onClick() {
-        if (this.isVisible) {
+        if (super.isVisible()) {
             $('#businessCardModal').modal('show');
             $('#businessCardModal .modal-body').append(`
                 <div id=${"businessCardWait" + this.participantId} style="text-align: center;">
