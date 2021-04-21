@@ -197,7 +197,7 @@ module.exports = class RouteController {
 
         /* Only needed when video storage is required for this conference */
         if (Settings.VIDEOSTORAGE_ACTIVATED) {
-            this.#app.get('/upload', (request, response) => {
+            this.#app.get('/my-dashboard/upload', (request, response) => {
                 if (request.session.loggedin === true) {
                     response.render('upload', this.#getLoggedInParameters({ title: '', startingTime: '', remarks: '', maxParticipants: '' }, request.session.username));
                 } else {
@@ -206,7 +206,7 @@ module.exports = class RouteController {
             });
 
 
-            this.#app.post('/upload', (request, response) => {
+            this.#app.post('/my-dashboard/upload', (request, response) => {
                 if (!request.files || Object.keys(request.files).length === 0) {
                     return response.render('upload', this.#getLoggedInParameters({ noFilesUploaded: true, title: request.body.title, startingTime: request.body.startingTime, remarks: request.body.remarks, maxParticipants: request.body.maxParticipants }, request.session.username));
                 }
@@ -343,8 +343,8 @@ module.exports = class RouteController {
             }
         });
 
-        this.#app.get('/account-settings', (request, response) => {
-            if (request.session.loggedin === true) {
+        this.#app.get('/:username/account-settings', (request, response) => {
+            if (request.session.loggedin === true && request.params.username === request.session.username) {
                 response.render('account-settings', this.#getLoggedInParameters({ forename: request.session.forename }, request.session.username))
             }
             else {
@@ -352,7 +352,7 @@ module.exports = class RouteController {
             }
         })
 
-        this.#app.post('/account-settings', (request, response) => {
+        this.#app.post('/:username/account-settings', (request, response) => {
             var clickedButton = request.body.accountSettingsButton;
             var accountId = request.session.accountId;
 
