@@ -17,7 +17,7 @@ class ParticipantAvatarView extends AvatarView {
     standingDownRightAnimation;
     currentAnimation;
     walking = false;
-    username;
+    forename;
     isModerator;
     isOwnAvatar;
 
@@ -46,7 +46,7 @@ class ParticipantAvatarView extends AvatarView {
         this.initSpriteAnimation();
 
         this.currentAnimation = this.standingDownRightAnimation;
-        this.username = username;
+        this.forename = forename;
         super.setVisibility(isVisible);
         this.isModerator = isModerator;
         this.isOwnAvatar = isOwnAvatar;
