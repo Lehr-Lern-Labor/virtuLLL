@@ -75,8 +75,7 @@ class FriendRequestListView extends WindowView {
 
         $('#accept' + businessCard.getParticipantId()).off();
         $('#accept' + businessCard.getParticipantId()).on('click', (event) => {
-            if ($('#notifFriendRequestDiv' + businessCard.getUsername()).length)
-                $('#notifFriendRequestDiv' + businessCard.getUsername()).remove();
+            this.eventManager.handleRemoveNewFriendRequestNotif(businessCard.getUsername());
 
             event.stopPropagation();
             this.eventManager.handleAcceptRequestClicked(businessCard);
@@ -84,8 +83,7 @@ class FriendRequestListView extends WindowView {
 
         $('#reject' + businessCard.getParticipantId()).off();
         $('#reject' + businessCard.getParticipantId()).on('click', (event) => {
-            if ($('#notifFriendRequestDiv' + businessCard.getUsername()).length)
-                $('#notifFriendRequestDiv' + businessCard.getUsername()).remove();
+            this.eventManager.handleRemoveNewFriendRequestNotif(businessCard.getUsername());
 
             event.stopPropagation();
             this.eventManager.handleRejectRequestClicked(businessCard.getParticipantId());
