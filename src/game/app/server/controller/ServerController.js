@@ -201,6 +201,7 @@ module.exports = class ServerController {
                     let typeOfCurrentRoom = currentRoom.getTypeOfRoom();
 
                     socket.ppantID = ppant.getId();
+                    socket.username = ppant.getBusinessCard().getUsername();
 
                     //Join Room Channel
                     socket.join(currentRoomId.toString());
@@ -411,7 +412,7 @@ module.exports = class ServerController {
                     let input = text.substring(1).split(" ");
                     new CommandHandler(this).handleCommand(socket,
                         new AllchatContext(this, room),
-                        input, username);
+                        input);
                 } else {
                     // If the message contains a command, we don't want to be handled like a regular message
 
