@@ -1083,6 +1083,14 @@ class GameView {
     }
 
     /**
+     * Adds command into last commands array in allchat
+     * @param {String} command last command
+     */
+    saveCommand(command) {
+        this.allchatView.saveCommand(command);
+    }
+
+    /**
      * Draws everything about all chat
      * 
      * @param {String} roomName name of room
