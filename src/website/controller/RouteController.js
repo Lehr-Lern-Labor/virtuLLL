@@ -13,6 +13,8 @@ const blobClient = require('../../config/blob');
 const Account = require('../models/Account');
 const nodemailer = require("nodemailer");
 const ServerController = require('../../game/app/server/controller/ServerController');
+const handlebars = require("handlebars");
+const fs = require("fs");
 const LectureService = require('../../game/app/server/services/LectureService');
 
 /**
@@ -142,7 +144,7 @@ module.exports = class RouteController {
         });
 
         this.#app.post('/contact-us', (request, response) => {
-            const vimsuEmail = process.env.VIMSU_DEFAULT_EMAIL;
+            const vimsuEmail = process.env.VIMSU_NOREPLY_EMAIL;
 
             const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             if (request.body.email && !emailRegex.test(String(request.body.email).toLowerCase())) {
@@ -161,22 +163,37 @@ module.exports = class RouteController {
                 }
             }
 
+            const filteredMessage = request.body.message.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g, '<br/>');
+
             const mailOptions = {
                 from: vimsuEmail,
-                to: vimsuEmail,
+                to: process.env.VIMSU_DEFAULT_EMAIL,
                 subject: "New message from contact us form",
                 html: `
                     <p>From: <a href="mailto:${request.body.email}">${request.body.email}</a></p>
-                    <p>Message: ${request.body.message}</p>
+                    <p>Message:<br>${filteredMessage}</p>
                 `
             }
 
-            return this.#sendMail(mailOptions).then(result => {
+            return this.#sendMail(mailOptions, vimsuEmail, process.env.VIMSU_NOREPLY_EMAIL_PASSWORD).then(result => {
                 if (result === true) {
                     if (request.session.loggedin === true) {
                         response.render('contact-us', this.#getLoggedInParameters({ messageSent: true, email: '', message: '' }, request.session.username));
                     } else {
                         response.render('contact-us', { messageSent: true, email: '', message: '' });
+                    }
+
+                    if (request.body.email) {
+                        const from = process.env.VIMSU_NOREPLY_EMAIL;
+                        const subject = "Your message to VIMSU";
+                        const message = `
+                            This is a confirmation message that we have received your message and will get back to you as soon as possible.<br><br>
+                            <small>Your message:<br>${filteredMessage}</small>
+                        `;
+                        const messageReason = "we received a message from the contact us form";
+
+                        const mailOptions = this.#getMailOptionsWithDefaultTemplate("there", from, request.body.email, { show: false }, subject, message, messageReason)
+                        return this.#sendMail(mailOptions, from, process.env.VIMSU_NOREPLY_EMAIL_PASSWORD);
                     }
                 } else {
                     if (request.session.loggedin === true) {
@@ -422,15 +439,45 @@ module.exports = class RouteController {
         });
     }
 
-    #sendMail = async function (mailOptions) {
+    #getMailOptionsWithDefaultTemplate = function (username, senderEmail, receiverEmail, button, subject, message, messageReason) {
+        const htmlTemplatePath = path.join(__dirname, '../views/email-template/default-template.html');
+        const source = fs.readFileSync(htmlTemplatePath, 'utf-8').toString();
+        const htmlTemplate = handlebars.compile(source);
+        const replacements = {
+            username: username,
+            vimsu_domain: process.env.VIMSU_DOMAIN,
+            vimsu_default_email: process.env.VIMSU_DEFAULT_EMAIL,
+            sent_to: receiverEmail,
+            button: button.show,
+            button_name: button.name,
+            action_url: button.url,
+            message: message,
+            message_reason: messageReason
+        };
+        const htmlToSend = htmlTemplate(replacements);
+
+        return {
+            from: senderEmail,
+            to: receiverEmail,
+            subject: subject,
+            attachments: [{
+                filename: 'vimsu_logo_schrift_transparent.png',
+                path: path.join(__dirname, '../assets/vimsu_logo_schrift_transparent.png'),
+                cid: 'logo'
+            }],
+            html: htmlToSend
+        }
+    }
+
+    #sendMail = async function (mailOptions, email, emailPassword) {
         return new Promise(function (resolve, reject) {
             const smtpTransport = nodemailer.createTransport({
                 service: "Gmail",
                 port: 465,
                 secure: true,
                 auth: {
-                    user: mailOptions.from,
-                    pass: process.env.VIMSU_DEFAULT_EMAIL_PASSWORD
+                    user: email,
+                    pass: emailPassword
                 }
             });
 
@@ -445,7 +492,7 @@ module.exports = class RouteController {
             });
         });
     }
-
+    
     #getLoggedInParameters = function (otherParameters, username) {
         return { ...otherParameters, videoStorageActivated: Settings.VIDEOSTORAGE_ACTIVATED, loggedIn: true, username: username }
     }
