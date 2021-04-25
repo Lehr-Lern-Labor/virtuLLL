@@ -13,6 +13,7 @@ const blobClient = require('../../config/blob');
 const Account = require('../models/Account');
 const nodemailer = require("nodemailer");
 const ServerController = require('../../game/app/server/controller/ServerController');
+const LectureService = require('../../game/app/server/services/LectureService');
 
 /**
  * The Route Controller
@@ -382,6 +383,9 @@ module.exports = class RouteController {
             } else if (clickedButton === "deleteAccountButton") {
                 return ParticipantService.deleteAccountAndParticipant(accountId, request.session.username, Settings.CONFERENCE_ID, this.#db).then(ppantIdOfDeletedAcc => {
                     if (ppantIdOfDeletedAcc) {
+                        if (Settings.VIDEOSTORAGE_ACTIVATED) {
+                            LectureService.deleteLecturesByOratorId(this.#db, this.#blob, accountId);
+                        }
                         this.#serverController.deleteParticipantReferences(ppantIdOfDeletedAcc, request.session.username);
                         response.redirect('/logout');
                     } else {
