@@ -318,7 +318,7 @@ module.exports = class RouteController {
         });
 
         this.#app.post('/register', (request, response) => {
-            const usernameRegex = /^(?=[a-zA-Z0-9._-]{1,10}$)(?!.*[_.-]{2})[^_.-].*[^_.-]$/;
+            const usernameRegex = /^(?=[a-zA-Z0-9._-]{1,32}$)(?!.*[_.-]{2})[^_.-].*[^_.-]$/;
 
             if (!usernameRegex.test(request.body.username)) {
                 return response.render('register', { invalidUsernameString: true, username: request.body.username, forename: request.body.forename });
@@ -378,7 +378,7 @@ module.exports = class RouteController {
             var accountId = request.session.accountId;
 
             if (clickedButton === "saveChangesButton") {
-                const usernameRegex = /^(?=[a-zA-Z0-9._-]{1,10}$)(?!.*[_.-]{2})[^_.-].*[^_.-]$/;
+                const usernameRegex = /^(?=[a-zA-Z0-9._-]{1,32}$)(?!.*[_.-]{2})[^_.-].*[^_.-]$/;
 
                 if (!usernameRegex.test(request.body.username)) {
                     return response.render('account-settings', this.#getLoggedInParameters({ forename: request.session.forename, invalidUsernameString: true }, request.session.username));
