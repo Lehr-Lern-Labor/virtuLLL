@@ -91,15 +91,17 @@ class RankListView extends WindowView {
                 document.getElementById("rank" + ppant.participantId).style.boxShadow = '0 0 4px 4px ' + color;
         })
 
-        const loadMore = () => {
+        modalBody.data('ready', true).on('scroll', () => {
+            if (modalBody.data('ready') == false) return;
+
             if (modalBody.scrollTop() + modalBody.innerHeight() >= (modalBody[0].scrollHeight)) {    
                 modalBody.data('ready', false);
                 const lastPpant = this.rankList[this.rankList.length - 1]
                 const lastRank = lastPpant.rank;
                 const lastPoints = lastPpant.points;
-                let lastPointsLength = 0;
+                let lastPointsLength = 1;
                 
-                for (let i = this.rankList.length; i-- > 0;) {
+                for (let i = this.rankList.length - 1; i-- > 0;) {
                     if (this.rankList[i].points !== lastPoints)
                         break;
                         
@@ -108,14 +110,6 @@ class RankListView extends WindowView {
 
                 this.eventManager.handleLoadMoreRankList(this.rankList.length, lastRank, lastPoints, lastPointsLength);
             }
-        }
-        
-        loadMore();
-
-        modalBody.data('ready', true).on('scroll', () => {
-            if (modalBody.data('ready') == false) return;
-
-            loadMore()
         });
     }
 }
