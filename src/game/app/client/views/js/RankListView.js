@@ -97,7 +97,15 @@ class RankListView extends WindowView {
                 const lastPpant = this.rankList[this.rankList.length - 1]
                 const lastRank = lastPpant.rank;
                 const lastPoints = lastPpant.points;
-                const lastPointsLength = this.rankList.filter(ppant => ppant.points == lastPoints).length
+                let lastPointsLength = 0;
+                
+                for (let i = this.rankList.length; i-- > 0;) {
+                    if (this.rankList[i].points !== lastPoints)
+                        break;
+                        
+                    ++lastPointsLength;
+                }
+
                 this.eventManager.handleLoadMoreRankList(this.rankList.length, lastRank, lastPoints, lastPointsLength);
             }
         }
