@@ -53,7 +53,7 @@ database.connectDB().then(res => {
     }
 
     const getRankListWithUsername = async () => {
-        return RankListService.getRankListWithUsername(conferenceId, 2, database).then(rankList => {
+        return RankListService.getRankListWithUsername(conferenceId, database, 2).then(rankList => {
             return rankList;
         }).catch(err => {
             console.log(err);
@@ -98,7 +98,7 @@ database.connectDB().then(res => {
         })
 
         it('test getRankListWithUsername', function () {
-            expect(globalResults[1]).to.be.an('array').and.to.have.lengthOf.above(1);
+            expect(globalResults[1]).to.be.an('array').and.to.have.lengthOf(2);
         });
 
         after(async () => {
