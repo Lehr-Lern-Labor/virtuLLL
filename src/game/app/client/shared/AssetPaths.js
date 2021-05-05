@@ -46,11 +46,11 @@ AssetPaths = Object.freeze({
     "rightwallframe_default2": "../client/assets/frames/wallframe3.png",
     
     // Logo
-    "leftconferencelogo_default0": "../client/assets/logos/conferencelogo1.png",
-    "leftconferencelogo_default1": "../client/assets/logos/conferencelogo2.png",
-    "leftconferencelogo_default2": "../client/assets/logos/conferencelogo3.png",
-    "leftconferencelogo_default3": "../client/assets/logos/conferencelogo4.png",
-    "leftconferencelogo_default4": "../client/assets/logos/conferencelogo5.png",
+    "leftconferencelogo_default0": "../client/assets/logos/conferencelogoLLL1.png",
+    "leftconferencelogo_default1": "../client/assets/logos/conferencelogoLLL2.png",
+    "leftconferencelogo_default2": "../client/assets/logos/conferencelogoLLL3.png",
+    "leftconferencelogo_default3": "../client/assets/logos/conferencelogoLLL4.png",
+    "leftconferencelogo_default4": "../client/assets/logos/conferencelogoLLL5.png",
     
     // Seating
     "leftsofa_default": "../client/assets/chairs/sofa_left.png",
