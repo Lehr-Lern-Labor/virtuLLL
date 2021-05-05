@@ -12,9 +12,10 @@ module.exports = Object.freeze({
 
     /* Start-Position Constants */
     RECEPTION_ID: 0,
-    FOYER_ID: 1,
-    FOODCOURT_ID: 2, 
-    ESCAPEROOM_ID:3,
+    LOUNGE_ID: 1, 
+    WORKSHOP_1_ID:2,
+    WORKSHOP_2_ID:3,
+    BEISPIEL_ID: 4,
     STARTROOM_ID: 0,
     STARTPOSITION_X: 3,
     STARTPOSITION_Y: 12,
