@@ -240,19 +240,31 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.SMALLTABLE, position: [4,14], isClickable: true, iFrameData: {title: "Das Lehr-Lern-Labor Informatik Karlsruhe", url: "https://media.lehr-lern-labor.info/home/", width: 1000, height: 600 }},
             {type: GameObjectType.SMALLTABLE, position: [0,10], isClickable: true, iFrameData: {title: "Gästebuch", url: "https://media.lehr-lern-labor.info/collab/p/GuestBook?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
             {type: GameObjectType.TEA, position: [4, 14]},
-			//{type: GameObjectType.CHAIR, variation: 0, position: [0,13]},
-            //{type: GameObjectType.CHAIR, variation: 2, position: [1,14]},
             {type: GameObjectType.CHAIR, variation: 1, position: [[1,2,3],14]},
             {type: GameObjectType.CHAIR, variation: 3, position: [0,[11,12,13]]},
             {type: GameObjectType.PLANT, position: [4, 0], isClickable: true, story: ["Wenn der Workshop losgeht, darfst du eintreten.","Du musst dich noch ein bisschen gedulden.","Moderatoren haben einen Schlüssel."]},
         ],
 		DOORS: [
-		    {wallSide: GlobalStrings.LEFT, logo: GlobalStrings.RECEPTION,  positionOfDoor: [2, -1], positionOnExit: [1, 15, 2], directionOnExit: Direction.DOWNLEFT, isOpen: false, closedMessage: Messages.FIRSTDOORCLOSED }
-			//{wallSide: GlobalStrings.LEFT, logo: GlobalStrings.RECEPTION,  positionOfDoor: [2, -1], positionOnExit: [Settings.WORKSHOP_ID, 2, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: false, closedMessage: Messages.FIRSTDOORCLOSED }
+		    {wallSide: GlobalStrings.LEFT, logo: GlobalStrings.RECEPTION,  positionOfDoor: [2, -1], positionOnExit: [1, 15, 2], directionOnExit: Direction.DOWNLEFT, isOpen: false, closedMessage: DoorClosedMessages.FIRSTDOORCLOSED }
 		],
 		NPCS: [
 			{name: FloorplanConstants.NPCNAMES.tutorial, position: [14, 7], direction: Direction.DOWNLEFT, dialog: NPCDialog.basicTutorialDialog},
 		]
+	},
+	
+	THUMBNAIL: {
+		ID: Settings.THUMBNAIL_ID,
+		NAME: "Virtuelles Lehr-Lern-Labor Informatik",
+		TYPE: TypeOfRoom.CUSTOM,
+		LENGTH: 15,
+		WIDTH: 15,
+		MAPELEMENTS: [],
+		OBJECTS: [
+        ],
+		DOORS: [
+			{wallSide: GlobalStrings.LEFT, logo: GlobalStrings.RECEPTION,  positionOfDoor: [2, -1], positionOnExit: [Settings.BEISPIEL_ID, 2, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: true }
+		],
+		NPCS: []
 	},
 	
 	BEISPIEL: {
@@ -269,7 +281,7 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.TEA, position: [0, 1]},
         ],
 		DOORS: [
-			//{wallSide: GlobalStrings.LEFT, logo: GlobalStrings.RECEPTION,  positionOfDoor: [2, -1], positionOnExit: [Settings.RECEPTION_ID, 2, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: true }
+			{wallSide: GlobalStrings.LEFT, logo: GlobalStrings.RECEPTION,  positionOfDoor: [2, -1], positionOnExit: [Settings.THUMBNAIL_ID, 2, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: true }
 		],
 		NPCS: []
 	},
@@ -286,7 +298,6 @@ const Floorplan = Object.freeze({
 			{type: GameObjectType.CONFERENCELOGO, position: [7, -1]},
         ],
 		OBJECTS: [
-			//{type: GameObjectType.SMALLTABLE, position: [[13, 11], 1]},
 			{type: GameObjectType.SMALLTABLE, position: [13, 0], isClickable: true, iFrameData: {title: "Thunkable: Login und Vorschau", url: "https://www.youtube.com/embed/oJKgC9koLj4", width: 800, height: 450 }},
 			{type: GameObjectType.SMALLTABLE, position: [11, 0], isClickable: true, iFrameData: {title: "Thunkable: Nutzeroberfläche Design", url: "https://www.youtube.com/embed/ZlIFm6-2Ad4", width: 800, height: 450 }},
 			{type: GameObjectType.SMALLTABLE, position: [9, 0], isClickable: true, iFrameData: {title: "Thunkable: Nutzeroberfläche Programmierung", url: "https://www.youtube.com/embed/83UJ634oYpk", width: 800, height: 450 }},
@@ -312,7 +323,6 @@ const Floorplan = Object.freeze({
         NPCS: [
             {name: "Spiele-App", position: [0, 0], direction: Direction.DOWNRIGHT, dialog: ["Zur Spiele-App","Hier lernst du, wie man mithilfe eines Canvas eine eigene Spiele-App entwickelt."]},
 			{name: "Urlaubshelfer", position: [5, 0], direction: Direction.DOWNRIGHT, dialog: ["Zur Urlaubshelfer-App","Hier lernst du am Beispiel eines Urlaubshelfers, worauf man bei der Entwicklung einer eigenen App achten muss."]},
-			//{name: "Foyer", position: [15, 1], direction: Direction.DOWNLEFT, dialog: ["Diese Tür führt zurück in die Eingangshalle"]}
         ]
 	},
 	
@@ -328,7 +338,6 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.CONFERENCELOGO, position: [7, -1]},
         ],
 		OBJECTS: [
-			//{type: GameObjectType.SMALLTABLE, position: [2, 2]},
 			{type: GameObjectType.CHAIR, variation: 3, position: [1, 2]},
 			{type: GameObjectType.SMALLTABLE, position: [2, 2], isClickable: true, iFrameData: {title: "Linksammlung", url: "https://media.lehr-lern-labor.info/collab/p/r.c315f0f3e1332774a48f51b019101c89?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
             {type: GameObjectType.TEA, position: [2, 2], isClickable: false},		
@@ -337,9 +346,6 @@ const Floorplan = Object.freeze({
 			{type: GameObjectType.SMALLTABLE, position: [13, 9], isClickable: true, iFrameData: {title: "Spiellogik", url: "https://www.youtube.com/embed/REdrQlD2BQg", width: 800, height: 450 }},
 			{type: GameObjectType.SMALLTABLE, position: [13, 13], isClickable: true, iFrameData: {title: "Interaktion", url: "https://www.youtube.com/embed/-rswoF26EYA", width: 800, height: 450 }},
 			{type: GameObjectType.SMALLTABLE, position: [9, 13], isClickable: true, iFrameData: {title: "Steuerung", url: "https://www.youtube.com/embed/0IJ--pKwLLE", width: 800, height: 450 }},
-			//{type: GameObjectType.SMALLTABLE, position: [5, 13], isClickable: true, iFrameData: {title: "Video 6", url: "https://www.youtube.com/embed/1Ckx4QT1KjA", width: 800, height: 450 }},
-			//{type: GameObjectType.SMALLTABLE, position: [1, 13], isClickable: true, iFrameData: {title: "Video 7", url: "https://www.youtube.com/embed/1Ckx4QT1KjA", width: 800, height: 450 }},
-			//{type: GameObjectType.SMALLTABLE, position: [1, 9], isClickable: true, iFrameData: {title: "Video 8", url: "https://www.youtube.com/embed/1Ckx4QT1KjA", width: 800, height: 450 }},
 			{type: GameObjectType.PLANT, position: [[0, 0], [14, 0], [0, 14], [14, 14]]}
 		],
 		DOORS: [ 
@@ -347,7 +353,6 @@ const Floorplan = Object.freeze({
 		],
 		NPCS: [
 			{name: "Spiele-App", position: [2, 1], direction: Direction.DOWNRIGHT, dialog: ["An jedem Tisch gibt es ein Video. Das erste Video ist am Tisch oben vor dem Logo, danach geht es im Uhrzeigersinn weiter.","Die Videos bauen in der Regel nicht aufeinander auf, aber es macht Sinn die Reihenfolge ungefähr einzuhalten. <br><br><i>Du kannst dich schließlich noch nicht um ein Punktesystem kümmern, wenn in deinem Spiel noch nichts passiert...</i>"]},
-			//{name: "Gruppenraum", position: [3, 0], direction: Direction.DOWNRIGHT, dialog: ["Diese Tür führt zurück in den Gruppenraum"]}
         ]
 	},
 	
@@ -388,8 +393,7 @@ const Floorplan = Object.freeze({
 		],
 		NPCS: [
 			{name: "Urlaubshelfer", position: [2, 1], direction: Direction.DOWNRIGHT, dialog: ["An jedem Tisch gibt es ein Video. Das erste Video ist am Tisch links vor dem Logo, danach geht es im Uhrzeigersinn weiter. Die letzten beiden Videos sind Zusatzvideos, falls du dich für wietere Layout-Möglichkeiten interessierst.","Du kannst dir die Videos passend zu den von dir gewählten Modulen anschauen."]},
-			//{name: "Gruppenraum", position: [3, 0], direction: Direction.DOWNRIGHT, dialog: ["Diese Tür führt zurück in den Gruppenraum"]}
-        ]
+		]
 	},
 
 /*    RECEPTION: {

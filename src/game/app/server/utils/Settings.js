@@ -16,6 +16,8 @@ module.exports = Object.freeze({
     WORKSHOP_1_ID:2,
     WORKSHOP_2_ID:3,
     BEISPIEL_ID: 4,
+    THUMBNAIL_ID: 5,
+
     STARTROOM_ID: 0,
     STARTPOSITION_X: 3,
     STARTPOSITION_Y: 12,
@@ -40,7 +42,7 @@ module.exports = Object.freeze({
     CONFERENCE_ID: 'LLL',
 
     /* Meeting Constants */
-    CONFERENCE_MEETINGNAME: 'Conference Meeting',
+    CONFERENCE_MEETINGNAME: 'Lehr-Lern-Labor',
     DEFAULT_MEETINGDOMAIN: '//talk.lehr-lern-labor.info/',
 
     /* Lecture Constants */
