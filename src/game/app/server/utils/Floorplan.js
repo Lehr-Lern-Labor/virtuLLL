@@ -256,13 +256,34 @@ const Floorplan = Object.freeze({
 		ID: Settings.THUMBNAIL_ID,
 		NAME: "Virtuelles Lehr-Lern-Labor Informatik",
 		TYPE: TypeOfRoom.CUSTOM,
-		LENGTH: 15,
-		WIDTH: 15,
-		MAPELEMENTS: [],
+		LENGTH: 13,
+		WIDTH: 13,
+		MAPELEMENTS: [
+            {type: GameObjectType.CONFERENCELOGO, position: [5, -1]},
+            {type: GameObjectType.RIGHTWINDOW, position: [[13, [1,2,3]]]},
+        ],
 		OBJECTS: [
+            {type: GameObjectType.RECEPTIONCOUNTER, position: [11,5]},
+
+            {type: GameObjectType.SMALLTABLE, position: [10,2]},
+            {type: GameObjectType.CHAIR, position: [10,1], variation: 0},
+            {type: GameObjectType.CHAIR, position: [10,3], variation: 1},
+            {type: GameObjectType.CHAIR, position: [11,2], variation: 2},
+            {type: GameObjectType.CHAIR, position: [9,2], variation: 3},
+            {type: GameObjectType.SMALLTABLE, position: [4,2]},
+            {type: GameObjectType.CHAIR, position: [4,1], variation: 0},
+            {type: GameObjectType.CHAIR, position: [4,3], variation: 1},
+            {type: GameObjectType.CHAIR, position: [5,2], variation: 2},
+            {type: GameObjectType.CHAIR, position: [3,2], variation: 3},
+            {type: GameObjectType.SMALLTABLE, position: [7,5]},
+            {type: GameObjectType.TEA, position: [7,5]},
+            {type: GameObjectType.CHAIR, position: [7,4], variation: 0},
+            {type: GameObjectType.CHAIR, position: [7,6], variation: 1},
+            {type: GameObjectType.CHAIR, position: [8,5], variation: 2},
+            {type: GameObjectType.CHAIR, position: [6,5], variation: 3},
         ],
 		DOORS: [
-			{wallSide: GlobalStrings.LEFT, logo: GlobalStrings.RECEPTION,  positionOfDoor: [2, -1], positionOnExit: [Settings.BEISPIEL_ID, 2, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: true }
+			{wallSide: GlobalStrings.LEFT, positionOfDoor: [2, -1], positionOnExit: [Settings.BEISPIEL_ID, 2, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: true }
 		],
 		NPCS: []
 	},
@@ -271,14 +292,51 @@ const Floorplan = Object.freeze({
 		ID: Settings.BEISPIEL_ID,
 		NAME: "Beispiele",
 		TYPE: TypeOfRoom.CUSTOM,
-		LENGTH: 5,
-		WIDTH: 5,
+		LENGTH: 25,
+		WIDTH: 25,
 		MAPELEMENTS: [],
 		OBJECTS: [
             {type: GameObjectType.SMALLTABLE, position: [0, 4], isClickable: true, iFrameData: {title: "Exponate", url: "https://media.lehr-lern-labor.info/workshops/binary/", width: 600, height: 300 }},
             {type: GameObjectType.SMALLTABLE, position: [0, 3], isClickable: true, iFrameData: {title: "Video", url: "https://www.youtube.com/embed/1Ckx4QT1KjA", width: 800, height: 450 }},
             {type: GameObjectType.SMALLTABLE, position: [0, 1], isClickable: true, iFrameData: {title: "Etherpad", url: "https://media.lehr-lern-labor.info/collab/p/ErgebnissammlungGirlsDay?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
             {type: GameObjectType.TEA, position: [0, 1]},
+            // Left Wall
+            {type: GameObjectType.LEFTSCHEDULE, position: [5,-1]},
+            {type: GameObjectType.LEFTWINDOW, position: [9,-1], variation: 0},
+            {type: GameObjectType.LEFTWINDOW, position: [11,-1], variation: 1},
+            {type: GameObjectType.CONFERENCELOGO, position: [14,-1]},
+            // Right Wall
+            {type: GameObjectType.RIGHTWINDOW, position: [24,1], variation: 0},
+            {type: GameObjectType.RIGHTWINDOW, position: [24,3], variation: 1},
+            {type: GameObjectType.PICTUREFRAME, position: [24,5]},
+            // Seating
+            {type: GameObjectType.CHAIR, position: [5,2], variation: 0},
+            {type: GameObjectType.CHAIR, position: [5,4], variation: 1},
+            {type: GameObjectType.CHAIR, position: [5,6], variation: 2},
+            {type: GameObjectType.CHAIR, position: [5,8], variation: 3},
+            {type: GameObjectType.SOFA, position: [5,11], variation: 0},
+            {type: GameObjectType.SOFA, position: [5,13], variation: 1},
+            // Tables
+            {type: GameObjectType.TABLE, position: [8,2]},
+            {type: GameObjectType.LARGETABLE, position: [8,4], variation: 0},
+            {type: GameObjectType.LARGETABLE, position: [8,8], variation: 1},
+            {type: GameObjectType.SMALLTABLE, position: [8,12]},
+            // Counters
+            {type: GameObjectType.CANTEENCOUNTER, position: [12,2]},
+            {type: GameObjectType.RECEPTIONCOUNTER, position: [12,6]},
+            {type: GameObjectType.RECEPTIONCOUNTERSIDEPART, position: [12,15], variation: 0},
+            {type: GameObjectType.RECEPTIONCOUNTERSIDEPART, position: [12,17], variation: 1},
+            // Decoration and Food
+            {type: GameObjectType.PLANT, position: [15,2]},
+            {type: GameObjectType.DRINKS, position: [15,4]},
+            {type: GameObjectType.LARGETABLE, position: [15,7], variation: 0}, //dummy
+            {type: GameObjectType.LARGETABLE, position: [15,10], variation: 0}, //dummy
+            {type: GameObjectType.SMALLFOOD, position: [15,7], variation: 0},
+            {type: GameObjectType.SMALLFOOD, position: [15,8], variation: 1},
+            {type: GameObjectType.SMALLFOOD, position: [15,9], variation: 2},
+            {type: GameObjectType.SMALLFOOD, position: [15,10], variation: 3},
+            {type: GameObjectType.TEA, position: [15,12]},
+            
         ],
 		DOORS: [
 			{wallSide: GlobalStrings.LEFT, logo: GlobalStrings.RECEPTION,  positionOfDoor: [2, -1], positionOnExit: [Settings.THUMBNAIL_ID, 2, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: true }
