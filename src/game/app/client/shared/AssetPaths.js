@@ -13,8 +13,8 @@ AssetPaths = Object.freeze({
     "tile_selected": "../client/assets/tiles/tile_selected.png",
     
     // Walls
-    "leftwall_default": "../client/assets/walls/wall1.png",
-    "rightwall_default": "../client/assets/walls/wall2.png",
+    "leftwall_default": "../client/assets/walls/wall_left.png",
+    "rightwall_default": "../client/assets/walls/wall_right.png",
 
     // Doors
     "leftnonedoor_default": "../client/assets/doors/door_none_alt.png",
