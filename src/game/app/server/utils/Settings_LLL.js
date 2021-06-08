@@ -11,15 +11,14 @@ const DisplayName = require('../../client/shared/DisplayName.js');
  */
 module.exports = Object.freeze({
 
+    /* Room-IDs */
+    FOYER_ID: 0,
+	
     /* Start-Position Constants */
-    RECEPTION_ID: 0,
-    FOYER_ID: 1,
-    FOODCOURT_ID: 2, 
-    ESCAPEROOM_ID:3,
-    STARTROOM_ID: 0,
-    STARTPOSITION_X: 3,
-    STARTPOSITION_Y: 12,
-    STARTDIRECTION: Direction.UPLEFT,
+    STARTROOM_ID: 0,	
+    STARTPOSITION_X: 1,
+    STARTPOSITION_Y: 1,
+    STARTDIRECTION: Direction.UPRIGHT,
     TYPE_OF_STARTROOM: 'CUSTOM',
 
     /* Chat Constants */
