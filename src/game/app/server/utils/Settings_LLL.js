@@ -40,7 +40,7 @@ module.exports = Object.freeze({
     CONFERENCE_ID: 'LLL',
 
     /* Meeting Constants */
-    CONFERENCE_MEETINGNAME: 'Conference Meeting',
+    CONFERENCE_MEETINGNAME: 'Lehr-Lern-Labor',
     DEFAULT_MEETINGDOMAIN: '//talk.lehr-lern-labor.info/',
 
     /* Lecture Constants */

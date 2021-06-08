@@ -47,7 +47,7 @@ const Settings = Object.freeze({
 
     PARTICIPANT_COLOR: 'antiquewhite',
     PARTICIPANT_NAME_COLOR: 'black',
-    MODERATOR_COLOR: 'gold',
+    MODERATOR_COLOR: '#69AF2A',
     MODERATOR_NAME_COLOR: 'black',
     NPC_COLOR: 'firebrick',
     NPC_NAME_COLOR: 'white',
