@@ -170,6 +170,23 @@ class GameObjectInfo {
             length: Settings.SMALL_OBJECT_LENGTH,
             assetName: "rightwall_default",
         },
+        
+        // Barriers
+        [GameObjectType.BARRIER]: {
+            hasVariation: true,
+            isSolid: true,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: [
+                "barrier_default",
+                "barrier_0",
+                "barrier_1",
+                "barrier_2",
+                "barrier_3",
+                "barrier_x",
+                "barrier_y",
+            ],
+        },    
 
         // Wall-like objects
         // Schedule, Windows, Logo, Picture Frames...

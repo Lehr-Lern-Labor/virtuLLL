@@ -23,6 +23,10 @@ const GameObjectType = Object.freeze({
         // Walls
         LEFTWALL: 'LEFTWALL',
         RIGHTWALL: 'RIGHTWALL',
+        
+        // Barriers
+        BARRIER: 'BARRIER',
+        
         // Wall-like objects
         // Schedule, Windows, Logo, Picture Frames...
         LEFTSCHEDULE: 'LEFTSCHEDULE',

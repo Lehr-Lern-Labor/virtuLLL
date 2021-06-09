@@ -15,7 +15,16 @@ AssetPaths = Object.freeze({
     // Walls
     "leftwall_default": "../client/assets/walls/wall_left.png",
     "rightwall_default": "../client/assets/walls/wall_right.png",
-
+    
+    // Barriers
+    "barrier_default": "../client/assets/walls/barrier_default.png",
+    "barrier_0": "../client/assets/walls/barrier_0.png",
+    "barrier_1": "../client/assets/walls/barrier_1.png",
+    "barrier_2": "../client/assets/walls/barrier_2.png",
+    "barrier_3": "../client/assets/walls/barrier_3.png",
+    "barrier_x": "../client/assets/walls/barrier_x.png",
+    "barrier_y": "../client/assets/walls/barrier_y.png",
+    
     // Doors
     "leftnonedoor_default": "../client/assets/doors/door_none_alt.png",
     "rightnonedoor_default": "../client/assets/doors/door_none.png",

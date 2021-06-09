@@ -378,15 +378,27 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.SOFA, position: [ 9,16],  isClickable: true, variation: 4},
             {type: GameObjectType.SOFA, position: [ 9,17],  isClickable: true, variation: 5},
             
-            {type: GameObjectType.SOFA, position: [10,17],  isClickable: true, variation: 6},
-            {type: GameObjectType.SOFA, position: [11,17],  isClickable: true, variation: 7},
-            {type: GameObjectType.SOFA, position: [12,17],  isClickable: true, variation: 7},
-            {type: GameObjectType.SOFA, position: [13,17],  isClickable: true, variation: 8},
+            {type: GameObjectType.SOFA, position: [10,18],  isClickable: true, variation: 6},
+            {type: GameObjectType.SOFA, position: [11,18],  isClickable: true, variation: 7},
+            {type: GameObjectType.SOFA, position: [12,18],  isClickable: true, variation: 7},
+            {type: GameObjectType.SOFA, position: [13,18],  isClickable: true, variation: 8},
             
             {type: GameObjectType.SOFA, position: [14,14],  isClickable: true, variation: 9},
             {type: GameObjectType.SOFA, position: [14,15],  isClickable: true, variation:10},
             {type: GameObjectType.SOFA, position: [14,16],  isClickable: true, variation:10},
             {type: GameObjectType.SOFA, position: [14,17],  isClickable: true, variation:11},
+            
+            // Barriers
+            {type: GameObjectType.BARRIER, position: [18,16], variation: 3},
+            {type: GameObjectType.BARRIER, position: [18,15], variation: 2},
+            {type: GameObjectType.BARRIER, position: [18,15], variation: 1},
+            {type: GameObjectType.BARRIER, position: [[19,20,21,22],15], variation: 5},
+            {type: GameObjectType.BARRIER, position: [23,15], variation: 4},
+            {type: GameObjectType.BARRIER, position: [23,15], variation: 1},
+            {type: GameObjectType.BARRIER, position: [23,[16,17,18,19]], variation: 6},
+            {type: GameObjectType.BARRIER, position: [23,20], variation: 3},
+            {type: GameObjectType.BARRIER, position: [20,18], variation: 0},
+            
             
         ],
         DOORS: [ 
