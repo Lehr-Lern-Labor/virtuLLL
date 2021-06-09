@@ -282,13 +282,26 @@ class GameObjectInfo {
                 "chair_white_3",
             ],
         },
-        // [GameObjectType.SOFA]: {
-            // hasVariation: true,
-            // isSolid: true,
-            // width: Settings.SMALL_OBJECT_WIDTH,
-            // length: Settings.SMALL_OBJECT_LENGTH,
-            // assetName: ["leftsofa_default", "rightsofa_default"],
-        // },
+        [GameObjectType.SOFA]: {
+            hasVariation: true,
+            isSolid: true,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: [
+                "sofa_front_0",
+                "sofa_middle_0",
+                "sofa_back_0",
+                "sofa_back_1",
+                "sofa_middle_1",
+                "sofa_front_1",
+                "sofa_front_2",
+                "sofa_middle_2",
+                "sofa_back_2",
+                "sofa_back_3",
+                "sofa_middle_3",
+                "sofa_front_3",
+            ],
+        },
 
         // Tables
         [GameObjectType.TABLE]: {

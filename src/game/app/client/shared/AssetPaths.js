@@ -53,12 +53,6 @@ AssetPaths = Object.freeze({
     "leftconferencelogo_default4": "../client/assets/logos/conferencelogo5.png",
     
     // Seating
-    // "leftsofa_default": "../client/assets/chairs/sofa_left.png",
-    // "rightsofa_default": "../client/assets/chairs/sofa_right.png",
-    // "leftchair_default": "../client/assets/chairs/chair_left.png",
-    // "rightchair_default": "../client/assets/chairs/chair_right.png",
-    // "leftchairback_default": "../client/assets/chairs/chair_left_back.png",
-    // "rightchairback_default": "../client/assets/chairs/chair_right_back.png",
     "chair_default_0": "../client/assets/chairs/chair_default_0.png",
     "chair_default_1": "../client/assets/chairs/chair_default_1.png",
     "chair_default_2": "../client/assets/chairs/chair_default_2.png",
@@ -99,6 +93,19 @@ AssetPaths = Object.freeze({
     "chair_white_1": "../client/assets/chairs/chair_white_1.png",
     "chair_white_2": "../client/assets/chairs/chair_white_2.png",
     "chair_white_3": "../client/assets/chairs/chair_white_3.png",
+    
+    "sofa_front_0": "../client/assets/chairs/sofa_front_0.png",
+    "sofa_middle_0": "../client/assets/chairs/sofa_middle_0.png",
+    "sofa_back_0": "../client/assets/chairs/sofa_back_0.png",
+    "sofa_front_1": "../client/assets/chairs/sofa_front_1.png",
+    "sofa_middle_1": "../client/assets/chairs/sofa_middle_1.png",
+    "sofa_back_1": "../client/assets/chairs/sofa_back_1.png",
+    "sofa_front_2": "../client/assets/chairs/sofa_front_2.png",
+    "sofa_middle_2": "../client/assets/chairs/sofa_middle_2.png",
+    "sofa_back_2": "../client/assets/chairs/sofa_back_2.png",
+    "sofa_front_3": "../client/assets/chairs/sofa_front_3.png",
+    "sofa_middle_3": "../client/assets/chairs/sofa_middle_3.png",
+    "sofa_back_3": "../client/assets/chairs/sofa_back_3.png",
     
     // Tables
     "table_default": "../client/assets/tables/table.png",
