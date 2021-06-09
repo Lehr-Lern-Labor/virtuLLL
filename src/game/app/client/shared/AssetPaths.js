@@ -93,6 +93,10 @@ AssetPaths = Object.freeze({
     "chair_white_1": "../client/assets/chairs/chair_white_1.png",
     "chair_white_2": "../client/assets/chairs/chair_white_2.png",
     "chair_white_3": "../client/assets/chairs/chair_white_3.png",
+    "chair_swivel_0": "../client/assets/chairs/chair_swivel_0.png",
+    "chair_swivel_1": "../client/assets/chairs/chair_swivel_1.png",
+    "chair_swivel_2": "../client/assets/chairs/chair_swivel_2.png",
+    "chair_swivel_3": "../client/assets/chairs/chair_swivel_3.png",
     
     "sofa_front_0": "../client/assets/chairs/sofa_front_0.png",
     "sofa_middle_0": "../client/assets/chairs/sofa_middle_0.png",

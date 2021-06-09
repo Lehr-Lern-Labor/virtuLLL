@@ -280,6 +280,10 @@ class GameObjectInfo {
                 "chair_white_1",
                 "chair_white_2",
                 "chair_white_3",
+                "chair_swivel_0",
+                "chair_swivel_1",
+                "chair_swivel_2",
+                "chair_swivel_3",
             ],
         },
         [GameObjectType.SOFA]: {

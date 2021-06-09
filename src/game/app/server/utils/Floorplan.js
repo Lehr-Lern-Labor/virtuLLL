@@ -356,6 +356,10 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.CHAIR, position: [13,10],  isClickable: true, variation: 9 * 4 + 2},
             {type: GameObjectType.CHAIR, position: [15,10],  isClickable: true, variation: 9 * 4 + 3},
             
+            {type: GameObjectType.CHAIR, position: [ 9,11],  isClickable: true, variation:10 * 4 + 0},
+            {type: GameObjectType.CHAIR, position: [11,11],  isClickable: true, variation:10 * 4 + 1},
+            {type: GameObjectType.CHAIR, position: [13,11],  isClickable: true, variation:10 * 4 + 2},
+            {type: GameObjectType.CHAIR, position: [15,11],  isClickable: true, variation:10 * 4 + 3},
             
             {type: GameObjectType.TABLE, position: [21,10],  isClickable: true, variation: 0},
             {type: GameObjectType.CHAIR, position: [21, 9],  isClickable: true, variation: 8 * 4 + 0},
@@ -364,25 +368,25 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.CHAIR, position: [22,10],  isClickable: true, variation: 8 * 4 + 3},
             
             // Sofas
-            {type: GameObjectType.SOFA, position: [10,12],  isClickable: true, variation: 0},
-            {type: GameObjectType.SOFA, position: [11,12],  isClickable: true, variation: 1},
-            {type: GameObjectType.SOFA, position: [12,12],  isClickable: true, variation: 1},
-            {type: GameObjectType.SOFA, position: [13,12],  isClickable: true, variation: 2},
+            {type: GameObjectType.SOFA, position: [10,13],  isClickable: true, variation: 0},
+            {type: GameObjectType.SOFA, position: [11,13],  isClickable: true, variation: 1},
+            {type: GameObjectType.SOFA, position: [12,13],  isClickable: true, variation: 1},
+            {type: GameObjectType.SOFA, position: [13,13],  isClickable: true, variation: 2},
             
-            {type: GameObjectType.SOFA, position: [ 9,13],  isClickable: true, variation: 3},
-            {type: GameObjectType.SOFA, position: [ 9,14],  isClickable: true, variation: 4},
+            {type: GameObjectType.SOFA, position: [ 9,14],  isClickable: true, variation: 3},
             {type: GameObjectType.SOFA, position: [ 9,15],  isClickable: true, variation: 4},
-            {type: GameObjectType.SOFA, position: [ 9,16],  isClickable: true, variation: 5},
+            {type: GameObjectType.SOFA, position: [ 9,16],  isClickable: true, variation: 4},
+            {type: GameObjectType.SOFA, position: [ 9,17],  isClickable: true, variation: 5},
             
             {type: GameObjectType.SOFA, position: [10,17],  isClickable: true, variation: 6},
             {type: GameObjectType.SOFA, position: [11,17],  isClickable: true, variation: 7},
             {type: GameObjectType.SOFA, position: [12,17],  isClickable: true, variation: 7},
             {type: GameObjectType.SOFA, position: [13,17],  isClickable: true, variation: 8},
             
-            {type: GameObjectType.SOFA, position: [14,13],  isClickable: true, variation: 9},
-            {type: GameObjectType.SOFA, position: [14,14],  isClickable: true, variation:10},
+            {type: GameObjectType.SOFA, position: [14,14],  isClickable: true, variation: 9},
             {type: GameObjectType.SOFA, position: [14,15],  isClickable: true, variation:10},
-            {type: GameObjectType.SOFA, position: [14,16],  isClickable: true, variation:11},
+            {type: GameObjectType.SOFA, position: [14,16],  isClickable: true, variation:10},
+            {type: GameObjectType.SOFA, position: [14,17],  isClickable: true, variation:11},
             
         ],
         DOORS: [ 
