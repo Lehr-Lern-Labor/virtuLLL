@@ -263,6 +263,48 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.COUNTER, position: [7,10],  isClickable: true, variation: 5},
             {type: GameObjectType.COUNTER, position: [7, 9],  isClickable: true, variation:10},
             {type: GameObjectType.COUNTER, position: [6, 9],  isClickable: true, variation: 2},
+            
+            // Cupboards
+            {type: GameObjectType.CUPBOARD, position: [19, 0],  isClickable: true, variation: 0},
+            {type: GameObjectType.CUPBOARD, position: [20, 0],  isClickable: true, variation: 1},
+            {type: GameObjectType.CUPBOARD, position: [21, 0],  isClickable: true, variation: 2},
+            {type: GameObjectType.CUPBOARD, position: [22, 0],  isClickable: true, variation: 3},
+            {type: GameObjectType.CUPBOARD, position: [23, 0],  isClickable: true, variation: 4},
+            
+            {type: GameObjectType.CUPBOARD, position: [24, 1],  isClickable: true, variation: 5},
+            {type: GameObjectType.CUPBOARD, position: [24, 2],  isClickable: true, variation: 6},
+            {type: GameObjectType.CUPBOARD, position: [24, 3],  isClickable: true, variation: 7},
+            {type: GameObjectType.CUPBOARD, position: [24, 4],  isClickable: true, variation: 8},
+            {type: GameObjectType.CUPBOARD, position: [24, 5],  isClickable: true, variation: 9},
+            
+            {type: GameObjectType.CUPBOARD, position: [18, 0],  isClickable: true, variation: 12},
+            {type: GameObjectType.CUPBOARD, position: [18, 6],  isClickable: true, variation: 13},
+            {type: GameObjectType.CUPBOARD, position: [24, 6],  isClickable: true, variation: 14},
+            {type: GameObjectType.CUPBOARD, position: [24, 0],  isClickable: true, variation: 15},
+            
+            {type: GameObjectType.CUPBOARD, position: [18, [1,5]],  isClickable: true, variation: 11},
+            {type: GameObjectType.CUPBOARD, position: [[19,23], 6],  isClickable: true, variation: 10},
+            
+            {type: GameObjectType.SIDEBOARD, position: [19, 7],  isClickable: true, variation: 0},
+            {type: GameObjectType.SIDEBOARD, position: [20, 7],  isClickable: true, variation: 1},
+            {type: GameObjectType.SIDEBOARD, position: [21, 7],  isClickable: true, variation: 2},
+            {type: GameObjectType.SIDEBOARD, position: [22, 7],  isClickable: true, variation: 3},
+            {type: GameObjectType.SIDEBOARD, position: [23, 7],  isClickable: true, variation: 4},
+            
+            {type: GameObjectType.SIDEBOARD, position: [24, 8],  isClickable: true, variation: 5},
+            {type: GameObjectType.SIDEBOARD, position: [24, 9],  isClickable: true, variation: 6},
+            {type: GameObjectType.SIDEBOARD, position: [24,10],  isClickable: true, variation: 7},
+            {type: GameObjectType.SIDEBOARD, position: [24,11],  isClickable: true, variation: 8},
+            {type: GameObjectType.SIDEBOARD, position: [24,12],  isClickable: true, variation: 9},
+            
+            {type: GameObjectType.SIDEBOARD, position: [18, 7],  isClickable: true, variation: 12},
+            {type: GameObjectType.SIDEBOARD, position: [18,13],  isClickable: true, variation: 13},
+            {type: GameObjectType.SIDEBOARD, position: [24,13],  isClickable: true, variation: 14},
+            {type: GameObjectType.SIDEBOARD, position: [24, 7],  isClickable: true, variation: 15},
+            
+            {type: GameObjectType.SIDEBOARD, position: [18, [8,12]],  isClickable: true, variation: 11},
+            {type: GameObjectType.SIDEBOARD, position: [[19,23], 13],  isClickable: true, variation: 10},
+            
         ],
         DOORS: [ 
         ],

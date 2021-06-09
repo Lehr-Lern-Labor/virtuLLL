@@ -41,6 +41,10 @@ const GameObjectType = Object.freeze({
         // Counters
         COUNTER: 'COUNTER',
         
+        // Cupboards
+        CUPBOARD: 'CUPBOARD',
+        SIDEBOARD: 'SIDEBOARD',
+        
         // Food & Drinks
         DRINKS: 'DRINKS',   
         SMALLFOOD: 'SMALLFOOD',
