@@ -34,8 +34,6 @@ const GameObjectType = Object.freeze({
         LEFTWINDOW: 'LEFTWINDOW',
         PICTUREFRAME: 'PICTUREFRAME',
         CONFERENCELOGO: 'CONFERENCELOGO',
-        // Plant
-        PLANT: 'PLANT',
         // Seating
         CHAIR: 'CHAIR',
         SOFA: 'SOFA',
@@ -49,6 +47,9 @@ const GameObjectType = Object.freeze({
         // Cupboards
         CUPBOARD: 'CUPBOARD',
         SIDEBOARD: 'SIDEBOARD',
+        
+        // Decoration
+        FLOORDECORATION: 'FLOORDECORATION',
         
         // Food & Drinks
         DRINKS: 'DRINKS',   

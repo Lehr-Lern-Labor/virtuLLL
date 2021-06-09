@@ -28,8 +28,6 @@ const GameObjectOffsets = Object.freeze({
     [TypeOfDoor.LEFT_LECTUREDOOR]: Settings.LEFTWALL_OFFSET,
     [TypeOfDoor.RIGHT_LECTUREDOOR]:Settings.RIGHTWALL_OFFSET,
 
-    // Plant 
-    [GameObjectType.PLANT]: { x: -5, y: -10 },
     // Seating
     // [GameObjectType.CHAIR]: { x: 15, y: -6 },
     // [GameObjectType.SOFA]: { x: 0, y: -4 },

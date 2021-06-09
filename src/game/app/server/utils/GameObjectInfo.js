@@ -241,14 +241,6 @@ class GameObjectInfo {
                 "leftconferencelogo_default3",
                 "leftconferencelogo_default4"],
         },
-        
-        // Plant 
-        [GameObjectType.PLANT]: {
-            isSolid: true,
-            width: Settings.SMALL_OBJECT_WIDTH,
-            length: Settings.SMALL_OBJECT_LENGTH,
-            assetName: "plant_default",
-        },    
 
         // Seating
         [GameObjectType.CHAIR]: {
@@ -411,6 +403,22 @@ class GameObjectInfo {
                 "sideboard_corner_back",
             ],
         },
+        
+        // Floordecoration
+        [GameObjectType.FLOORDECORATION]: {
+            hasVariation: true,
+            isSolid: true,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: [
+                "floordecoration_plant", 
+                "floordecoration_palm",
+                "floordecoration_palmtree",
+                "floordecoration_guitar",
+                "floordecoration_balls",
+            ],
+        },
+        
 
         // Food & Drinks
         [GameObjectType.DRINKS]: {

@@ -49,7 +49,7 @@ AssetPaths = Object.freeze({
     "rightwindow_default1": "../client/assets/windows/right_small_window_default1.png",
     
     // Plant & Picture Frames
-    "plant_default": "../client/assets/plants/plant.png",
+    // "plant_default": "../client/assets/plants/plant.png",
     "rightwallframe_default0": "../client/assets/frames/wallframe1.png",
     "rightwallframe_default1": "../client/assets/frames/wallframe2.png",
     "rightwallframe_default2": "../client/assets/frames/wallframe3.png",
@@ -177,6 +177,12 @@ AssetPaths = Object.freeze({
     "sideboard_corner_right": "../client/assets/cupboards/sideboard_corner_right.png",
     "sideboard_corner_back": "../client/assets/cupboards/sideboard_corner_back.png",
     
+    // Floordecoration
+    "floordecoration_plant": "../client/assets/decoration/floordecoration_plant.png",
+    "floordecoration_palm": "../client/assets/decoration/floordecoration_palm.png",
+    "floordecoration_palmtree": "../client/assets/decoration/floordecoration_palmtree.png",
+    "floordecoration_guitar": "../client/assets/decoration/floordecoration_guitar.png",
+    "floordecoration_balls": "../client/assets/decoration/floordecoration_balls.png",    
     
     // Food & Drinks
     "drinks_default": "../client/assets/other/Drinks.png",
