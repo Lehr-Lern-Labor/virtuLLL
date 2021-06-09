@@ -33,10 +33,6 @@ const GameObjectOffsets = Object.freeze({
     // Seating
     [GameObjectType.CHAIR]: { x: 15, y: -6 },
     [GameObjectType.SOFA]: { x: 0, y: -4 },
-    // Tables
-    [GameObjectType.TABLE]: { x: 0, y: 7 },
-    [GameObjectType.LARGETABLE]: { x: 0, y: 52 },
-    [GameObjectType.SMALLTABLE]: { x: 0, y: 20 },
     // Counters
     [GameObjectType.CANTEENCOUNTER]: { x: 0, y: 50 },
     [GameObjectType.RECEPTIONCOUNTER]: { x: 0, y: 8 },

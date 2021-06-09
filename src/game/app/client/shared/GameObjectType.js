@@ -36,10 +36,8 @@ const GameObjectType = Object.freeze({
         CHAIR: 'CHAIR',
         SOFA: 'SOFA',
         // Tables
-        TABLE: 'TABLE',  // NOT COHERENT WITH ART STYLE
-                         // DO NOT USE
-        LARGETABLE: 'LARGETABLE',      
-        SMALLTABLE: 'SMALLTABLE',
+        TABLE: 'TABLE',  
+        
         // Counters
         CANTEENCOUNTER: 'CANTEENCOUNTER',
         RECEPTIONCOUNTER: 'RECEPTIONCOUNTER',

@@ -115,6 +115,14 @@ class GameObjectInfo {
  
     // All the info for each GameObjectType
     static #INFORMATION = Object.freeze({
+        // DEMO
+        [GameObjectType.DEMO]: {
+            isSolid: false,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: "demo",
+        },
+        
         // Blank
         [GameObjectType.BLANK]: {
             isSolid: false,
@@ -243,25 +251,19 @@ class GameObjectInfo {
 
         // Tables
         [GameObjectType.TABLE]: {
-            // NOT COHERENT WITH ART STYLE
-            // DO NOT USE
-            isSolid: true,
-            width: Settings.SMALL_OBJECT_WIDTH,
-            length: Settings.SMALL_OBJECT_LENGTH,
-            assetName: "table_default",
-        },
-        [GameObjectType.LARGETABLE]: {
             hasVariation: true,
             isSolid: true,
             width: Settings.SMALL_OBJECT_WIDTH,
-            length: 3 * Settings.SMALL_OBJECT_LENGTH,
-            assetName: ["righttable_default", "lefttable_default"]
-        },
-        [GameObjectType.SMALLTABLE]: {
-            isSolid: true,
-            width: Settings.SMALL_OBJECT_WIDTH,
             length: Settings.SMALL_OBJECT_LENGTH,
-            assetName: "smalldinnertable_default",
+            assetName: [
+                "table_default", 
+                "table_front_x",
+                "table_middle_x",
+                "table_back_x",
+                "table_back_y",
+                "table_middle_y",
+                "table_front_y",
+            ],
         },
 
         // Counters

@@ -232,7 +232,17 @@ const Floorplan = Object.freeze({
         WIDTH: 25, 
         MAPELEMENTS: [
         ],
-        OBJECTS: [
+        OBJECTS: [            
+            // Tables
+            {type: GameObjectType.TABLE, position: [1,1],  isClickable: true, variation: 0},    // Table default
+            
+            {type: GameObjectType.TABLE, position: [1,3],  isClickable: true, variation: 1},    // Table x
+            {type: GameObjectType.TABLE, position: [2,3],  isClickable: true, variation: 2},
+            {type: GameObjectType.TABLE, position: [3,3],  isClickable: true, variation: 3},
+            
+            {type: GameObjectType.TABLE, position: [1,5],  isClickable: true, variation: 4},    // Table y
+            {type: GameObjectType.TABLE, position: [1,6],  isClickable: true, variation: 5},
+            {type: GameObjectType.TABLE, position: [1,7],  isClickable: true, variation: 6},
         ],
         DOORS: [ 
         ],

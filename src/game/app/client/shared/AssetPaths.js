@@ -4,7 +4,7 @@
  * @author Eric Ritte, Klaudia Leo, Laura Traub, Niklas Schmidt, Philipp Schumacher
  * @version 1.0.0
  */
-AssetPaths = Object.freeze({
+AssetPaths = Object.freeze({	
     // Blank
     "blank": "../client/assets/other/blank.png",
 
@@ -62,9 +62,12 @@ AssetPaths = Object.freeze({
     
     // Tables
     "table_default": "../client/assets/tables/table.png",
-    "righttable_default": "../client/assets/tables/dinnerTableRight.png",
-    "lefttable_default": "../client/assets/tables/dinnerTableLeft.png",       
-    "smalldinnertable_default": "../client/assets/tables/smallDinnerTable.png",
+    "table_front_x": "../client/assets/tables/table_front_x.png",
+    "table_middle_x": "../client/assets/tables/table_middle_x.png",
+    "table_back_x": "../client/assets/tables/table_back_x.png",
+    "table_front_y": "../client/assets/tables/table_front_y.png",
+    "table_middle_y": "../client/assets/tables/table_middle_y.png",
+    "table_back_y": "../client/assets/tables/table_back_y.png",
     
     // Counters
     "canteencounter_default": "../client/assets/other/canteenCounter.png",
