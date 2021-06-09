@@ -243,6 +243,26 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.TABLE, position: [1,5],  isClickable: true, variation: 4},    // Table y
             {type: GameObjectType.TABLE, position: [1,6],  isClickable: true, variation: 5},
             {type: GameObjectType.TABLE, position: [1,7],  isClickable: true, variation: 6},
+            
+            // Counters
+            {type: GameObjectType.COUNTER, position: [5,1],  isClickable: true, variation: 0},  // Counter default
+            
+            {type: GameObjectType.COUNTER, position: [5,3],  isClickable: true, variation: 1},  // Counter x
+            {type: GameObjectType.COUNTER, position: [6,3],  isClickable: true, variation: 2},
+            {type: GameObjectType.COUNTER, position: [7,3],  isClickable: true, variation: 3},
+            
+            {type: GameObjectType.COUNTER, position: [5,5],  isClickable: true, variation: 4},  // Counter y
+            {type: GameObjectType.COUNTER, position: [5,6],  isClickable: true, variation: 5},
+            {type: GameObjectType.COUNTER, position: [5,7],  isClickable: true, variation: 6},
+            
+            {type: GameObjectType.COUNTER, position: [5, 9],  isClickable: true, variation: 7}, // Counter circle
+            {type: GameObjectType.COUNTER, position: [5,10],  isClickable: true, variation: 5},
+            {type: GameObjectType.COUNTER, position: [5,11],  isClickable: true, variation: 8},
+            {type: GameObjectType.COUNTER, position: [6,11],  isClickable: true, variation: 2},
+            {type: GameObjectType.COUNTER, position: [7,11],  isClickable: true, variation: 9},
+            {type: GameObjectType.COUNTER, position: [7,10],  isClickable: true, variation: 5},
+            {type: GameObjectType.COUNTER, position: [7, 9],  isClickable: true, variation:10},
+            {type: GameObjectType.COUNTER, position: [6, 9],  isClickable: true, variation: 2},
         ],
         DOORS: [ 
         ],

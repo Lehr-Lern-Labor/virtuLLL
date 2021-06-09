@@ -39,9 +39,8 @@ const GameObjectType = Object.freeze({
         TABLE: 'TABLE',  
         
         // Counters
-        CANTEENCOUNTER: 'CANTEENCOUNTER',
-        RECEPTIONCOUNTER: 'RECEPTIONCOUNTER',
-        RECEPTIONCOUNTERSIDEPART: 'RECEPTIONCOUNTERSIDEPART',
+        COUNTER: 'COUNTER',
+        
         // Food & Drinks
         DRINKS: 'DRINKS',   
         SMALLFOOD: 'SMALLFOOD',

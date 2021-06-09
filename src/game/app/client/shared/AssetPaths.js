@@ -70,10 +70,17 @@ AssetPaths = Object.freeze({
     "table_back_y": "../client/assets/tables/table_back_y.png",
     
     // Counters
-    "canteencounter_default": "../client/assets/other/canteenCounter.png",
-    "receptionCounterFrontPart_default": "../client/assets/other/ReceptionCounterFrontPart.png",
-    "receptionCounterLeftPart_default": "../client/assets/other/ReceptionCounterBackPartLeft.png",
-    "receptionCounterRightPart_default": "../client/assets/other/ReceptionCounterBackPartRight.png",
+    "counter_default": "../client/assets/counters/counter_default.png",
+    "counter_front_x": "../client/assets/counters/counter_front_x.png",
+    "counter_middle_x": "../client/assets/counters/counter_middle_x.png",
+    "counter_back_x": "../client/assets/counters/counter_back_x.png",
+    "counter_front_y": "../client/assets/counters/counter_front_y.png",
+    "counter_middle_y": "../client/assets/counters/counter_middle_y.png",
+    "counter_back_y": "../client/assets/counters/counter_back_y.png",
+    "counter_corner_left": "../client/assets/counters/counter_corner_left.png",
+    "counter_corner_front": "../client/assets/counters/counter_corner_front.png",
+    "counter_corner_right": "../client/assets/counters/counter_corner_right.png",
+    "counter_corner_back": "../client/assets/counters/counter_corner_back.png",
     
     // Food & Drinks
     "drinks_default": "../client/assets/other/Drinks.png",

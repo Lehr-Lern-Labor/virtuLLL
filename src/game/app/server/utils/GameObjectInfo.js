@@ -267,32 +267,24 @@ class GameObjectInfo {
         },
 
         // Counters
-        [GameObjectType.CANTEENCOUNTER]: {
-            isSolid: true,
-            width: Settings.SMALL_OBJECT_WIDTH,
-            length: 3 * Settings.SMALL_OBJECT_LENGTH,
-            assetName: "canteencounter_default",
-        },
-        [GameObjectType.RECEPTIONCOUNTER]: {
-            // OBJECT WITH ADDITIONAL PARTS
-            hasAdditionalParts: true,
-            parts: [
-                // type, positional offsets, maybe variation
-                {type: GameObjectType.RECEPTIONCOUNTERSIDEPART, offset_x: 1, offset_y: 0, variation: 0}, 
-                {type: GameObjectType.RECEPTIONCOUNTERSIDEPART, offset_x: 1, offset_y: 6, variation: 1}
-            ],
-            isSolid: true,
-            width: Settings.SMALL_OBJECT_WIDTH,
-            length: 7 * Settings.SMALL_OBJECT_LENGTH,
-            assetName: "receptionCounterFrontPart_default",
-        },
-        [GameObjectType.RECEPTIONCOUNTERSIDEPART]: {
-            // OBJECT WITH VARIATIONS
+        [GameObjectType.COUNTER]: {
             hasVariation: true,
             isSolid: true,
             width: Settings.SMALL_OBJECT_WIDTH,
             length: Settings.SMALL_OBJECT_LENGTH,
-            assetName: ["receptionCounterLeftPart_default","receptionCounterRightPart_default"],
+            assetName: [
+                "counter_default", 
+                "counter_front_x",
+                "counter_middle_x",
+                "counter_back_x",
+                "counter_back_y",
+                "counter_middle_y",
+                "counter_front_y",
+                "counter_corner_left",
+                "counter_corner_front",
+                "counter_corner_right",
+                "counter_corner_back",
+            ],
         },
 
         // Food & Drinks
