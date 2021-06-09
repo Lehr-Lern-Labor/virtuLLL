@@ -305,6 +305,64 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.SIDEBOARD, position: [18, [8,12]],  isClickable: true, variation: 11},
             {type: GameObjectType.SIDEBOARD, position: [[19,23], 13],  isClickable: true, variation: 10},
             
+            // Chairs
+            {type: GameObjectType.CHAIR, position: [ 9, 1],  isClickable: true, variation: 0 * 4 + 0},
+            {type: GameObjectType.CHAIR, position: [11, 1],  isClickable: true, variation: 0 * 4 + 1},
+            {type: GameObjectType.CHAIR, position: [13, 1],  isClickable: true, variation: 0 * 4 + 2},
+            {type: GameObjectType.CHAIR, position: [15, 1],  isClickable: true, variation: 0 * 4 + 3},
+            
+            {type: GameObjectType.CHAIR, position: [ 9, 2],  isClickable: true, variation: 1 * 4 + 0},
+            {type: GameObjectType.CHAIR, position: [11, 2],  isClickable: true, variation: 1 * 4 + 1},
+            {type: GameObjectType.CHAIR, position: [13, 2],  isClickable: true, variation: 1 * 4 + 2},
+            {type: GameObjectType.CHAIR, position: [15, 2],  isClickable: true, variation: 1 * 4 + 3},
+            
+            {type: GameObjectType.CHAIR, position: [ 9, 3],  isClickable: true, variation: 2 * 4 + 0},
+            {type: GameObjectType.CHAIR, position: [11, 3],  isClickable: true, variation: 2 * 4 + 1},
+            {type: GameObjectType.CHAIR, position: [13, 3],  isClickable: true, variation: 2 * 4 + 2},
+            {type: GameObjectType.CHAIR, position: [15, 3],  isClickable: true, variation: 2 * 4 + 3},
+            
+            {type: GameObjectType.CHAIR, position: [ 9, 4],  isClickable: true, variation: 3 * 4 + 0},
+            {type: GameObjectType.CHAIR, position: [11, 4],  isClickable: true, variation: 3 * 4 + 1},
+            {type: GameObjectType.CHAIR, position: [13, 4],  isClickable: true, variation: 3 * 4 + 2},
+            {type: GameObjectType.CHAIR, position: [15, 4],  isClickable: true, variation: 3 * 4 + 3},
+            
+            {type: GameObjectType.CHAIR, position: [ 9, 5],  isClickable: true, variation: 4 * 4 + 0},
+            {type: GameObjectType.CHAIR, position: [11, 5],  isClickable: true, variation: 4 * 4 + 1},
+            {type: GameObjectType.CHAIR, position: [13, 5],  isClickable: true, variation: 4 * 4 + 2},
+            {type: GameObjectType.CHAIR, position: [15, 5],  isClickable: true, variation: 4 * 4 + 3},
+            
+            {type: GameObjectType.CHAIR, position: [ 9, 6],  isClickable: true, variation: 5 * 4 + 0},
+            {type: GameObjectType.CHAIR, position: [11, 6],  isClickable: true, variation: 5 * 4 + 1},
+            {type: GameObjectType.CHAIR, position: [13, 6],  isClickable: true, variation: 5 * 4 + 2},
+            {type: GameObjectType.CHAIR, position: [15, 6],  isClickable: true, variation: 5 * 4 + 3},
+            
+            {type: GameObjectType.CHAIR, position: [ 9, 7],  isClickable: true, variation: 6 * 4 + 0},
+            {type: GameObjectType.CHAIR, position: [11, 7],  isClickable: true, variation: 6 * 4 + 1},
+            {type: GameObjectType.CHAIR, position: [13, 7],  isClickable: true, variation: 6 * 4 + 2},
+            {type: GameObjectType.CHAIR, position: [15, 7],  isClickable: true, variation: 6 * 4 + 3},
+            
+            {type: GameObjectType.CHAIR, position: [ 9, 8],  isClickable: true, variation: 7 * 4 + 0},
+            {type: GameObjectType.CHAIR, position: [11, 8],  isClickable: true, variation: 7 * 4 + 1},
+            {type: GameObjectType.CHAIR, position: [13, 8],  isClickable: true, variation: 7 * 4 + 2},
+            {type: GameObjectType.CHAIR, position: [15, 8],  isClickable: true, variation: 7 * 4 + 3},
+            
+            {type: GameObjectType.CHAIR, position: [ 9, 9],  isClickable: true, variation: 8 * 4 + 0},
+            {type: GameObjectType.CHAIR, position: [11, 9],  isClickable: true, variation: 8 * 4 + 1},
+            {type: GameObjectType.CHAIR, position: [13, 9],  isClickable: true, variation: 8 * 4 + 2},
+            {type: GameObjectType.CHAIR, position: [15, 9],  isClickable: true, variation: 8 * 4 + 3},
+            
+            {type: GameObjectType.CHAIR, position: [ 9,10],  isClickable: true, variation: 9 * 4 + 0},
+            {type: GameObjectType.CHAIR, position: [11,10],  isClickable: true, variation: 9 * 4 + 1},
+            {type: GameObjectType.CHAIR, position: [13,10],  isClickable: true, variation: 9 * 4 + 2},
+            {type: GameObjectType.CHAIR, position: [15,10],  isClickable: true, variation: 9 * 4 + 3},
+            
+            
+            {type: GameObjectType.TABLE, position: [21,10],  isClickable: true, variation: 0},
+            {type: GameObjectType.CHAIR, position: [21, 9],  isClickable: true, variation: 8 * 4 + 0},
+            {type: GameObjectType.CHAIR, position: [20,10],  isClickable: true, variation: 8 * 4 + 1},
+            {type: GameObjectType.CHAIR, position: [21,11],  isClickable: true, variation: 8 * 4 + 2},
+            {type: GameObjectType.CHAIR, position: [22,10],  isClickable: true, variation: 8 * 4 + 3},
+            
         ],
         DOORS: [ 
         ],

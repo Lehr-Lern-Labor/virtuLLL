@@ -31,8 +31,8 @@ const GameObjectOffsets = Object.freeze({
     // Plant 
     [GameObjectType.PLANT]: { x: -5, y: -10 },
     // Seating
-    [GameObjectType.CHAIR]: { x: 15, y: -6 },
-    [GameObjectType.SOFA]: { x: 0, y: -4 },
+    // [GameObjectType.CHAIR]: { x: 15, y: -6 },
+    // [GameObjectType.SOFA]: { x: 0, y: -4 },
     // Food & Drinks
     [GameObjectType.DRINKS]: { x: 14, y: 12 },
     [GameObjectType.TEA]: { x: -4, y: 20 },
