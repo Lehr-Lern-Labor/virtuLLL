@@ -419,6 +419,40 @@ class GameObjectInfo {
             ],
         },
         
+        // Tabledecoration
+        [GameObjectType.TABLEDECORATION]: {
+            hasVariation: true,
+            isSolid: false,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: [
+                "tabledecoration_plant", 
+                "tabledecoration_palm",
+                "tabledecoration_cactus",
+                "tabledecoration_flowers",
+                "tabledecoration_succulents",
+                "tabledecoration_balls",
+                "tabledecoration_paper_0",
+                "tabledecoration_paper_1",
+                "tabledecoration_paper_2",
+                "tabledecoration_paper_3",
+                "tabledecoration_pen_0",
+                "tabledecoration_pen_1",
+                "tabledecoration_pen_2",
+                "tabledecoration_pen_3",
+                "tabledecoration_tablet_x",
+                "tabledecoration_tablet_y",
+                "tabledecoration_coffee",
+                "tabledecoration_coffeegroup",
+                "tabledecoration_books_back",
+                "tabledecoration_books_left",
+                "tabledecoration_books_right",
+                "tabledecoration_books",
+                "tabledecoration_computer_0",
+                "tabledecoration_computer_3",
+            ],
+        },
+        
 
         // Food & Drinks
         [GameObjectType.DRINKS]: {
