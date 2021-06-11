@@ -26,8 +26,8 @@ AssetPaths = Object.freeze({
     "barrier_y": "../client/assets/walls/barrier_y.png",
     
     // Doors
-    "leftnonedoor_default": "../client/assets/doors/door_none_alt.png",
-    "rightnonedoor_default": "../client/assets/doors/door_none.png",
+    "leftnonedoor_default": "../client/assets/doors/door_left_default.png",
+    "rightnonedoor_default": "../client/assets/doors/door_right_default.png",
     "leftfoyerdoor_default": "../client/assets/doors/door_foyer.png",
     "rightfoyerdoor_default": "../client/assets/doors/door_foyer_alt.png",
     "leftreceptiondoor_default": "../client/assets/doors/door_reception_alt.png",
