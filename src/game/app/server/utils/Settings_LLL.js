@@ -13,6 +13,8 @@ module.exports = Object.freeze({
 
     /* Room-IDs */
     FOYER_ID: 0,
+    EXHIBITION_ID: 10,
+    LOUNGE_ID: 20,
 	
     /* Start-Position Constants */
     STARTROOM_ID: 0,	

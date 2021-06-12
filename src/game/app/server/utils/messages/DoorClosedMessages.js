@@ -11,10 +11,10 @@
         body: "This door is currently closed for you."
     },
     FIRSTDOORCLOSED: {
-        header: 'Welcome to VIMSU!',
-        body: "Please talk to our BasicTutorial NPC by clicking" +
-               " the tile he is standing on. He will give you a" +
-               " short introduction that will help you to learn the basics of using VIMSU."
+        header: "Workshops",
+        body:   "Derzeit finden keine Workshops statt. " + 
+				"Wenn du dich zu einem Workshop angemeldet hast, wird die Tür rechtzeitig für dich aufgeschlossen. " +
+				"Komme wieder, wenn ein Workshop stattfindet."
     },
     FOODCOURTDOORCLOSED: {
         header: "Door closed",
