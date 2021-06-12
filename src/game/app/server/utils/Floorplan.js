@@ -224,14 +224,14 @@ const Floorplan = Object.freeze({
     /**************************************************************************/
     
 
-        FOYER: {
+    FOYER: {
         ID: Settings.FOYER_ID, 
         NAME: "Foyer",
         TYPE: TypeOfRoom.CUSTOM,
         LENGTH: 16, 
-        WIDTH: 15, 
+        WIDTH: 11, 
         MAPELEMENTS: [
-            {type: GameObjectType.RIGHTWINDOW, position: [[16, [6,7,8]]]},
+            {type: GameObjectType.RIGHTWINDOW, position: [[16, [4,5,6]]]},
             {type: GameObjectType.CONFERENCELOGO, position: [7, -1]}
         ],
         OBJECTS: [     
@@ -241,35 +241,29 @@ const Floorplan = Object.freeze({
             
             {type: GameObjectType.EXPLANATION, variation: 0, position: [2,0], isClickable: true, story: ["Hier geht es zu den Workshops.", "Wenn du dich für einen Workshop angemeldet hast, hast du ein Passwort bekommen. Damit kannst du eintreten.","Andernfalls wird die Türe rechtzeitig geöffnet."]},
             
-            {type: GameObjectType.TABLE, position: [7,12], isClickable: true, iFrameData: {title: "Das Lehr-Lern-Labor Informatik Karlsruhe", url: "https://media.lehr-lern-labor.info/home/", width: 1000, height: 600 }},
-            {type: GameObjectType.TABLEDECORATION, position: [7, 12], variation: 4},
-            {type: GameObjectType.CHAIR, variation: 8 * 4 + 0, position: [7,11]},
-            {type: GameObjectType.CHAIR, variation: 8 * 4 + 1, position: [6,12]},
-            {type: GameObjectType.CHAIR, variation: 8 * 4 + 2, position: [7,13]},
-            {type: GameObjectType.CHAIR, variation: 8 * 4 + 3, position: [8,12]},
+            {type: GameObjectType.SEATINGAREA, position: [7,8], isClickable: true, iFrameData: {title: "Das Lehr-Lern-Labor Informatik Karlsruhe", url: "https://media.lehr-lern-labor.info/home/", width: 1000, height: 600 }},
+            {type: GameObjectType.TABLEDECORATION, position: [7, 8], variation: 4},
             
-            {type: GameObjectType.TABLE, position: [3, 7], isClickable: true, iFrameData: {title: "Gästebuch", url: "https://media.lehr-lern-labor.info/collab/p/GuestBook?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
-            {type: GameObjectType.TABLEDECORATION, position: [3, 7], variation: 6},
-            {type: GameObjectType.CHAIR, variation: 8 * 4 + 0, position: [3, 6]},
-            {type: GameObjectType.CHAIR, variation: 8 * 4 + 1, position: [2, 7]},
-            {type: GameObjectType.CHAIR, variation: 8 * 4 + 2, position: [3, 8]},
-            {type: GameObjectType.CHAIR, variation: 8 * 4 + 3, position: [4, 7]},
+            {type: GameObjectType.SEATINGAREA, position: [3, 5], isClickable: true, iFrameData: {title: "Gästebuch", url: "https://media.lehr-lern-labor.info/collab/p/GuestBook?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
+            {type: GameObjectType.TABLEDECORATION, position: [3, 5], variation: 6},
+            
+            {type: GameObjectType.SEATINGAREA, position: [8, 2]},
+            {type: GameObjectType.TABLEDECORATION, position: [8, 2], variation: 11},
             
             // Counter
-            {type: GameObjectType.COUNTER, position: [14, 5], variation: 3, isClickable: true, story: ["Klicke auf die Bodenfliese unter " + FloorplanConstants.NPCNAMES.tutorial + ". Er erklärt dir, was du tun kannst.","Auf geht's! <br>Herbert wartet auf dich!"]},
-            {type: GameObjectType.COUNTER, position: [13, 5], variation: 7, isClickable: true, story: ["Klicke auf die Bodenfliese unter " + FloorplanConstants.NPCNAMES.tutorial + ". Er erklärt dir, was du tun kannst.","Auf geht's! <br>Herbert wartet auf dich!"]},
-            {type: GameObjectType.COUNTER, position: [13,[6,7,8]], variation: 5, isClickable: true, story: ["Klicke auf die Bodenfliese unter " + FloorplanConstants.NPCNAMES.tutorial + ". Er erklärt dir, was du tun kannst.","Auf geht's! <br>Herbert wartet auf dich!"]},
-            {type: GameObjectType.COUNTER, position: [13, 9], variation: 8, isClickable: true, story: ["Klicke auf die Bodenfliese unter " + FloorplanConstants.NPCNAMES.tutorial + ". Er erklärt dir, was du tun kannst.","Auf geht's! <br>Herbert wartet auf dich!"]},
-            {type: GameObjectType.COUNTER, position: [14, 9], variation: 3, isClickable: true, story: ["Klicke auf die Bodenfliese unter " + FloorplanConstants.NPCNAMES.tutorial + ". Er erklärt dir, was du tun kannst.","Auf geht's! <br>Herbert wartet auf dich!"]},
-            {type: GameObjectType.TABLEDECORATION, position: [13, 7], variation: 23},
-            
+            {type: GameObjectType.COUNTER, position: [14, 3], variation: 3, isClickable: true, story: ["Klicke auf die Bodenfliese unter " + FloorplanConstants.NPCNAMES.tutorial + ". Er erklärt dir, was du tun kannst.","Auf geht's! <br>Herbert wartet auf dich!"]},
+            {type: GameObjectType.COUNTER, position: [13, 3], variation: 7, isClickable: true, story: ["Klicke auf die Bodenfliese unter " + FloorplanConstants.NPCNAMES.tutorial + ". Er erklärt dir, was du tun kannst.","Auf geht's! <br>Herbert wartet auf dich!"]},
+            {type: GameObjectType.COUNTER, position: [13,[4,5,6]], variation: 5, isClickable: true, story: ["Klicke auf die Bodenfliese unter " + FloorplanConstants.NPCNAMES.tutorial + ". Er erklärt dir, was du tun kannst.","Auf geht's! <br>Herbert wartet auf dich!"]},
+            {type: GameObjectType.COUNTER, position: [13, 7], variation: 8, isClickable: true, story: ["Klicke auf die Bodenfliese unter " + FloorplanConstants.NPCNAMES.tutorial + ". Er erklärt dir, was du tun kannst.","Auf geht's! <br>Herbert wartet auf dich!"]},
+            {type: GameObjectType.COUNTER, position: [14, 7], variation: 3, isClickable: true, story: ["Klicke auf die Bodenfliese unter " + FloorplanConstants.NPCNAMES.tutorial + ". Er erklärt dir, was du tun kannst.","Auf geht's! <br>Herbert wartet auf dich!"]},
+            {type: GameObjectType.TABLEDECORATION, position: [13, 5], variation: 23},
         ],
         DOORS: [ 
              {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.LOUNGE_ID, 1, 0], directionOnExit: Direction.DOWNLEFT, isOpen: false, codeToOpen: "Lehr-Lern-Labor"},
              {wallSide: GlobalStrings.LEFT, positionOfDoor: [4, -1], positionOnExit: [Settings.EXHIBITION_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
         ],
         NPCS: [
-            {name: FloorplanConstants.NPCNAMES.tutorial, position: [14, 7], direction: Direction.DOWNLEFT, dialog: NPCDialog.basicTutorialDialog},
+            {name: FloorplanConstants.NPCNAMES.tutorial, position: [14, 5], direction: Direction.DOWNLEFT, dialog: NPCDialog.basicTutorialDialog},
         ]
     },
 
@@ -338,6 +332,19 @@ const Floorplan = Object.freeze({
         NPCS: []
     },
     
+    LOUNGE: {
+        ID: Settings.LOUNGE_ID,
+        NAME: "Lounge",
+        TYPE: TypeOfRoom.CUSTOM,
+        LENGTH: 15,
+        WIDTH: 15,
+        MAPELEMENTS: [],
+        OBJECTS: [],
+        DOORS: [
+            {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.FOYER_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
+        ],
+        NPCS: []
+     },
 })
 
 if (typeof module === 'object' && typeof exports === 'object') {

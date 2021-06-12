@@ -19,8 +19,8 @@ module.exports = Object.freeze({
 	
     /* Start-Position Constants */
     STARTROOM_ID: 0,	
-    STARTPOSITION_X: 0,
-    STARTPOSITION_Y: 0,
+    STARTPOSITION_X: 12,
+    STARTPOSITION_Y: 5,
     STARTDIRECTION: Direction.UPRIGHT,
     TYPE_OF_STARTROOM: 'CUSTOM',
 
