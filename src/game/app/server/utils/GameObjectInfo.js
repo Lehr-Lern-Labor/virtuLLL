@@ -453,6 +453,19 @@ class GameObjectInfo {
             ],
         },
         
+        // Explanation
+        [GameObjectType.EXPLANATION]: {
+            hasVariation: true,
+            isSolid: false,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: [
+                "explanation_left", 
+                "explanation_right",
+                "explanation_1",
+                "explanation_2",
+            ],
+        },
 
         // Food & Drinks
         [GameObjectType.DRINKS]: {
