@@ -27,8 +27,10 @@
 		'Einige Gegenstände kann man anklicken. Manche der Pop-Ups lassen sich mit <i class="fa fa-window-maximize"></i> im Vollbildmodus betrachten.',
 		'Wenn du Fragen oder Probleme hast, kannst du dich an einen der Moderatoren wenden. Du erkennst sie an ihrem grünen Namensschild.<br><br>' +
 		'Und jetzt wünsche ich dir viel Spaß bei deinem Besuch!'],
-    chefDialog: ['Hello mate. Are you hungry?',
-        'Come back later to eat some of my fresh food!'],
+    kit21Dialog: ['Willkommen in der Ausstellung. Schau dich ruhig um und probiere alles aus.<br><br>Die grünen Erklärungen an den Wänden und auf den Tischen helfen dir, dich zurecht zu finden.',
+        'Wir sind Teil von KIT21 und möchten euch in den nächsten Tagen unser eigenes Format vorstellen: <br><br><strong>7 Tage - 7 Türen - 7 Themen</strong>',
+        'Jeden Tag wird es eine neue Türe zu einem neuen Thema geben. Außerdem entwickelt sich das virtuLLL immer weiter. Also schau gerne noch ein paar mal vorbei!'
+        ],
 
 });
 
