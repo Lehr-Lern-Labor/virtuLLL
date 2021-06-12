@@ -385,6 +385,20 @@ class GameObjectInfo {
             ],
         },
 
+        [GameObjectType.SEATINGAREA]: {
+            hasAdditionalParts: true,
+            isSolid: true,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: "table_default",
+            parts: [                
+                {type: GameObjectType.CHAIR, variation: 8 * 4 + 0, offset_y: -1, offset_x: 0},
+                {type: GameObjectType.CHAIR, variation: 8 * 4 + 1, offset_x: -1, offset_y: 0},
+                {type: GameObjectType.CHAIR, variation: 8 * 4 + 2, offset_y:  1, offset_x: 0},
+                {type: GameObjectType.CHAIR, variation: 8 * 4 + 3, offset_x:  1, offset_y: 0},
+            ],
+        },
+
         // Tables
         [GameObjectType.TABLE]: {
             hasVariation: true,

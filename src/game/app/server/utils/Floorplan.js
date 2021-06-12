@@ -361,11 +361,7 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.CHAIR, position: [13,11],  isClickable: true, variation:10 * 4 + 2},
             {type: GameObjectType.CHAIR, position: [15,11],  isClickable: true, variation:10 * 4 + 3},
             
-            {type: GameObjectType.TABLE, position: [21,10],  isClickable: true, variation: 0},
-            {type: GameObjectType.CHAIR, position: [21, 9],  isClickable: true, variation: 8 * 4 + 0},
-            {type: GameObjectType.CHAIR, position: [20,10],  isClickable: true, variation: 8 * 4 + 1},
-            {type: GameObjectType.CHAIR, position: [21,11],  isClickable: true, variation: 8 * 4 + 2},
-            {type: GameObjectType.CHAIR, position: [22,10],  isClickable: true, variation: 8 * 4 + 3},
+            {type: GameObjectType.SEATINGAREA, position: [21,10], isClickable: true},
             
             // Sofas
             {type: GameObjectType.SOFA, position: [10,13],  isClickable: true, variation: 0},
