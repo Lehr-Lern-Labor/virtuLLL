@@ -244,6 +244,8 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.TABLE, position: [1,6],  isClickable: true, variation: 5},
             {type: GameObjectType.TABLE, position: [1,7],  isClickable: true, variation: 6},
             
+            {type: GameObjectType.COMPUTER, position: [1,11],  isClickable: true},              // Table with Computer     
+            
             // Counters
             {type: GameObjectType.COUNTER, position: [5,1],  isClickable: true, variation: 0},  // Counter default
             

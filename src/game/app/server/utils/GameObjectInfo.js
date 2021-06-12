@@ -398,6 +398,20 @@ class GameObjectInfo {
                 {type: GameObjectType.CHAIR, variation: 8 * 4 + 3, offset_x:  1, offset_y: 0},
             ],
         },
+        
+        [GameObjectType.COMPUTER]: {
+            hasAdditionalParts: true,
+            isSolid: true,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: "tabledecoration_computer_3",
+            parts: [                
+                {type: GameObjectType.TABLE, variation: 4, offset_x:  0, offset_y:  0},
+                {type: GameObjectType.TABLE, variation: 6, offset_x:  0, offset_y:  1},
+                {type: GameObjectType.CHAIR, variation: 10 * 4 + 3, offset_x:  1, offset_y: 0},
+                {type: GameObjectType.CHAIR, variation: 10 * 4 + 3, offset_x:  1, offset_y: 1},
+            ],
+        },
 
         // Tables
         [GameObjectType.TABLE]: {
