@@ -156,6 +156,23 @@ class GameObjectInfo {
             length: Settings.SMALL_OBJECT_LENGTH,
             assetName: "tile_default",
         },
+        [GameObjectType.CARPET]: {
+            hasVariation: true,
+            isSolid: false,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: [
+                "carpet_yellow",
+                "carpet_orange",
+                "carpet_red",
+                "carpet_pink",
+                "carpet_purple",
+                "carpet_blue",
+                "carpet_tosca",
+                "carpet_green",
+                "carpet_white",
+            ],
+        },
 
         // Walls
         [GameObjectType.LEFTWALL]: {

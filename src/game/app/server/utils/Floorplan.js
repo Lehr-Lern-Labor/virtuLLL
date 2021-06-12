@@ -441,6 +441,16 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.EXPLANATION, position: [1,3], variation:2},
             {type: GameObjectType.EXPLANATION, position: [2,3], variation:3},
             
+            {type: GameObjectType.CARPET, position: [0,0], variation: 0},
+            {type: GameObjectType.CARPET, position: [0,1], variation: 1},
+            {type: GameObjectType.CARPET, position: [0,2], variation: 2},
+            {type: GameObjectType.CARPET, position: [0,3], variation: 3},
+            {type: GameObjectType.CARPET, position: [0,4], variation: 4},
+            {type: GameObjectType.CARPET, position: [0,5], variation: 5},
+            {type: GameObjectType.CARPET, position: [0,6], variation: 6},
+            {type: GameObjectType.CARPET, position: [0,7], variation: 7},
+            {type: GameObjectType.CARPET, position: [0,8], variation: 8},
+            
         ],
         DOORS: [ 
         ],

@@ -11,6 +11,15 @@ AssetPaths = Object.freeze({
     // Tiles
     "tile_default": "../client/assets/tiles/tile.png",
     "tile_selected": "../client/assets/tiles/tile_selected.png",
+    "carpet_yellow": "../client/assets/tiles/carpet_yellow.png",
+    "carpet_orange": "../client/assets/tiles/carpet_orange.png",
+    "carpet_red": "../client/assets/tiles/carpet_red.png",
+    "carpet_pink": "../client/assets/tiles/carpet_pink.png",
+    "carpet_purple": "../client/assets/tiles/carpet_purple.png",
+    "carpet_blue": "../client/assets/tiles/carpet_blue.png",
+    "carpet_tosca": "../client/assets/tiles/carpet_tosca.png",
+    "carpet_green": "../client/assets/tiles/carpet_green.png",
+    "carpet_white": "../client/assets/tiles/carpet_white.png",
     
     // Walls
     "leftwall_default": "../client/assets/walls/wall_left.png",

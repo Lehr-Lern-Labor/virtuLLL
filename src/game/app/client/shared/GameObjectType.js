@@ -20,6 +20,7 @@ const GameObjectType = Object.freeze({
         SELECTED_TILE: 'SELECTED_TILE',
         LEFTTILE: 'LEFTTILE',
         RIGHTTILE: 'RIGHTTILE',
+        CARPET: 'CARPET',
         // Walls
         LEFTWALL: 'LEFTWALL',
         RIGHTWALL: 'RIGHTWALL',
