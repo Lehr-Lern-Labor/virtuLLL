@@ -231,6 +231,7 @@ const Floorplan = Object.freeze({
         LENGTH: 25, 
         WIDTH: 25, 
         MAPELEMENTS: [
+            {type: GameObjectType.CONFERENCELOGO, position: [2, -1]},
         ],
         OBJECTS: [            
             // Tables
