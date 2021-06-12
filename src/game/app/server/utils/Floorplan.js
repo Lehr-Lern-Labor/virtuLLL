@@ -311,10 +311,27 @@ const Floorplan = Object.freeze({
         ID: Settings.EXHIBITION_1_ID,
         NAME: "Binärsystem",
         TYPE: TypeOfRoom.CUSTOM,
-        LENGTH: 15,
-        WIDTH: 15,
-        MAPELEMENTS: [],
-        OBJECTS: [],
+        LENGTH: 12,
+        WIDTH: 7,
+        MAPELEMENTS: [
+            {type: GameObjectType.RIGHTWINDOW, position: [12, [2,3,4]]},
+            {type: GameObjectType.CONFERENCELOGO, position: [3, -1]}
+        ],
+        OBJECTS: [
+            {type: GameObjectType.TABLE, position: [2,4], variation: 4},
+            {type: GameObjectType.TABLE, position: [2,5], variation: 6},
+            {type: GameObjectType.EXPLANATION, variation: 2, position: [2,4], isClickable: true, story: [
+                "Computer können nicht selbst denken. Aber trotzdem sind sie auf ein paar Gebieten besser als ein Mensch, z.B. wenn es darum geht, schnell zu rechnen.<br><br>Aber wie geht das?", 
+                "In diesem Raum erfährst du, wie ein Computer rechnet - und zwar mit nur zwei Zuständen: Strom an und Strom aus bzw. 1 und 0.",
+                "An den vorderen Tischen lernst du die Grundlagen und an den hinteren Tischen kannst du dein neues Wissen testen. <br><br>Viel Spaß!"]},
+        
+            {type: GameObjectType.COMPUTER, position: [3, 1], isClickable: true, iFrameData: {title: "Das Binärsystem", url: "https://www.youtube.com/embed/T8pt_GhohQs", width: 800, height: 450 }},
+            {type: GameObjectType.COMPUTER, position: [3, 4], isClickable: true, iFrameData: {title: "Rechnen mit Strom", url: "https://www.youtube.com/embed/9l-l_dD6qPQ", width: 800, height: 450 }},
+            {type: GameObjectType.COMPUTER, position: [6, 1], isClickable: true, iFrameData: {title: "Rechnen mit Dualzahlen", url: "https://www.youtube.com/embed/2YJxC_FwBLE", width: 800, height: 450 }},
+            {type: GameObjectType.COMPUTER, position: [6, 4], isClickable: true, iFrameData: {title: "Welche Stellen werden benötigt? Klicke dann auf die gelbe Zahl.", url: "https://media.lehr-lern-labor.info/workshops/binary/", width: 600, height: 300 }},
+            {type: GameObjectType.COMPUTER, position: [9, 1], isClickable: true, iFrameData: {title: "Korrigiere den Fehler!", url: "https://media.lehr-lern-labor.info/workshops/binary1/", width: 800, height: 400 }},
+            {type: GameObjectType.COMPUTER, position: [9, 4], isClickable: true, iFrameData: {title: "Berechne.", url: "https://media.lehr-lern-labor.info/workshops/binary2/", width: 600, height: 500 }},
+        ],
         DOORS: [
             {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.EXHIBITION_ID, 4, 0], directionOnExit: Direction.DOWNRIGHT},
         ],
