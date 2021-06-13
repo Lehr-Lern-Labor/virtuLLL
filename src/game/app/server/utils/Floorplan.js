@@ -277,11 +277,12 @@ const Floorplan = Object.freeze({
         MAPELEMENTS: [],
         OBJECTS: [
             // Themenräume
-            {type: GameObjectType.EXPLANATION, variation: 0, position: [5,0], isClickable: true, story: ["Das Binärsystem.", "In diesem Raum erfährst du, wie ein Computer rechnet."]},
+            {type: GameObjectType.EXPLANATION, variation: 0, position: [5,0], isClickable: true, story: ["Das Binärsystem", "In diesem Raum erfährst du, wie ein Computer rechnet."]},
+            {type: GameObjectType.EXPLANATION, variation: 0, position: [8,0], isClickable: true, story: ["Logik", "In diesem Raum kannst du Rätsel lösen und einen eigenen Computer bauen."]},
         
             // Grüner Teppich
-            {type: GameObjectType.BARRIER, variation: 3, position: [[3,5],0]},
-            {type: GameObjectType.CARPET, variation: 7, position: [4,0]},
+            {type: GameObjectType.BARRIER, variation: 3, position: [[6,8],0]},
+            {type: GameObjectType.CARPET, variation: 7, position: [7,0]},
             
             // Sitzbereiche
             {type: GameObjectType.SEATINGAREA, position: [4,12]},
@@ -295,6 +296,7 @@ const Floorplan = Object.freeze({
         DOORS: [
             {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.FOYER_ID, 4, 0], directionOnExit: Direction.DOWNRIGHT},
             {wallSide: GlobalStrings.LEFT, positionOfDoor: [4, -1], positionOnExit: [Settings.EXHIBITION_1_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
+            {wallSide: GlobalStrings.LEFT, positionOfDoor: [7, -1], positionOnExit: [Settings.EXHIBITION_2_ID, 5, 0], directionOnExit: Direction.DOWNRIGHT},
         ],
         NPCS: [
             {name: FloorplanConstants.NPCNAMES.exhibit, position: [10, 2], direction: Direction.DOWNRIGHT, dialog: NPCDialog.kit21Dialog},
@@ -328,6 +330,89 @@ const Floorplan = Object.freeze({
         ],
         DOORS: [
             {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.EXHIBITION_ID, 4, 0], directionOnExit: Direction.DOWNRIGHT},
+        ],
+        NPCS: []
+    },
+    
+    EXHIBITION_2: {
+        ID: Settings.EXHIBITION_2_ID,
+        NAME: "Logik",
+        TYPE: TypeOfRoom.CUSTOM,
+        LENGTH: 11,
+        WIDTH: 11,
+        MAPELEMENTS: [
+            {type: GameObjectType.RIGHTWINDOW, position: [12, [2,3,4]]},
+        ],
+        OBJECTS: [
+            // Station 1
+            {type: GameObjectType.SIDEBOARD, position: [ 7, 0], variation:  3, isClickable: true, iFrameData: {title: "Logik im Alltag", url: "https://www.youtube.com/embed/Tp9WzwUMjDs", width: 800, height: 450 }},
+            {type: GameObjectType.SIDEBOARD, position: [ 8, 0], variation:  4},
+            {type: GameObjectType.CUPBOARD,  position: [ 9, 0], variation:  3, isClickable: true, iFrameData: {title: "Aussagenlogik", url: "https://www.youtube.com/embed/inwIsNIaWJM", width: 800, height: 450 }},
+            {type: GameObjectType.CUPBOARD,  position: [10, 0], variation: 15},
+            {type: GameObjectType.CUPBOARD,  position: [10, 1], variation:  9},
+            {type: GameObjectType.SIDEBOARD, position: [10, 2], variation:  5, isClickable: true, iFrameData: {title: "Aussagenlogik", url: "https://inf-schule.de/programmierung/funktional/konzepte/wahrheitswerte/aussagenlogik", width: 800, height: 450 }},
+            {type: GameObjectType.SIDEBOARD, position: [10, 3], variation:  6},
+            
+            {type: GameObjectType.SEATINGAREA, position: [8,2], variation: 0},
+            {type: GameObjectType.EXPLANATION, variation: 2, position: [8,2], isClickable: true, story: [
+                "An dieser Station lernst du die Grundlagen der Logik in verschiedenen Fachbereichen kennen. klicke dazu auf die Schränke und Regale.", 
+                "Wenn du die Begriffe <i>Wahrheitstabelle</i>, <i>UND</i>, <i>ODER</i> und <i>Negation</i> im logischen Zusammenhang kennst, kannst du zur nächsten Station weitergehen."]},
+                
+            // Station 2
+            {type: GameObjectType.SIDEBOARD, position: [10, 7], variation:  7, isClickable: true, iFrameData: {title: "LogicTraffic", url: "https://logictraffic.ch/", width: 1000, height: 600 }},
+            {type: GameObjectType.SIDEBOARD, position: [10, 8], variation:  8},
+            {type: GameObjectType.CUPBOARD,  position: [10, 9], variation:  5},
+            {type: GameObjectType.CUPBOARD,  position: [10,10], variation: 14},
+            {type: GameObjectType.CUPBOARD,  position: [ 9,10], variation: 10},
+            {type: GameObjectType.SIDEBOARD, position: [ 8,10], variation: 10},
+            {type: GameObjectType.SIDEBOARD, position: [ 7,10], variation: 10},
+            
+            {type: GameObjectType.SEATINGAREA, position: [8,8], variation: 0},
+            {type: GameObjectType.EXPLANATION, variation: 3, position: [8,8], isClickable: true, story: [
+                "Hinter dem leeren Regal versteckt sich das Spiel LogicTraffic. Anhand einer Straßenkreuzung kannst du dein Können mit Wahrheitstabellen und aussagenlogischen Formeln unter Beweis stellen.", 
+                "Wähle eine Situation aus (beginne am besten mit Situation 1) und entscheide für jede Sequenz, ob die die jeweilige Sequenz sicher ist. Dadurch wird die Wahrheitstabelle ausgefüllt.<br><br>" + 
+                "Du kannst die Wahrheitstabelle auch direkt ausfüllen, indem du auf die Fragezeichen klickst.",
+                "Wenn dir das zu einfach ist, öffne den Formeleditor rechts, gib die richtige Formel ein und überprüfe sie, indem du sie in die Wahrheitstabelle lädst."]},
+                
+            // Station 3
+            {type: GameObjectType.SIDEBOARD, position: [ 3,10], variation: 10},
+            {type: GameObjectType.SIDEBOARD, position: [ 2,10], variation: 10},
+            {type: GameObjectType.CUPBOARD,  position: [ 1,10], variation: 10},
+            {type: GameObjectType.CUPBOARD,  position: [ 0,10], variation: 13, isClickable: true, iFrameData: {title: "Schaltlogik", url: "https://www.youtube.com/embed/gdgB1BbI7vc", width: 800, height: 450 }},
+            {type: GameObjectType.CUPBOARD,  position: [ 0, 9], variation: 11},
+            {type: GameObjectType.SIDEBOARD, position: [ 0, 8], variation: 11},
+            {type: GameObjectType.SIDEBOARD, position: [ 0, 7], variation: 11, isClickable: true, iFrameData: {title: "Nandgame", url: "https://nandgame.com/", width: 800, height: 450 }},
+            
+            {type: GameObjectType.SEATINGAREA, position: [2,8], variation: 0},
+            {type: GameObjectType.EXPLANATION, variation: 3, position: [2,8], isClickable: true, story: [
+                "Nun solltest du mit den Grundlagen der Aussagenlogik vertraut sein und wir können uns der Schaltlogik zuwenden.", 
+                "Schau dir zuerst das Video in der Ecke über Schaltlogik an. Dann kannst du mit dem <i>Nandgame</i> beginnen.<br><br>" + 
+                "Beim Nandgame beginnst du mit zwei einfachen Relais und baust daraus Schritt für Schritt einen ganzen Computer.<br><br>" +
+                "<i>Falls du beim Nandgame nicht mehr weiterkommen solltest, gibt es <a href='https://youtube.com/playlist?list=PL-BzNEwVGF7I3kGs9APa3ANJ5jswfHy7D' target='_blank'>hier</a> eine Komplettlösung mit Erklärung.</i>"]},
+                
+            // Station 4
+            {type: GameObjectType.SIDEBOARD, position: [ 0, 3], variation: 11},
+            {type: GameObjectType.SIDEBOARD, position: [ 0, 2], variation: 11, isClickable: true, iFrameData: {title: "Logikrätsel", url: "https://www.logisch-gedacht.de/logikraetsel/", width: 800, height: 450 }},
+            {type: GameObjectType.CUPBOARD,  position: [ 0, 1], variation: 11},
+            {type: GameObjectType.CUPBOARD,  position: [ 0, 0], variation: 12},
+            {type: GameObjectType.CUPBOARD,  position: [ 1, 0], variation:  3},
+            {type: GameObjectType.SIDEBOARD, position: [ 2, 0], variation:  3, isClickable: true, iFrameData: {title: "Logikrätsel", url: "https://media.lehr-lern-labor.info/collab/p/Logik?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 800, height: 450 }},
+            {type: GameObjectType.SIDEBOARD, position: [ 3, 0], variation:  4},
+            
+            {type: GameObjectType.SEATINGAREA, position: [2,2], variation: 0},
+            {type: GameObjectType.EXPLANATION, variation: 3, position: [2,2], isClickable: true, story: [
+                "Hier findest du eine Sammlung von Logik-Rätseln. Du wirst vermutlich keine Wahrheitstabellen brauchen, aber logisch denken musst du auf jeden Fall!", 
+                "Außerdem kannst du noch einen Kommentar dalassen. Worüber würdest du gerne mehr wissen? Wo begegnet dir Logik im Alltag?"]},
+                
+            
+            {type: GameObjectType.EXPLANATION, variation: 0, position: [6,0], isClickable: true, story: [
+                "Computer arbeiten logisch. Das fängt mit den kleinsten Bauteilen und Schaltungen an und ist auch für die verwendete Software wichtig.<br><br>" + 
+                "Aber nicht nur in der Informatik stößt man auf Logik. Auch in der Mathematik, der Physik oder der Philosophie (um nur ein paar Gebiete zu nennen) begegnet man Logik. Je nach Fachbereich wird sie unterschiedlich aufgeschrieben und anders angewendet, aber die Logik dahinter ist immer die gleiche.", 
+                "In diesem Raum lernst du die Grundlagen der Logik kennen und kannst die Schaltung eines Computers von Grund auf selber bauen.",
+                "Beginne am besten in der oberen linken Ecke und gehe dann im Uhrzeigersinn weiter. <br><br>Viel Spaß!"]},
+        ],
+        DOORS: [
+            {wallSide: GlobalStrings.LEFT, positionOfDoor: [5, -1], positionOnExit: [Settings.EXHIBITION_ID, 7, 0], directionOnExit: Direction.DOWNRIGHT},
         ],
         NPCS: []
     },
