@@ -277,12 +277,13 @@ const Floorplan = Object.freeze({
         MAPELEMENTS: [],
         OBJECTS: [
             // Themenräume
-            {type: GameObjectType.EXPLANATION, variation: 0, position: [5,0], isClickable: true, story: ["Das Binärsystem", "In diesem Raum erfährst du, wie ein Computer rechnet."]},
-            {type: GameObjectType.EXPLANATION, variation: 0, position: [8,0], isClickable: true, story: ["Logik", "In diesem Raum kannst du Rätsel lösen und einen eigenen Computer bauen."]},
+            {type: GameObjectType.EXPLANATION, variation: 0, position: [ 5,0], isClickable: true, story: ["Das Binärsystem", "In diesem Raum erfährst du, wie ein Computer rechnet."]},
+            {type: GameObjectType.EXPLANATION, variation: 0, position: [ 8,0], isClickable: true, story: ["Logik", "In diesem Raum kannst du Rätsel lösen und einen eigenen Computer bauen."]},
+            {type: GameObjectType.EXPLANATION, variation: 0, position: [11,0], isClickable: true, story: ["Programmieren", "In diesem Raum geht es um Prgorammieren und wie du lernen kannst zu programmieren."]},
         
             // Grüner Teppich
-            {type: GameObjectType.BARRIER, variation: 3, position: [[6,8],0]},
-            {type: GameObjectType.CARPET, variation: 7, position: [7,0]},
+            {type: GameObjectType.BARRIER, variation: 3, position: [[9,11],0]},
+            {type: GameObjectType.CARPET, variation: 7, position: [10,0]},
             
             // Sitzbereiche
             {type: GameObjectType.SEATINGAREA, position: [4,12]},
@@ -294,9 +295,10 @@ const Floorplan = Object.freeze({
             
         ],
         DOORS: [
-            {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.FOYER_ID, 4, 0], directionOnExit: Direction.DOWNRIGHT},
-            {wallSide: GlobalStrings.LEFT, positionOfDoor: [4, -1], positionOnExit: [Settings.EXHIBITION_1_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
-            {wallSide: GlobalStrings.LEFT, positionOfDoor: [7, -1], positionOnExit: [Settings.EXHIBITION_2_ID, 5, 0], directionOnExit: Direction.DOWNRIGHT},
+            {wallSide: GlobalStrings.LEFT, positionOfDoor: [ 1, -1], positionOnExit: [Settings.FOYER_ID, 4, 0], directionOnExit: Direction.DOWNRIGHT},
+            {wallSide: GlobalStrings.LEFT, positionOfDoor: [ 4, -1], positionOnExit: [Settings.EXHIBITION_1_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
+            {wallSide: GlobalStrings.LEFT, positionOfDoor: [ 7, -1], positionOnExit: [Settings.EXHIBITION_2_ID, 5, 0], directionOnExit: Direction.DOWNRIGHT},
+            {wallSide: GlobalStrings.LEFT, positionOfDoor: [10, -1], positionOnExit: [Settings.EXHIBITION_3_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
         ],
         NPCS: [
             {name: FloorplanConstants.NPCNAMES.exhibit, position: [10, 2], direction: Direction.DOWNRIGHT, dialog: NPCDialog.kit21Dialog},
@@ -413,6 +415,68 @@ const Floorplan = Object.freeze({
         ],
         DOORS: [
             {wallSide: GlobalStrings.LEFT, positionOfDoor: [5, -1], positionOnExit: [Settings.EXHIBITION_ID, 7, 0], directionOnExit: Direction.DOWNRIGHT},
+        ],
+        NPCS: []
+    },
+    
+    EXHIBITION_3: {
+        ID: Settings.EXHIBITION_3_ID,
+        NAME: "Programmieren",
+        TYPE: TypeOfRoom.CUSTOM,
+        LENGTH: 11,
+        WIDTH: 11,
+        MAPELEMENTS: [
+            {type: GameObjectType.LEFTWINDOW, position: [[4,5,6,7,8], -1]},
+        ],
+        OBJECTS: [            
+            {type: GameObjectType.EXPLANATION, variation: 0, position: [2,0], isClickable: true, story: [
+                "Informatik ist mehr als Code, aber mit Code kann man sehr präzise aufschreiben, was man meint.<br><br>" + 
+                "Daher ist es für einen Informatiker wichtig, programmieren zu können.",
+                "An den Computern findest du ein paar kleine Herausforderungen und in der Sofaecke Hinweise, wie du anfangen kannst, programmieren zu lernen.<br><br>Viel Spaß!"]},
+            
+            {type: GameObjectType.TABLE, variation:1, position: [3,2], isClickable: true, iFrameData: {title: "Minecraft", url: "https://media.lehr-lern-labor.info/redirect.html?text=Minecraft&url=https://studio.code.org/s/mc/lessons/1/levels/1", width: 800, height: 450 }},            
+            {type: GameObjectType.TABLE, variation:2, position: [4,2], isClickable: true, iFrameData: {title: "Minecraft Aquatic", url: "https://media.lehr-lern-labor.info/redirect.html?text=Minecraft%20Aquatic&url=https://studio.code.org/s/aquatic/lessons/1/levels/1", width: 800, height: 450 }},            
+            {type: GameObjectType.TABLE, variation:3, position: [5,2], isClickable: true, iFrameData: {title: "Frozen", url: "https://media.lehr-lern-labor.info/redirect.html?text=Frozen&url=https://studio.code.org/s/frozen/lessons/1/levels/1", width: 800, height: 450 }},
+            {type: GameObjectType.TABLE, variation:1, position: [6,2], isClickable: true, iFrameData: {title: "Sport", url: "https://media.lehr-lern-labor.info/redirect.html?text=Sport&url=https://studio.code.org/s/sports/lessons/1/levels/1", width: 800, height: 450 }},            
+            {type: GameObjectType.TABLE, variation:2, position: [7,2], isClickable: true, iFrameData: {title: "Flappy Bird", url: "https://media.lehr-lern-labor.info/redirect.html?text=Flappy%20Bird&url=https://studio.code.org/flappy/1", width: 800, height: 450 }},            
+            {type: GameObjectType.TABLE, variation:3, position: [8,2], isClickable: true, iFrameData: {title: "Scratch", url: "https://media.lehr-lern-labor.info/redirect.html?text=Scratch&url=https://scratch.mit.edu/projects/editor/", width: 800, height: 450 }},          
+            {type: GameObjectType.TABLEDECORATION, variation:22, position: [[3,4,5,6,7,8],2]},
+            {type: GameObjectType.CHAIR, variation:40, position: [[3,4,5,6,7,8],1]},
+            
+                        
+            {type: GameObjectType.COUNTER, variation:4, position: [10,0]},
+            {type: GameObjectType.COUNTER, variation:5, position: [10,[1,2,3]]},
+            {type: GameObjectType.COUNTER, variation:9, position: [10,4]},
+            {type: GameObjectType.COUNTER, variation:2, position: [[9,8,7,6,5,4],4]},
+            {type: GameObjectType.COUNTER, variation:1, position: [3,4]},
+            {type: GameObjectType.TABLEDECORATION, variation:0, position: [10,0]},
+            {type: GameObjectType.TABLEDECORATION, variation:5, position: [10,4]},
+            {type: GameObjectType.TABLEDECORATION, variation:14, position: [ 4,4]},
+            
+            
+            {type: GameObjectType.SOFA, variation: 0, position: [7, 5]},
+            {type: GameObjectType.SOFA, variation: 1, position: [8, 5]},
+            {type: GameObjectType.SOFA, variation: 2, position: [9, 5]},
+            {type: GameObjectType.SOFA, variation: 9, position: [10, 6]},
+            {type: GameObjectType.SOFA, variation:10, position: [10,[7,8]]},
+            {type: GameObjectType.SOFA, variation:11, position: [10, 9]},
+            {type: GameObjectType.SOFA, variation: 8, position: [9,10]},
+            {type: GameObjectType.SOFA, variation: 7, position: [8,10]},
+            {type: GameObjectType.SOFA, variation: 6, position: [7,10]},
+            {type: GameObjectType.TABLE, variation:4, position: [8,7], isClickable: true, iFrameData: {title: "Programmieren", url: "https://media.lehr-lern-labor.info/collab/p/r.10dfaf25e961e9b5b4a631705f151b07?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
+            {type: GameObjectType.TABLE, variation:6, position: [8,8], isClickable: true, iFrameData: {title: "Programmieren", url: "https://media.lehr-lern-labor.info/collab/p/r.10dfaf25e961e9b5b4a631705f151b07?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
+            {type: GameObjectType.TABLEDECORATION, variation:4, position: [8,8]},
+            
+            {type: GameObjectType.TABLE, variation:4, position: [2,7], isClickable: true, iFrameData: {title: "Kommentare", url: "https://media.lehr-lern-labor.info/collab/p/proggen?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
+            {type: GameObjectType.TABLE, variation:6, position: [2,8], isClickable: true, iFrameData: {title: "Kommentare", url: "https://media.lehr-lern-labor.info/collab/p/proggen?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
+            {type: GameObjectType.TABLEDECORATION, variation:7, position: [2,7]},
+            {type: GameObjectType.CHAIR, variation:0, position: [2,6]},
+            {type: GameObjectType.CHAIR, variation:1, position: [1,[7,8]]},
+            {type: GameObjectType.CHAIR, variation:2, position: [2,9]},
+            {type: GameObjectType.CHAIR, variation:3, position: [3,[7,8]]},
+        ],
+        DOORS: [
+            {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.EXHIBITION_ID,10, 0], directionOnExit: Direction.DOWNRIGHT},
         ],
         NPCS: []
     },
