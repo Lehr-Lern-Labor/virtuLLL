@@ -259,7 +259,7 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.TABLEDECORATION, position: [13, 5], variation: 23},
         ],
         DOORS: [ 
-             {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.LOUNGE_ID, 1, 0], directionOnExit: Direction.DOWNLEFT, isOpen: false, codeToOpen: "Lehr-Lern-Labor"},
+             {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.LOUNGE_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: false, codeToOpen: "Lehr-Lern-Labor"},
              {wallSide: GlobalStrings.LEFT, positionOfDoor: [4, -1], positionOnExit: [Settings.EXHIBITION_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
         ],
         NPCS: [
@@ -485,12 +485,134 @@ const Floorplan = Object.freeze({
         ID: Settings.LOUNGE_ID,
         NAME: "Lounge",
         TYPE: TypeOfRoom.CUSTOM,
-        LENGTH: 15,
+        LENGTH: 13,
         WIDTH: 15,
-        MAPELEMENTS: [],
-        OBJECTS: [],
+        MAPELEMENTS: [
+            {type: GameObjectType.CONFERENCELOGO, position: [3, -1]}
+        ],
+        OBJECTS: [
+            {type: GameObjectType.EXPLANATION, variation: 0, position: [11,0], isClickable: true, story: ["App-Entwicklung"]},
+            {type: GameObjectType.FLOORDECORATION, variation: 2, position: [12,0]},
+            
+            {type: GameObjectType.FLOORDECORATION, variation: 2, position: [12,14]},
+            {type: GameObjectType.DRINKS, variation: 2, position: [12,12]},
+            
+            {type: GameObjectType.CHAIR, variation:  7, position: [ 3,[2,3,4,5,6,7]]},
+            {type: GameObjectType.CHAIR, variation: 11, position: [ 5,[2,3,4,5,6,7]]},
+            {type: GameObjectType.CHAIR, variation: 19, position: [ 7,[2,3,4,5,6,7]]},
+            {type: GameObjectType.CHAIR, variation: 31, position: [ 9,[2,3,4,5,6,7]]},
+            {type: GameObjectType.CHAIR, variation: 39, position: [11,[2,3,4,5,6,7]]},
+            
+            
+            {type: GameObjectType.SEATINGAREA, position: [ 2,10]},
+            {type: GameObjectType.SEATINGAREA, position: [ 5,13]},
+            {type: GameObjectType.SEATINGAREA, position: [ 9,11]},
+            {type: GameObjectType.TABLEDECORATION, variation: 4, position: [ 2,10]},
+            {type: GameObjectType.TABLEDECORATION, variation: 4, position: [ 5,13]},
+            {type: GameObjectType.TABLEDECORATION, variation: 4, position: [ 9,11]},
+        ],
         DOORS: [
             {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.FOYER_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
+            {wallSide: GlobalStrings.LEFT, positionOfDoor: [10, -1], positionOnExit: [Settings.WS_APP_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: false},
+        ],
+        NPCS: []
+     },
+     
+    WS_APP: {
+        ID: Settings.WS_APP_ID,
+        NAME: "App-Entwicklung",
+        TYPE: TypeOfRoom.CUSTOM,
+        LENGTH: 9,
+        WIDTH: 10,
+        MAPELEMENTS: [],
+        OBJECTS: [            
+            {type: GameObjectType.EXPLANATION, variation: 1, position: [8,2], isClickable: true, story: ["Spiele-App","Hier lernst du, wie man mithilfe eines Canvas eine eigene Spiele-App entwickelt."]},
+            {type: GameObjectType.EXPLANATION, variation: 1, position: [8,5], isClickable: true, story: ["Urlaubshelfer","Hier lernst du am Beispiel eines Urlaubshelfers, worauf man bei der Entwicklung einer eigenen App achten muss."]},
+        
+            {type: GameObjectType.CUPBOARD, position: [ 3, 0], variation: 4, isClickable: true, iFrameData: {title: "Thunkable: Login und Vorschau", url: "https://www.youtube.com/embed/oJKgC9koLj4", width: 800, height: 450 }},
+			{type: GameObjectType.CUPBOARD, position: [ 4, 0], variation: 2},
+            {type: GameObjectType.CUPBOARD, position: [ 5, 0], variation: 3, isClickable: true, iFrameData: {title: "Thunkable: Nutzeroberfläche Design", url: "https://www.youtube.com/embed/ZlIFm6-2Ad4", width: 800, height: 450 }},
+			{type: GameObjectType.CUPBOARD, position: [ 6, 0], variation: 2},
+            {type: GameObjectType.CUPBOARD, position: [ 7, 0], variation: 4, isClickable: true, iFrameData: {title: "Thunkable: Nutzeroberfläche Programmierung", url: "https://www.youtube.com/embed/83UJ634oYpk", width: 800, height: 450 }},
+			
+            {type: GameObjectType.SEATINGAREA, position: [ 2, 3], isClickable: true, iFrameData: {title: "Appvorstellung", url: "https://www.youtube.com/embed/JYZtZWwigMc", width: 800, height: 450 }},
+			{type: GameObjectType.TABLEDECORATION, position: [ 2, 3], variation: 15},
+            
+			{type: GameObjectType.SEATINGAREA, position: [3,8], isClickable: true, iFrameData: {title: "Ergebnisse", url: "https://media.lehr-lern-labor.info/collab/p/ErgebnissammlungGirlsDay?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
+            {type: GameObjectType.TABLEDECORATION, position: [3,8], variation: 17},
+			{type: GameObjectType.SEATINGAREA, position: [5,4], isClickable: true, iFrameData: {title: "Ergebnisse", url: "https://media.lehr-lern-labor.info/collab/p/ErgebnissammlungGirlsDay?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
+            {type: GameObjectType.TABLEDECORATION, position: [5,4], variation: 17},
+			{type: GameObjectType.SEATINGAREA, position: [7,7], isClickable: true, iFrameData: {title: "Ergebnisse", url: "https://media.lehr-lern-labor.info/collab/p/ErgebnissammlungGirlsDay?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
+            {type: GameObjectType.TABLEDECORATION, position: [7,7], variation: 17}, 
+        ],
+        DOORS: [
+            {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.LOUNGE_ID, 10, 0], directionOnExit: Direction.DOWNRIGHT},
+            {wallSide: GlobalStrings.RIGHT, positionOfDoor: [9, 1], positionOnExit: [Settings.WS_APP_1_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
+            {wallSide: GlobalStrings.RIGHT, positionOfDoor: [9, 4], positionOnExit: [Settings.WS_APP_2_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
+        ],
+        NPCS: []
+     },
+     
+    WS_APP_1: {
+        ID: Settings.WS_APP_1_ID,
+        NAME: "Spiele-App",
+        TYPE: TypeOfRoom.CUSTOM,
+        LENGTH: 6,
+        WIDTH: 6,
+        MAPELEMENTS: [],
+        OBJECTS: [   
+            {type: GameObjectType.EXPLANATION, variation: 0, position: [2,0], isClickable: true, story: ["An jedem Schrank und Regal gibt es ein Video. Das erste Video ist im Regal neben der Anleitung, danach geht es im Uhrzeigersinn weiter.","Die Videos bauen in der Regel nicht aufeinander auf, aber es macht Sinn die Reihenfolge ungefähr einzuhalten. <br><br><i>Du kannst dich schließlich noch nicht um ein Punktesystem kümmern, wenn in deinem Spiel noch nichts passiert...</i>"]},
+			{type: GameObjectType.SEATINGAREA, position: [2,3], isClickable: true, iFrameData: {title: "Linksammlung", url: "https://media.lehr-lern-labor.info/collab/p/r.c315f0f3e1332774a48f51b019101c89?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
+            {type: GameObjectType.EXPLANATION, variation: 3, position: [2,3]},
+			{type: GameObjectType.CUPBOARD, variation: 3, position: [ 3, 0], isClickable: true, iFrameData: {title: "Übersicht", url: "https://www.youtube.com/embed/H_j5OdGU-So", width: 800, height: 450 }},
+			{type: GameObjectType.CUPBOARD, variation: 4, position: [ 4, 0], isClickable: true, iFrameData: {title: "Spielbeginn", url: "https://www.youtube.com/embed/NqJUlsVDeGM", width: 800, height: 450 }},
+			{type: GameObjectType.CUPBOARD, variation: 15, position: [ 5, 0]},
+            {type: GameObjectType.CUPBOARD, variation: 5, position: [ 5, 1], isClickable: true, iFrameData: {title: "Spiellogik", url: "https://www.youtube.com/embed/REdrQlD2BQg", width: 800, height: 450 }},
+			{type: GameObjectType.CUPBOARD, variation: 6, position: [ 5, 2], isClickable: true, iFrameData: {title: "Interaktion", url: "https://www.youtube.com/embed/-rswoF26EYA", width: 800, height: 450 }},
+			{type: GameObjectType.CUPBOARD, variation: 8, position: [ 5, 3], isClickable: true, iFrameData: {title: "Steuerung", url: "https://www.youtube.com/embed/0IJ--pKwLLE", width: 800, height: 450 }},
+            {type: GameObjectType.SIDEBOARD, variation: 9, position: [ 5, 4]},
+            {type: GameObjectType.SIDEBOARD, variation: 8, position: [ 5, 5]},
+            
+            {type: GameObjectType.FLOORDECORATION, variation:2, position: [0, 0]}
+		],
+        DOORS: [
+            {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.WS_APP_ID, 8, 1], directionOnExit: Direction.DOWNLEFT},
+        ],
+        NPCS: []
+    },
+     
+    WS_APP_2: {
+        ID: Settings.WS_APP_2_ID,
+        NAME: "Urlaubshelfer",
+        TYPE: TypeOfRoom.CUSTOM,
+        LENGTH: 11,
+        WIDTH: 8,
+        MAPELEMENTS: [],
+        OBJECTS: [            
+            {type: GameObjectType.EXPLANATION, variation: 0, position: [2,0], isClickable: true, story: ["An jedem Schrank und Regal gibt es ein Video. Das erste Video ist im Regal neben der Anleitung, danach geht es im Uhrzeigersinn weiter. Die letzten beiden Videos sind Zusatzvideos, falls du dich für wietere Layout-Möglichkeiten interessierst.","Du kannst dir die Videos passend zu den von dir gewählten Modulen anschauen."]},
+			{type: GameObjectType.SEATINGAREA, position: [5,4], isClickable: true, iFrameData: {title: "Linksammlung", url: "https://media.lehr-lern-labor.info/collab/p/r.62ffb72e85b0bae0ac3abade1cb854c0?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
+            {type: GameObjectType.EXPLANATION, variation: 3, position: [5,4], isSolid: true},
+			{type: GameObjectType.CUPBOARD, variation: 3, position: [ 3, 0], isClickable: true, iFrameData: {title: "Übersicht", url: "https://www.youtube.com/embed/xanJap2i0j8", width: 800, height: 450 }},
+			{type: GameObjectType.CUPBOARD, variation: 4, position: [ 4, 0], isClickable: true, iFrameData: {title: "Navigator", url: "https://www.youtube.com/embed/xma_2R2XkO0", width: 800, height: 450 }},
+			{type: GameObjectType.CUPBOARD, variation: 3, position: [ 5, 0], isClickable: true, iFrameData: {title: "Icons", url: "https://www.youtube.com/embed/zwl9AqswzNM", width: 800, height: 450 }},
+			{type: GameObjectType.CUPBOARD, variation: 0, position: [ 6, 0], isClickable: true, iFrameData: {title: "Übersetzer - Design", url: "https://www.youtube.com/embed/gIZybH9KaCY", width: 800, height: 450 }},
+			{type: GameObjectType.CUPBOARD, variation: 1, position: [ 7, 0], isClickable: true, iFrameData: {title: "Übersetzer - Programm", url: "https://www.youtube.com/embed/6XWd9PcIu-M", width: 800, height: 450 }},
+			{type: GameObjectType.CUPBOARD, variation: 0, position: [ 8, 0], isClickable: true, iFrameData: {title: "Packliste - Design", url: "https://www.youtube.com/embed/viPpKw8rQ-4", width: 800, height: 450 }},
+			{type: GameObjectType.CUPBOARD, variation: 1, position: [ 9, 0], isClickable: true, iFrameData: {title: "Packliste - Programm", url: "https://www.youtube.com/embed/8Pnl0W-r7A4", width: 800, height: 450 }},
+			{type: GameObjectType.CUPBOARD, variation: 15, position: [10, 0]},
+            {type: GameObjectType.CUPBOARD, variation: 5, position: [10, 1], isClickable: true, iFrameData: {title: "Wetter - Design", url: "https://www.youtube.com/embed/SNnZ9rxJY1Y", width: 800, height: 450 }},
+			{type: GameObjectType.CUPBOARD, variation: 6, position: [10, 2], isClickable: true, iFrameData: {title: "Wetter - Programm", url: "https://www.youtube.com/embed/xtpjEZIztVU", width: 800, height: 450 }},
+			{type: GameObjectType.CUPBOARD, variation: 5, position: [10, 3], isClickable: true, iFrameData: {title: "Währungsrechner - Design", url: "https://www.youtube.com/embed/yJPLN_qBg7M", width: 800, height: 450 }},
+			{type: GameObjectType.CUPBOARD, variation: 6, position: [10, 4], isClickable: true, iFrameData: {title: "Währungsrechner - Programm", url: "https://www.youtube.com/embed/5Q0lnhDFrXI", width: 800, height: 450 }},
+			{type: GameObjectType.CUPBOARD, variation: 5, position: [10, 5], isClickable: true, iFrameData: {title: "Universal-Übersetzer - Design", url: "https://www.youtube.com/embed/u-6jJyV8c-4", width: 800, height: 450 }},
+			{type: GameObjectType.CUPBOARD, variation: 6, position: [10, 6], isClickable: true, iFrameData: {title: "Universal-Übersetzer - Programm", url: "https://www.youtube.com/embed/Xmcp6XyEB9c", width: 800, height: 450 }},
+			{type: GameObjectType.CUPBOARD, variation: 9, position: [10, 7], isClickable: true, iFrameData: {title: "Zusatz: Farben & Rahmen", url: "https://www.youtube.com/embed/KVm0rGnMSws", width: 800, height: 450 }},
+			{type: GameObjectType.CUPBOARD, variation: 8, position: [10, 8], isClickable: true, iFrameData: {title: "Zusatz: Layout", url: "https://www.youtube.com/embed/N_fLrzpNSyc", width: 800, height: 450 }},
+			{type: GameObjectType.FLOORDECORATION, variation:2, position: [0, 0]}
+		
+        ],
+        DOORS: [
+            {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.WS_APP_ID, 8, 4], directionOnExit: Direction.DOWNLEFT},
         ],
         NPCS: []
      },

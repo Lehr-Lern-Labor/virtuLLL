@@ -7,8 +7,8 @@
  */
  module.exports = Object.freeze({
     STANDARDDOORCLOSED: {
-        header: "Door closed",
-        body: "This door is currently closed for you."
+        header: "Türe geschlossen",
+        body: "Diese Tür ist derzeit abgeschlossen."
     },
     FIRSTDOORCLOSED: {
         header: "Workshops",
