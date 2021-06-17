@@ -318,7 +318,7 @@ const Floorplan = Object.freeze({
         OBJECTS: [
             {type: GameObjectType.TABLE, position: [2,4], variation: 4},
             {type: GameObjectType.TABLE, position: [2,5], variation: 6},
-            {type: GameObjectType.EXPLANATION, variation: 2, position: [2,4], isClickable: true, story: [
+            {type: GameObjectType.EXPLANATION, variation: 5, position: [2,4], isClickable: true, story: [
                 "Computer können nicht selbst denken. Aber trotzdem sind sie auf ein paar Gebieten besser als ein Mensch, z.B. wenn es darum geht, schnell zu rechnen.<br><br>Aber wie geht das?", 
                 "In diesem Raum erfährst du, wie ein Computer rechnet - und zwar mit nur zwei Zuständen: Strom an und Strom aus bzw. 1 und 0.",
                 "An den vorderen Tischen lernst du die Grundlagen und an den hinteren Tischen kannst du dein neues Wissen testen. <br><br>Viel Spaß!"]},
@@ -356,7 +356,7 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.SIDEBOARD, position: [10, 3], variation:  6},
             
             {type: GameObjectType.SEATINGAREA, position: [8,2], variation: 0},
-            {type: GameObjectType.EXPLANATION, variation: 2, position: [8,2], isClickable: true, story: [
+            {type: GameObjectType.EXPLANATION, variation: 5, position: [8,2], isClickable: true, story: [
                 "An dieser Station lernst du die Grundlagen der Logik in verschiedenen Fachbereichen kennen. klicke dazu auf die Schränke und Regale.", 
                 "Wenn du die Begriffe <i>Wahrheitstabelle</i>, <i>UND</i>, <i>ODER</i> und <i>Negation</i> im logischen Zusammenhang kennst, kannst du zur nächsten Station weitergehen."]},
                 
@@ -370,7 +370,7 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.SIDEBOARD, position: [ 7,10], variation: 10},
             
             {type: GameObjectType.SEATINGAREA, position: [8,8], variation: 0},
-            {type: GameObjectType.EXPLANATION, variation: 3, position: [8,8], isClickable: true, story: [
+            {type: GameObjectType.EXPLANATION, variation: 4, position: [8,8], isClickable: true, story: [
                 "Hinter dem leeren Regal versteckt sich das Spiel LogicTraffic. Anhand einer Straßenkreuzung kannst du dein Können mit Wahrheitstabellen und aussagenlogischen Formeln unter Beweis stellen.", 
                 "Wähle eine Situation aus (beginne am besten mit Situation 1) und entscheide für jede Sequenz, ob die die jeweilige Sequenz sicher ist. Dadurch wird die Wahrheitstabelle ausgefüllt.<br><br>" + 
                 "Du kannst die Wahrheitstabelle auch direkt ausfüllen, indem du auf die Fragezeichen klickst.",
@@ -386,7 +386,7 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.SIDEBOARD, position: [ 0, 7], variation: 11, isClickable: true, iFrameData: {title: "Nandgame", url: "https://nandgame.com/", width: 800, height: 450 }},
             
             {type: GameObjectType.SEATINGAREA, position: [2,8], variation: 0},
-            {type: GameObjectType.EXPLANATION, variation: 3, position: [2,8], isClickable: true, story: [
+            {type: GameObjectType.EXPLANATION, variation: 7, position: [2,8], isClickable: true, story: [
                 "Nun solltest du mit den Grundlagen der Aussagenlogik vertraut sein und wir können uns der Schaltlogik zuwenden.", 
                 "Schau dir zuerst das Video in der Ecke über Schaltlogik an. Dann kannst du mit dem <i>Nandgame</i> beginnen.<br><br>" + 
                 "Beim Nandgame beginnst du mit zwei einfachen Relais und baust daraus Schritt für Schritt einen ganzen Computer.<br><br>" +
@@ -402,7 +402,7 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.SIDEBOARD, position: [ 3, 0], variation:  4},
             
             {type: GameObjectType.SEATINGAREA, position: [2,2], variation: 0},
-            {type: GameObjectType.EXPLANATION, variation: 3, position: [2,2], isClickable: true, story: [
+            {type: GameObjectType.EXPLANATION, variation: 6, position: [2,2], isClickable: true, story: [
                 "Hier findest du eine Sammlung von Logik-Rätseln. Du wirst vermutlich keine Wahrheitstabellen brauchen, aber logisch denken musst du auf jeden Fall!", 
                 "Außerdem kannst du noch einen Kommentar dalassen. Worüber würdest du gerne mehr wissen? Wo begegnet dir Logik im Alltag?"]},
                 
@@ -563,7 +563,7 @@ const Floorplan = Object.freeze({
         OBJECTS: [   
             {type: GameObjectType.EXPLANATION, variation: 0, position: [2,0], isClickable: true, story: ["An jedem Schrank und Regal gibt es ein Video. Das erste Video ist im Regal neben der Anleitung, danach geht es im Uhrzeigersinn weiter.","Die Videos bauen in der Regel nicht aufeinander auf, aber es macht Sinn die Reihenfolge ungefähr einzuhalten. <br><br><i>Du kannst dich schließlich noch nicht um ein Punktesystem kümmern, wenn in deinem Spiel noch nichts passiert...</i>"]},
 			{type: GameObjectType.SEATINGAREA, position: [2,3], isClickable: true, iFrameData: {title: "Linksammlung", url: "https://media.lehr-lern-labor.info/collab/p/r.c315f0f3e1332774a48f51b019101c89?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
-            {type: GameObjectType.EXPLANATION, variation: 3, position: [2,3]},
+            {type: GameObjectType.EXPLANATION, variation: 4, position: [2,3]},
 			{type: GameObjectType.CUPBOARD, variation: 3, position: [ 3, 0], isClickable: true, iFrameData: {title: "Übersicht", url: "https://www.youtube.com/embed/H_j5OdGU-So", width: 800, height: 450 }},
 			{type: GameObjectType.CUPBOARD, variation: 4, position: [ 4, 0], isClickable: true, iFrameData: {title: "Spielbeginn", url: "https://www.youtube.com/embed/NqJUlsVDeGM", width: 800, height: 450 }},
 			{type: GameObjectType.CUPBOARD, variation: 15, position: [ 5, 0]},
@@ -591,7 +591,7 @@ const Floorplan = Object.freeze({
         OBJECTS: [            
             {type: GameObjectType.EXPLANATION, variation: 0, position: [2,0], isClickable: true, story: ["An jedem Schrank und Regal gibt es ein Video. Das erste Video ist im Regal neben der Anleitung, danach geht es im Uhrzeigersinn weiter. Die letzten beiden Videos sind Zusatzvideos, falls du dich für wietere Layout-Möglichkeiten interessierst.","Du kannst dir die Videos passend zu den von dir gewählten Modulen anschauen."]},
 			{type: GameObjectType.SEATINGAREA, position: [5,4], isClickable: true, iFrameData: {title: "Linksammlung", url: "https://media.lehr-lern-labor.info/collab/p/r.62ffb72e85b0bae0ac3abade1cb854c0?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
-            {type: GameObjectType.EXPLANATION, variation: 3, position: [5,4], isSolid: true},
+            {type: GameObjectType.EXPLANATION, variation: 4, position: [5,4], isSolid: true},
 			{type: GameObjectType.CUPBOARD, variation: 3, position: [ 3, 0], isClickable: true, iFrameData: {title: "Übersicht", url: "https://www.youtube.com/embed/xanJap2i0j8", width: 800, height: 450 }},
 			{type: GameObjectType.CUPBOARD, variation: 4, position: [ 4, 0], isClickable: true, iFrameData: {title: "Navigator", url: "https://www.youtube.com/embed/xma_2R2XkO0", width: 800, height: 450 }},
 			{type: GameObjectType.CUPBOARD, variation: 3, position: [ 5, 0], isClickable: true, iFrameData: {title: "Icons", url: "https://www.youtube.com/embed/zwl9AqswzNM", width: 800, height: 450 }},

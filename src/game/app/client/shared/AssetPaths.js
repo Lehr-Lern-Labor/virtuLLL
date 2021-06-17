@@ -222,8 +222,12 @@ AssetPaths = Object.freeze({
     // Explanations
     "explanation_left": "../client/assets/decoration/explanation_left.png",
     "explanation_right": "../client/assets/decoration/explanation_right.png",
+    "explanation_barrier_left": "../client/assets/decoration/explanation_barrier_left.png",
+    "explanation_barrier_right": "../client/assets/decoration/explanation_barrier_right.png",
+    "explanation_0": "../client/assets/decoration/explanation_0.png",
     "explanation_1": "../client/assets/decoration/explanation_1.png",
     "explanation_2": "../client/assets/decoration/explanation_2.png",
+    "explanation_3": "../client/assets/decoration/explanation_3.png",
     
     
     // Food & Drinks
