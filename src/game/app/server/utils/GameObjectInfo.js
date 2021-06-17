@@ -559,8 +559,12 @@ class GameObjectInfo {
             assetName: [
                 "explanation_left", 
                 "explanation_right",
+                "explanation_barrier_left", 
+                "explanation_barrier_right",
+                "explanation_0",
                 "explanation_1",
                 "explanation_2",
+                "explanation_3",
             ],
         },
 
