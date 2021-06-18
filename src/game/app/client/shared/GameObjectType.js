@@ -54,6 +54,8 @@ const GameObjectType = Object.freeze({
         // Decoration
         FLOORDECORATION: 'FLOORDECORATION',
         TABLEDECORATION: 'TABLEDECORATION',
+        LEFTCOUNTERTOP: 'LEFTCOUNTERTOP',
+        RIGHTCOUNTERTOP: 'RIGHTCOUNTERTOP',
         EXPLANATION: 'EXPLANATION',
         
         // Food & Drinks

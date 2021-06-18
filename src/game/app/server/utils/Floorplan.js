@@ -254,9 +254,15 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.COUNTER, position: [6,3],  isClickable: true, variation: 2},
             {type: GameObjectType.COUNTER, position: [7,3],  isClickable: true, variation: 3},
             
+            {type: GameObjectType.LEFTCOUNTERTOP, position: [5,3],  isClickable: true},
+            {type: GameObjectType.TABLEDECORATION, position: [7,3],  isClickable: true, variation: 24},
+            
             {type: GameObjectType.COUNTER, position: [5,5],  isClickable: true, variation: 4},  // Counter y
             {type: GameObjectType.COUNTER, position: [5,6],  isClickable: true, variation: 5},
             {type: GameObjectType.COUNTER, position: [5,7],  isClickable: true, variation: 6},
+            
+            {type: GameObjectType.RIGHTCOUNTERTOP, position: [5,5],  isClickable: true},
+            {type: GameObjectType.TABLEDECORATION, position: [5,7],  isClickable: true, variation: 24},
             
             {type: GameObjectType.COUNTER, position: [5, 9],  isClickable: true, variation: 7}, // Counter circle
             {type: GameObjectType.COUNTER, position: [5,10],  isClickable: true, variation: 5},
