@@ -513,6 +513,7 @@ class GameObjectInfo {
                 "floordecoration_palmtree",
                 "floordecoration_guitar",
                 "floordecoration_balls",
+                "floordecoration_robot",
             ],
         },
         

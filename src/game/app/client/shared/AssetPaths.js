@@ -192,6 +192,7 @@ AssetPaths = Object.freeze({
     "floordecoration_palmtree": "../client/assets/decoration/floordecoration_palmtree.png",
     "floordecoration_guitar": "../client/assets/decoration/floordecoration_guitar.png", 
     "floordecoration_balls": "../client/assets/decoration/floordecoration_balls.png",   
+    "floordecoration_robot": "../client/assets/decoration/floordecoration_robot.png",  
     
     // Tabledecoration
     "tabledecoration_plant": "../client/assets/decoration/tabledecoration_plant.png",
