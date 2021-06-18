@@ -17,6 +17,7 @@ module.exports = Object.freeze({
     EXHIBITION_1_ID: 11,
     EXHIBITION_2_ID: 12,
     EXHIBITION_3_ID: 13,
+    EXHIBITION_4_ID: 14,
     LOUNGE_ID: 20,
     WS_APP_ID: 21,
     WS_APP_1_ID: 211,

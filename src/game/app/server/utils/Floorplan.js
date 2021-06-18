@@ -280,10 +280,11 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.EXPLANATION, variation: 0, position: [ 5,0], isClickable: true, story: ["Das Binärsystem", "In diesem Raum erfährst du, wie ein Computer rechnet."]},
             {type: GameObjectType.EXPLANATION, variation: 0, position: [ 8,0], isClickable: true, story: ["Logik", "In diesem Raum kannst du Rätsel lösen und einen eigenen Computer bauen."]},
             {type: GameObjectType.EXPLANATION, variation: 0, position: [11,0], isClickable: true, story: ["Programmieren", "In diesem Raum geht es um Prgorammieren und wie du lernen kannst zu programmieren."]},
+            {type: GameObjectType.EXPLANATION, variation: 0, position: [14,0], isClickable: true, story: ["Algorithmen", "In diesem Raum erfährst du, wie Computer denken und was ein Kochrezept mit einem Computer zu tun hat."]},
         
             // Grüner Teppich
-            {type: GameObjectType.BARRIER, variation: 3, position: [[9,11],0]},
-            {type: GameObjectType.CARPET, variation: 7, position: [10,0]},
+            {type: GameObjectType.BARRIER, variation: 3, position: [[12,14],0]},
+            {type: GameObjectType.CARPET, variation: 7, position: [13,0]},
             
             // Sitzbereiche
             {type: GameObjectType.SEATINGAREA, position: [4,12]},
@@ -299,9 +300,10 @@ const Floorplan = Object.freeze({
             {wallSide: GlobalStrings.LEFT, positionOfDoor: [ 4, -1], positionOnExit: [Settings.EXHIBITION_1_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
             {wallSide: GlobalStrings.LEFT, positionOfDoor: [ 7, -1], positionOnExit: [Settings.EXHIBITION_2_ID, 5, 0], directionOnExit: Direction.DOWNRIGHT},
             {wallSide: GlobalStrings.LEFT, positionOfDoor: [10, -1], positionOnExit: [Settings.EXHIBITION_3_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
+            {wallSide: GlobalStrings.LEFT, positionOfDoor: [13, -1], positionOnExit: [Settings.EXHIBITION_4_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
         ],
         NPCS: [
-            {name: FloorplanConstants.NPCNAMES.exhibit, position: [10, 2], direction: Direction.DOWNRIGHT, dialog: NPCDialog.kit21Dialog},
+            {name: FloorplanConstants.NPCNAMES.exhibit, position: [2, 0], direction: Direction.DOWNRIGHT, dialog: NPCDialog.kit21Dialog},
         ]
     },
     
@@ -477,6 +479,123 @@ const Floorplan = Object.freeze({
         ],
         DOORS: [
             {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.EXHIBITION_ID,10, 0], directionOnExit: Direction.DOWNRIGHT},
+        ],
+        NPCS: []
+    },
+    
+    EXHIBITION_4: {
+        ID: Settings.EXHIBITION_4_ID,
+        NAME: "Algorithmen",
+        TYPE: TypeOfRoom.CUSTOM,
+        LENGTH: 25,
+        WIDTH: 20,
+        MAPELEMENTS: [
+        ],
+        OBJECTS: [            
+            {type: GameObjectType.EXPLANATION, variation: 0, position: [2,0], isClickable: true, story: [
+                "Hast du schon mal nach einem Rezept gekocht oder gebacken?<br><br>" + 
+                "Dann kennst du dich schon mit Algorithmen aus. Algorithmen sind Schritt-für-Schritt-Anleitungen, die in der Informatik eine große Rolle spielen. " + 
+                "Computer sind sehr gut darin, nach einer vorgegebenen Anleitung, einem Algorithmus, vorzugehen, aber furchtbar schlecht darin, zu improvisieren.",
+                "In diesem Raum erfährst du, was ein Algorithmus eigentlich ist und kannst dich im Labyrinth verlaufen. " + 
+                "Hast du schonmal einen Algorithmus getanzt? Am Ende des Labyrinths geht es um Sortieralgorithmen - und wie man diese tanzt.<br><br>Viel Spaß!"]},
+
+            {type: GameObjectType.EXPLANATION, variation: 3, position: [3,3], isClickable: true, iFrameData: {title: "Algorithmen", url: "https://www.youtube-nocookie.com/embed/BGL6ar9kuao?modestbranding=1", width: 800, height: 450 }},
+            {type: GameObjectType.EXPLANATION, variation: 3, position: [3,7], isClickable: true, iFrameData: {title: "Ein Problem - mehrere Lösungswege", url: "https://www.youtube-nocookie.com/embed/FBUoEumkP2w?start=105&modestbranding=1", width: 800, height: 450 }},
+            
+            // Sortieralgorithmen
+            {type: GameObjectType.CUPBOARD, variation: 0, position: [21,0]},
+            {type: GameObjectType.CUPBOARD, variation: 1, position: [22,0]},
+            {type: GameObjectType.CUPBOARD, variation: 3, position: [23,0]},
+            {type: GameObjectType.CUPBOARD, variation:15, position: [24,0]},
+            {type: GameObjectType.CUPBOARD, variation: 8, position: [24,1]},
+            {type: GameObjectType.CUPBOARD, variation: 5, position: [24,2], isClickable: true, iFrameData: {title: "Battle der Sortieralgorithmen", url: "https://www.youtube-nocookie.com/embed/videoseries?modestbranding=1&list=PL2aHrV9pFqNS79ZKnGLw-RG5gH01bcjRZ", width: 800, height: 450 }},
+            {type: GameObjectType.CUPBOARD, variation: 6, position: [24,3], isClickable: true, iFrameData: {title: "Sortieralgorithmen getanzt", url: "https://www.youtube-nocookie.com/embed/lyZQPjUT5B4?rel=0&modestbranding=1&playlist=lyZQPjUT5B4,ROalU379l3U0,Ns4TPTC8whw,ywWBy6J5gz8,XaqR3G_NVoo,CmPA7zE8mx0,Xw2D9aJRBY4", width: 800, height: 450 }},
+            {type: GameObjectType.CUPBOARD, variation: 9, position: [24,4]},
+            
+            {type: GameObjectType.SEATINGAREA, position: [22,2], isClickable: true, iFrameData: {title: "Sortierwaage", url: "http://www.inspiration-informatik.de/anwendung/sorting-algorithms/index.html", width: 823, height: 463 }},
+            // Labyrinth
+            {type: GameObjectType.BARRIER, variation: 5, position: [[9,10],1]},
+            {type: GameObjectType.BARRIER, variation: 5, position: [16,2]},
+            {type: GameObjectType.BARRIER, variation: 5, position: [[4,5,16,17,24],5]},
+            {type: GameObjectType.BARRIER, variation: 5, position: [17,7]},
+            {type: GameObjectType.BARRIER, variation: 5, position: [24,8]},
+            {type: GameObjectType.BARRIER, variation: 5, position: [[9,10],9]},
+            {type: GameObjectType.BARRIER, variation: 5, position: [22,10]},
+            {type: GameObjectType.BARRIER, variation: 5, position: [[12,14,15],13]},
+            {type: GameObjectType.BARRIER, variation: 5, position: [12,14]},
+            {type: GameObjectType.BARRIER, variation: 5, position: [[5,7,8,16,17],15]},
+            {type: GameObjectType.BARRIER, variation: 5, position: [[7,8,9,23,24],16]},
+            {type: GameObjectType.BARRIER, variation: 5, position: [[3,4,5,18,19],17]},
+            {type: GameObjectType.BARRIER, variation: 5, position: [[3,4,5,6,7,18,19],18]},
+            {type: GameObjectType.BARRIER, variation: 5, position: [14,19]},
+            
+            {type: GameObjectType.BARRIER, variation: 6, position: [ 0,[13,17,18,19]]},
+            {type: GameObjectType.BARRIER, variation: 6, position: [ 2,[13,14]]},
+            {type: GameObjectType.BARRIER, variation: 6, position: [ 3,[0,1,2,3,4,6,7,8,9,10,11]]},
+            {type: GameObjectType.BARRIER, variation: 6, position: [ 5,[2,8,9,10,11,12,13]]},
+            {type: GameObjectType.BARRIER, variation: 6, position: [ 6,[0,2,6,8,9,10,11,12]]},
+            {type: GameObjectType.BARRIER, variation: 6, position: [ 8,[2,4,8,12]]},
+            {type: GameObjectType.BARRIER, variation: 6, position: [ 9,[6,12,14]]},
+            {type: GameObjectType.BARRIER, variation: 6, position: [10,17]},
+            {type: GameObjectType.BARRIER, variation: 6, position: [11,[2,3,4,5,6,10,11,12]]},
+            {type: GameObjectType.BARRIER, variation: 6, position: [13,[2,3,4,5,6,10,15,16]]},
+            {type: GameObjectType.BARRIER, variation: 6, position: [14,[6,8,10]]},
+            {type: GameObjectType.BARRIER, variation: 6, position: [15,[3,4,16,17,18]]},
+            {type: GameObjectType.BARRIER, variation: 6, position: [16,[8,9,10,11,12]]},
+            {type: GameObjectType.BARRIER, variation: 6, position: [17,[0,1]]},
+            {type: GameObjectType.BARRIER, variation: 6, position: [18,[8,9,10,11,12,13,14]]},
+            {type: GameObjectType.BARRIER, variation: 6, position: [20,[0,2,3,4,6,7,11,15,16]]},
+            {type: GameObjectType.BARRIER, variation: 6, position: [21,[6,7,9,13]]},
+            {type: GameObjectType.BARRIER, variation: 6, position: [22,17]},
+            {type: GameObjectType.BARRIER, variation: 6, position: [23,[6,7,11,12,13]]},
+            
+            {type: GameObjectType.BARRIER, variation: 1, position: [13,1]},
+            
+            {type: GameObjectType.BARRIER, variation: 2, position: [19,1]},
+            
+            {type: GameObjectType.BARRIER, variation: 3, position: [[23,14],[15,0],[13,17],[11,7],[6,13],[2,15]]},
+            
+            {type: GameObjectType.BARRIER, variation: 4, position: [[23,18],[18,3],[18,5],[11,16],[11,18],[9,3],[8,18]]},
+            
+            {type: GameObjectType.BARRIER, variation: 2, position: [[2,12],[2,17],[4,14],[5,1],[5,7],[8,1],[8,7],[8,11],[13,9],[13,19],[14,5],[15,2],[15,15],[16,7],[17,17],[20,10],[20,14],[22,16],[23,5]]},
+            {type: GameObjectType.BARRIER, variation: 1, position: [[2,12],[2,17],[4,14],[5,1],[5,7],[8,1],[8,7],[8,11],[13,9],[13,19],[14,5],[15,2],[15,15],[16,7],[17,17],[20,10],[20,14],[22,16],[23,5]]},
+            
+            {type: GameObjectType.BARRIER, variation: 2, position: [[2,18],[4,15],[5,3],[8,5],[8,9],[8,13],[10,18],[11,14],[13,7],[13,11],[17,3],[17,18],[20,8],[20,12],[22,18],[23,8]]},
+            {type: GameObjectType.BARRIER, variation: 3, position: [[2,18],[4,15],[5,3],[8,5],[8,9],[8,13],[10,18],[11,14],[13,7],[13,11],[17,3],[17,18],[20,8],[20,12],[22,18],[23,8]]},
+            
+            {type: GameObjectType.BARRIER, variation: 3, position: [[0,14],[3,12],[5,14],[6,3],[6,17],[9,7],[9,15],[14,11],[16,13],[18,15],[20,18],[21,14]]},
+            {type: GameObjectType.BARRIER, variation: 4, position: [[0,14],[3,12],[5,14],[6,3],[6,17],[9,7],[9,15],[14,11],[16,13],[18,15],[20,18],[21,14]]},
+            
+            {type: GameObjectType.BARRIER, variation: 1, position: [[0,12],[0,16],[6,5],[9,5],[9,11],[11,1],[11,9],[18,7],[21,5],[21,12],[23,10]]},
+            {type: GameObjectType.BARRIER, variation: 4, position: [[0,12],[0,16],[6,5],[9,5],[9,11],[11,1],[11,9],[18,7],[21,5],[21,12],[23,10]]},
+            
+            {type: GameObjectType.BARRIER, variation: 3, position: [[15,5],[21,10]]},
+            {type: GameObjectType.BARRIER, variation: 5, position: [[15,5],[21,10]]},
+            
+            {type: GameObjectType.BARRIER, variation: 6, position: [[6,1],[6,7],[9,13],[13,14],[14,7],[14,9],[15,19],[17,2],[20,1],[20,17],[21,8]]},
+            {type: GameObjectType.BARRIER, variation: 4, position: [[6,1],[6,7],[9,13],[13,14],[14,7],[14,9],[15,19],[17,2],[20,1],[20,17],[21,8]]},
+            
+            {type: GameObjectType.BARRIER, variation: 5, position: [[6,15],[10,16],[13,13]]},
+            {type: GameObjectType.BARRIER, variation: 1, position: [[6,15],[10,16],[13,13]]},
+            
+            {type: GameObjectType.BARRIER, variation: 2, position: [[3,5],[6,16],[8,3],[11,13],[20,5]]},
+            {type: GameObjectType.BARRIER, variation: 6, position: [[3,5],[6,16],[8,3],[11,13],[20,5]]},
+            
+            {type: GameObjectType.EXPLANATION, variation: 2, position: [0,12], isClickable: true, story: [
+                "Willkommen im Labyrinth!<br><br>" + 
+                "Vor dir siehst du ein recht großes Labyrinth. Versuche zunächst, mit den Pfeiltasten ans andere Ende zu kommen.<br><br>"+
+                "Wie gehst du vor? Probierst du einfach, den richtigen Weg zu finden oder hast du eine Strategie?",
+                "Dein Avatar hat eine solche Strategie: Er wurde mit einem Algorithmus zur Wegefindung programmiert und kann so einen Weg zu Bodenfließen, Gegenständen oder eben durch das Labyrinth finden.<br><br>" + 
+                "Probiere den Algorithmus aus, indem du auf einen anklickbaren Gegenstand am Ende des Labyrinths klickst."]},
+             
+            {type: GameObjectType.EXPLANATION, variation: 2, position: [23,5], isClickable: true, story: [
+                "Jedes Problem hat seine eigene Lösung. Und für jede Lösung kann man auch einen passenden Algorithmus finden. (Auch wenn die Lösung je nach Problem anders aussieht oder die Lösung sogar ist, dass es keine Lösung gibt.)<br><br>" + 
+                "An Sortierproblemen kann man gut sehen, wie unterschiedliche Algorithmen mit einem Problem umgehen.",
+                "Auf dem Tisch findest du eine Waage. Versuche die Boxen zu sortieren. Wie viele Versuche brauchst du?<br><br>" +
+                "Du kannst auch einen der Sortieralgorithmen verwenden, die du in den Videos an den Schränken kennen lernst. Bist du damit schneller?<br><br>Viel Spaß!"]},
+        ],
+        DOORS: [
+            {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.EXHIBITION_ID,13, 0], directionOnExit: Direction.DOWNRIGHT},
         ],
         NPCS: []
     },
