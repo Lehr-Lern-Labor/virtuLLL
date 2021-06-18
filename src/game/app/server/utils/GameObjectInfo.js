@@ -547,7 +547,30 @@ class GameObjectInfo {
                 "tabledecoration_books",
                 "tabledecoration_computer_0",
                 "tabledecoration_computer_3",
+                "tabledecoration_plates",
             ],
+        },
+        [GameObjectType.LEFTCOUNTERTOP]: {
+            isMultiPart: true,
+            size: [2, 1],
+            isSolid: false,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: [
+                "tabledecoration_countertop_x_1", 
+                "tabledecoration_countertop_x_2",
+            ],
+        },
+        [GameObjectType.RIGHTCOUNTERTOP]: {
+            isMultiPart: true,
+            size: [1, 2],
+            isSolid: false,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: [[
+                "tabledecoration_countertop_y_1", 
+                "tabledecoration_countertop_y_2",
+            ]],
         },
         
         // Explanation
