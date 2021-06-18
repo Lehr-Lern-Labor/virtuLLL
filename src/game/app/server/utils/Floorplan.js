@@ -281,10 +281,11 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.EXPLANATION, variation: 0, position: [ 8,0], isClickable: true, story: ["Logik", "In diesem Raum kannst du Rätsel lösen und einen eigenen Computer bauen."]},
             {type: GameObjectType.EXPLANATION, variation: 0, position: [11,0], isClickable: true, story: ["Programmieren", "In diesem Raum geht es um Prgorammieren und wie du lernen kannst zu programmieren."]},
             {type: GameObjectType.EXPLANATION, variation: 0, position: [14,0], isClickable: true, story: ["Algorithmen", "In diesem Raum erfährst du, wie Computer denken und was ein Kochrezept mit einem Computer zu tun hat."]},
+            {type: GameObjectType.EXPLANATION, variation: 1, position: [14,2], isClickable: true, story: ["Robotik", "In diesem Raum erfährst du einige Dinge über Robotik, kannst einen Roboter fernsteuern und lernst ARMAR kennen."]},
         
             // Grüner Teppich
-            {type: GameObjectType.BARRIER, variation: 3, position: [[12,14],0]},
-            {type: GameObjectType.CARPET, variation: 7, position: [13,0]},
+            {type: GameObjectType.BARRIER, variation: 2, position: [14,[0,2]]},
+            {type: GameObjectType.CARPET, variation: 7, position: [14,1]},
             
             // Sitzbereiche
             {type: GameObjectType.SEATINGAREA, position: [4,12]},
@@ -296,11 +297,12 @@ const Floorplan = Object.freeze({
             
         ],
         DOORS: [
-            {wallSide: GlobalStrings.LEFT, positionOfDoor: [ 1, -1], positionOnExit: [Settings.FOYER_ID, 4, 0], directionOnExit: Direction.DOWNRIGHT},
-            {wallSide: GlobalStrings.LEFT, positionOfDoor: [ 4, -1], positionOnExit: [Settings.EXHIBITION_1_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
-            {wallSide: GlobalStrings.LEFT, positionOfDoor: [ 7, -1], positionOnExit: [Settings.EXHIBITION_2_ID, 5, 0], directionOnExit: Direction.DOWNRIGHT},
-            {wallSide: GlobalStrings.LEFT, positionOfDoor: [10, -1], positionOnExit: [Settings.EXHIBITION_3_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
-            {wallSide: GlobalStrings.LEFT, positionOfDoor: [13, -1], positionOnExit: [Settings.EXHIBITION_4_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
+            {wallSide: GlobalStrings.LEFT,  positionOfDoor: [ 1, -1], positionOnExit: [Settings.FOYER_ID, 4, 0], directionOnExit: Direction.DOWNRIGHT},
+            {wallSide: GlobalStrings.LEFT,  positionOfDoor: [ 4, -1], positionOnExit: [Settings.EXHIBITION_1_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
+            {wallSide: GlobalStrings.LEFT,  positionOfDoor: [ 7, -1], positionOnExit: [Settings.EXHIBITION_2_ID, 5, 0], directionOnExit: Direction.DOWNRIGHT},
+            {wallSide: GlobalStrings.LEFT,  positionOfDoor: [10, -1], positionOnExit: [Settings.EXHIBITION_3_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
+            {wallSide: GlobalStrings.LEFT,  positionOfDoor: [13, -1], positionOnExit: [Settings.EXHIBITION_4_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
+            {wallSide: GlobalStrings.RIGHT, positionOfDoor: [15,  1], positionOnExit: [Settings.EXHIBITION_5_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
         ],
         NPCS: [
             {name: FloorplanConstants.NPCNAMES.exhibit, position: [2, 0], direction: Direction.DOWNRIGHT, dialog: NPCDialog.kit21Dialog},
@@ -400,7 +402,7 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.CUPBOARD,  position: [ 0, 1], variation: 11},
             {type: GameObjectType.CUPBOARD,  position: [ 0, 0], variation: 12},
             {type: GameObjectType.CUPBOARD,  position: [ 1, 0], variation:  3},
-            {type: GameObjectType.SIDEBOARD, position: [ 2, 0], variation:  3, isClickable: true, iFrameData: {title: "Logikrätsel", url: "https://media.lehr-lern-labor.info/collab/p/Logik?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 800, height: 450 }},
+            {type: GameObjectType.SIDEBOARD, position: [ 2, 0], variation:  3, isClickable: true, iFrameData: {title: "Logik", url: "https://media.lehr-lern-labor.info/collab/p/Logik?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 800, height: 450 }},
             {type: GameObjectType.SIDEBOARD, position: [ 3, 0], variation:  4},
             
             {type: GameObjectType.SEATINGAREA, position: [2,2], variation: 0},
@@ -598,6 +600,55 @@ const Floorplan = Object.freeze({
             {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.EXHIBITION_ID,13, 0], directionOnExit: Direction.DOWNRIGHT},
         ],
         NPCS: []
+    },
+    
+    EXHIBITION_5: {
+        ID: Settings.EXHIBITION_5_ID,
+        NAME: "Robotik",
+        TYPE: TypeOfRoom.CUSTOM,
+        LENGTH: 10,
+        WIDTH: 10,
+        MAPELEMENTS: [
+        ],
+        OBJECTS: [            
+            {type: GameObjectType.EXPLANATION, variation: 0, position: [2,0], isClickable: true, story: [
+                "Roboter gibt es in den unterschiedlichsten Formen und Farben. Je nach Einsatzgebiet sind sie für unterschiedliche Aufgaben geeignet.",
+                "Am KIT wird unter anderem an humanoiden Robotern geforscht, also Robotern, die dem Menschen ähneln. Wenn du mehr darüber wissen möchtest, unterhalte dich doch mit ARMAR IIIa oder ARMAR 6.",
+                "Der kleine Roboter in der Mitte bringt dich ins Open Roberta Lab. Dort kannst du ganz einfach einen Roboter programmieren. Für einige Modelle gibt es auch Simulationsumgebungen, so dass du (auch ohne einen Roboter zu besitzen) siehst, wie dein Programm ausgeführt wird.",
+                "Am KIT gibt es außerdem das Robot Learning Lab. Dort kannst du bequem von zu Hause aus einen Roboterarm am KIT bewegen. Schau dafür bei den beiden Computern vorbei."]},
+            
+            {type: GameObjectType.COUNTER, variation: 1, position: [3,0]},
+            {type: GameObjectType.COUNTER, variation: 2, position: [[4,5,6,7,8],0]},
+            {type: GameObjectType.COUNTER, variation:10, position: [9,0]},
+            {type: GameObjectType.COUNTER, variation: 5, position: [9,[1,2,3,4,5]]},
+            {type: GameObjectType.COUNTER, variation: 6, position: [9,6]},
+            
+            {type: GameObjectType.LEFTCOUNTERTOP, position: [3,0]},
+            {type: GameObjectType.RIGHTCOUNTERTOP, position: [9,3]},
+            {type: GameObjectType.TABLEDECORATION, variation: 24, position: [[6,0],[7,0],[9,5]]},
+            {type: GameObjectType.TABLEDECORATION, variation: 17, position: [[9,1],[9,6]]},
+            {type: GameObjectType.TABLEDECORATION, variation: 16, position: [9,2]},
+            
+            
+            {type: GameObjectType.COUNTER, variation: 4, position: [0,7]},
+            {type: GameObjectType.COUNTER, variation: 5, position: [0,8]},
+            {type: GameObjectType.COUNTER, variation: 8, position: [0,9]},
+            {type: GameObjectType.COUNTER, variation: 2, position: [1,9]},
+            {type: GameObjectType.COUNTER, variation: 3, position: [2,9]},
+            {type: GameObjectType.TABLEDECORATION, variation: 23, position: [0,8], isClickable: true, iFrameData: {title: "Das KUKA Robot Learning Lab am KIT", url: "https://www.youtube-nocookie.com/embed/mIP6MUoGlC4?rel=0&modestbranding=1&playlist=mIP6MUoGlC4,mg7xsTjYKpg", width: 800, height: 450 }},
+            {type: GameObjectType.TABLEDECORATION, variation: 22, position: [1,9], isClickable: true, iFrameData: {title: "Das KUKA Robot Learning Lab am KIT", url: "https://rll.ipr.kit.edu/", width: 800, height: 450 }},
+            
+            {type: GameObjectType.FLOORDECORATION, variation: 5, position: [3,4], isClickable: true, iFrameData: {title: "Open Roberta Lab", url: "https://lab.open-roberta.org/", width: 800, height: 450 }},
+            
+        
+        ],
+        DOORS: [
+            {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.EXHIBITION_ID,14, 1], directionOnExit: Direction.DOWNLEFT},
+        ],
+        NPCS: [
+            {name: "ARMAR IIIa", position: [6, 1], direction: Direction.UPLEFT, dialog: ["I-ICH BIN ARMAR IIIa",'<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/5x1G0nkSd9w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>']},
+            {name: "ARMAR 6", position: [8, 8], direction: Direction.DOWNLEFT, dialog: ["ICH B-BIN ARMAR 6",'<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/AYWtBlE0z7c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>']},
+        ]
     },
     
     LOUNGE: {
