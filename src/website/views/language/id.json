@@ -84,6 +84,9 @@
     },
 
     "aboutUs": {
+        "whatIsVirtuLLL": "What is virtuLLL?",
+        "thisIsVirtuLLL": "The virtuLLL is the virtual Teaching and Learning Lab for Informatics in Karlsruhe. In our TLL you can experience computer science up close - and if you can not visit us on site in Karlsruhe, the virtuLLL will bring informatics to your home. If you are interested in our events, you can find all necessary information right here:",
+        "moreInfo": "More info",
         "whatIsVimsu": "What is VIMSU?",
         "thisIsVimsu": "VIMSU (Virtual Interactive Meeting SimUlator) is a software that was developed in response to the corona pandemic and originally was intended to allow scientific conferences and similar events to be held virtually with telepresence. In cooperation with Lehr-Lern-Labor, VIMSU currently mainly is used for workshops that have the purpose to get school students closer to computer science related topics. This takes place in the form of an interactive virtual event area. The participants are represented by virtual avatars that can be controlled in real-time.",
         "whoAreWe": "Who are we?",
