@@ -514,7 +514,7 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.CUPBOARD, variation: 6, position: [24,3], isClickable: true, iFrameData: {title: "Sortieralgorithmen getanzt", url: "https://www.youtube-nocookie.com/embed/lyZQPjUT5B4?rel=0&modestbranding=1&playlist=lyZQPjUT5B4,ROalU379l3U0,Ns4TPTC8whw,ywWBy6J5gz8,XaqR3G_NVoo,CmPA7zE8mx0,Xw2D9aJRBY4", width: 800, height: 450 }},
             {type: GameObjectType.CUPBOARD, variation: 9, position: [24,4]},
             
-            {type: GameObjectType.SEATINGAREA, position: [22,2], isClickable: true, iFrameData: {title: "Sortierwaage", url: "http://www.inspiration-informatik.de/anwendung/sorting-algorithms/index.html", width: 823, height: 463 }},
+            {type: GameObjectType.SEATINGAREA, position: [22,2], isClickable: true, iFrameData: {title: "Sortierwaage", url: "https://media.lehr-lern-labor.info/redirect.html?text=Sortierwaage&url=http://www.inspiration-informatik.de/anwendung/sorting-algorithms/index.html", width: 823, height: 463 }},
             // Labyrinth
             {type: GameObjectType.BARRIER, variation: 5, position: [[9,10],1]},
             {type: GameObjectType.BARRIER, variation: 5, position: [16,2]},
