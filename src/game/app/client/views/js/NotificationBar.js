@@ -7,6 +7,7 @@
 class NotificationBar extends ViewWithLanguageData {
 
     eventManager;
+    notificationSound;
 
     /**
      * Creates an instance of NotificationBar
@@ -24,6 +25,7 @@ class NotificationBar extends ViewWithLanguageData {
         NotificationBar.instance = this;
 
         this.eventManager = eventManager;
+        this.notificationSound = new Audio('../client/audio/notification_sound.wav');
 
         $('#unreadNotif').text($("#notifBar > div").length);
 
@@ -249,6 +251,7 @@ class NotificationBar extends ViewWithLanguageData {
         }
 
         $('#notifBar').scrollTop(0);
+        this.notificationSound.play();
     }
 
     removeNotifDiv(id) {
