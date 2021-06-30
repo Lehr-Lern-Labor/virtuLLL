@@ -10,15 +10,12 @@
  * @version 1.0.0
  */
  const NPCDialog = Object.freeze({
-    foyerHelperDialog: ['Hey! Welcome to our Foyer!',
-        'The door to my left leads to the lectures. Take a look and have fun! If you are on time and stay till the end, you can ask questions to the orator through the lecture chat.',
-        'Enjoy your stay!'],
     basicTutorialDialog: ['Willkommen im <strong>virtuellen Lehr-Lern-Labor Informatik Karlsruhe</strong>.<br><br>' +
         'Mein Name ist Herbert und ich habe ein paar wichtige Hinweise für deinen Besuch hier im LLL.',
 		'<strong>Die Steuerung</strong><br><br>' + 
 		'Mit den Pfeil- oder WASD-Tasten kannst du dich fortbewegen. Du kannst auch auf eine Bodenfließe doppelklicken, um an die jeweilge Stelle zu gelangen.<br><br>' +
 		'Um einen Raum zu betreten, klicke auf die entsprechende Bodenfließe oder laufe gegen die Tür. Du musst in der Nähe sein, um die Tür nutzen zu können.<br><br>' +
-		'Wenn du auf die Bodenfließe unter einer anderen Person klickst, kannst du mit ihr interagieren.',
+		'Klicke auf die entsprechende Bodenfließe, um mit einem Gegenstand oder einer anderen Person zu interagieren.',
 		'<strong>Videomeetings</strong><br><br>' +
 		'Wenn du auf <i class="fa fa-video"></i> klickst, kannst du einem Videomeeting beitreten. Dem Lehr-Lern-Labor-Meeting können alle anwesenden Besucher beitreten.<br><br>'+
 		'Wenn du das Meeting minimierst (<i class="fa fa-window-minimize"></i>), läuft es im Hintergrund weiter. Kamera und Mikrofon bleiben ein- bzw. ausgeschaltet.<br><br>"' +
@@ -27,10 +24,7 @@
 		'Einige Gegenstände kann man anklicken. Manche der Pop-Ups lassen sich mit <i class="fa fa-window-maximize"></i> im Vollbildmodus betrachten.',
 		'Wenn du Fragen oder Probleme hast, kannst du dich an einen der Moderatoren wenden. Du erkennst sie an ihrem grünen Namensschild.<br><br>' +
 		'Und jetzt wünsche ich dir viel Spaß bei deinem Besuch!'],
-    kit21Dialog: ['Willkommen in der Ausstellung. Schau dich ruhig um und probiere alles aus.<br><br>Die grünen Erklärungen an den Wänden und auf den Tischen helfen dir, dich zurecht zu finden.',
-        'Wir sind Teil von KIT21 und möchten euch in den nächsten Tagen unser eigenes Format vorstellen: <br><br><strong>7 Tage - 7 Türen - 7 Themen</strong>',
-        'Jeden Tag wird es eine neue Türe zu einem neuen Thema geben. Außerdem entwickelt sich das virtuLLL immer weiter. Also schau gerne noch ein paar mal vorbei!'
-        ],
+    exhibitionDialog: ['Willkommen in der Ausstellung. Schau dich ruhig um und probiere alles aus.<br><br>Die grünen Erklärungen an den Wänden und auf den Tischen helfen dir, dich zurecht zu finden.'],
 
 });
 
