@@ -235,11 +235,9 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.CONFERENCELOGO, position: [7, -1]}
         ],
         OBJECTS: [     
-            // Türen
-            {type: GameObjectType.BARRIER, variation: 3, position: [[3,5],0]},
-            {type: GameObjectType.CARPET, variation: 7, position: [4,0]},
-            
+            // Türen            
             {type: GameObjectType.EXPLANATION, variation: 0, position: [2,0], isClickable: true, story: ["Hier geht es zu den Workshops.", "Wenn du dich für einen Workshop angemeldet hast, hast du ein Passwort bekommen. Damit kannst du eintreten.","Andernfalls wird die Türe rechtzeitig geöffnet."]},
+            {type: GameObjectType.EXPLANATION, variation: 0, position: [5,0], isClickable: true, story: ["Hier geht es zur Ausstellung.", "Denke daran, immer auf die passende Bodenfließe zu klicken, um mit Objekten oder anderen Personen zu interagieren."]},
             
             {type: GameObjectType.SEATINGAREA, position: [7,8], isClickable: true, iFrameData: {title: "Das Lehr-Lern-Labor Informatik Karlsruhe", url: "https://media.lehr-lern-labor.info/home/", width: 1000, height: 600 }},
             {type: GameObjectType.TABLEDECORATION, position: [7, 8], variation: 4},
@@ -282,10 +280,6 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.EXPLANATION, variation: 0, position: [11,0], isClickable: true, story: ["Programmieren", "In diesem Raum geht es um Prgorammieren und wie du lernen kannst zu programmieren."]},
             {type: GameObjectType.EXPLANATION, variation: 0, position: [14,0], isClickable: true, story: ["Algorithmen", "In diesem Raum erfährst du, wie Computer denken und was ein Kochrezept mit einem Computer zu tun hat."]},
             {type: GameObjectType.EXPLANATION, variation: 1, position: [14,2], isClickable: true, story: ["Robotik", "In diesem Raum erfährst du einige Dinge über Robotik, kannst einen Roboter fernsteuern und lernst ARMAR kennen."]},
-        
-            // Grüner Teppich
-            {type: GameObjectType.BARRIER, variation: 2, position: [14,[0,2]]},
-            {type: GameObjectType.CARPET, variation: 7, position: [14,1]},
             
             // Sitzbereiche
             {type: GameObjectType.SEATINGAREA, position: [4,12]},
@@ -305,7 +299,7 @@ const Floorplan = Object.freeze({
             {wallSide: GlobalStrings.RIGHT, positionOfDoor: [15,  1], positionOnExit: [Settings.EXHIBITION_5_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
         ],
         NPCS: [
-            {name: FloorplanConstants.NPCNAMES.exhibit, position: [2, 0], direction: Direction.DOWNRIGHT, dialog: NPCDialog.kit21Dialog},
+            {name: FloorplanConstants.NPCNAMES.exhibit, position: [2, 0], direction: Direction.DOWNRIGHT, dialog: NPCDialog.exhibitionDialog},
         ]
     },
     
