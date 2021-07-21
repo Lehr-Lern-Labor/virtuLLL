@@ -324,9 +324,11 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.COMPUTER, position: [3, 1], isClickable: true, iFrameData: {title: "Das Binärsystem", url: "https://www.youtube.com/embed/T8pt_GhohQs", width: 800, height: 450 }},
             {type: GameObjectType.COMPUTER, position: [3, 4], isClickable: true, iFrameData: {title: "Rechnen mit Strom", url: "https://www.youtube.com/embed/9l-l_dD6qPQ", width: 800, height: 450 }},
             {type: GameObjectType.COMPUTER, position: [6, 1], isClickable: true, iFrameData: {title: "Rechnen mit Dualzahlen", url: "https://www.youtube.com/embed/2YJxC_FwBLE", width: 800, height: 450 }},
-            {type: GameObjectType.COMPUTER, position: [6, 4], isClickable: true, iFrameData: {title: "Welche Stellen werden benötigt? Klicke dann auf die gelbe Zahl.", url: "https://media.lehr-lern-labor.info/workshops/binary/", width: 600, height: 300 }},
-            {type: GameObjectType.COMPUTER, position: [9, 1], isClickable: true, iFrameData: {title: "Korrigiere den Fehler!", url: "https://media.lehr-lern-labor.info/workshops/binary1/", width: 800, height: 400 }},
-            {type: GameObjectType.COMPUTER, position: [9, 4], isClickable: true, iFrameData: {title: "Berechne.", url: "https://media.lehr-lern-labor.info/workshops/binary2/", width: 600, height: 500 }},
+            {type: GameObjectType.COMPUTER, position: [6, 4], isClickable: true, iFrameData: {title: "Welche Kärtchen werden benötigt? Klicke dann auf die gelbe Zahl.", url: "https://media.lehr-lern-labor.info/workshops/binary/", width: 600, height: 300 }},
+            {type: GameObjectType.COMPUTER, position: [9, 1], isClickable: true, iFrameData: {title: "Korrigiere den Fehler!", url: "https://media.lehr-lern-labor.info/workshops/binary1/", width: 800, height: 500 }},
+            {type: GameObjectType.COMPUTER, position: [9, 4], isClickable: true, iFrameData: {title: "Berechne.", url: "https://media.lehr-lern-labor.info/workshops/binary2/", width: 800, height: 500 }},
+            
+            {type: GameObjectType.TABLEDECORATION, position: [[6,5],[9,2],[9,5]], variation: 13},
         ],
         DOORS: [
             {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.EXHIBITION_ID, 4, 0], directionOnExit: Direction.DOWNRIGHT},
@@ -381,7 +383,7 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.CUPBOARD,  position: [ 0,10], variation: 13, isClickable: true, iFrameData: {title: "Schaltlogik", url: "https://www.youtube.com/embed/gdgB1BbI7vc", width: 800, height: 450 }},
             {type: GameObjectType.CUPBOARD,  position: [ 0, 9], variation: 11},
             {type: GameObjectType.SIDEBOARD, position: [ 0, 8], variation: 11},
-            {type: GameObjectType.SIDEBOARD, position: [ 0, 7], variation: 11, isClickable: true, iFrameData: {title: "Nandgame", url: "https://nandgame.com/", width: 800, height: 450 }},
+            {type: GameObjectType.SIDEBOARD, position: [ 0, 7], variation: 11, isClickable: true, iFrameData: {title: "Nandgame", url: "https://media.lehr-lern-labor.info/redirect.html?text=Zum%20NAND-Game&url=https://nandgame.com/", width: 800, height: 450 }},
             
             {type: GameObjectType.SEATINGAREA, position: [2,8], variation: 0},
             {type: GameObjectType.EXPLANATION, variation: 7, position: [2,8], isClickable: true, story: [
