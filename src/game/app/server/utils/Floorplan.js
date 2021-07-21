@@ -245,7 +245,7 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.SEATINGAREA, position: [3, 5], isClickable: true, iFrameData: {title: "Gästebuch", url: "https://media.lehr-lern-labor.info/collab/p/GuestBook?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
             {type: GameObjectType.TABLEDECORATION, position: [3, 5], variation: 6},
             
-            {type: GameObjectType.SEATINGAREA, position: [8, 2]},
+            {type: GameObjectType.SEATINGAREA, position: [8, 2], isClickable: true, iFrameData: {title: "Umfrage", url: "https://forms.office.com/Pages/ResponsePage.aspx?id=dexeT_1G-EONJGK-vZdx5YGcZnGyq4RJvZKHAx1yto5UOUdMRUo5RVFBTVFaR003RVkxRjdLWTlMWi4u&embed=true", width: 640, height: 480 }},
             {type: GameObjectType.TABLEDECORATION, position: [8, 2], variation: 11},
             
             // Counter
@@ -708,8 +708,8 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.TABLEDECORATION, position: [3,8], variation: 17},
 			{type: GameObjectType.SEATINGAREA, position: [5,4], isClickable: true, iFrameData: {title: "Ergebnisse", url: "https://media.lehr-lern-labor.info/collab/p/ErgebnissammlungGirlsDay?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
             {type: GameObjectType.TABLEDECORATION, position: [5,4], variation: 17},
-			{type: GameObjectType.SEATINGAREA, position: [7,7], isClickable: true, iFrameData: {title: "Ergebnisse", url: "https://media.lehr-lern-labor.info/collab/p/ErgebnissammlungGirlsDay?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
-            {type: GameObjectType.TABLEDECORATION, position: [7,7], variation: 17}, 
+			{type: GameObjectType.SEATINGAREA, position: [7,7], isClickable: true, iFrameData: {title: "Teilnehmer Betatest", url: "https://media.lehr-lern-labor.info/collab/p/Betatester?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
+            {type: GameObjectType.TABLEDECORATION, position: [7,7], variation: 13}, 
         ],
         DOORS: [
             {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.LOUNGE_ID, 10, 0], directionOnExit: Direction.DOWNRIGHT},
