@@ -4,7 +4,7 @@
  * @author Eric Ritte, Klaudia Leo, Laura Traub, Niklas Schmidt, Philipp Schumacher
  * @version 1.0.0
  */
-class MapView extends Views {
+class MapView extends AbstractView {
     map;
     objectMap;
     clickableTiles;
@@ -137,6 +137,7 @@ class MapView extends Views {
         this.gameObjectViewFactory = new GameObjectViewFactory(assetImages, this.gameEngine, this.eventManager);
 
         this.buildMap();
+        this.refreshDisplay();
     }
 
     /**
@@ -146,12 +147,14 @@ class MapView extends Views {
 
         this.tileIndicator = this.gameObjectViewFactory.createGameObjectView(GameObjectType.SELECTED_TILE, new PositionClient(0, 2), "tileselected_default", false, false);
 
+        var mapObject;
+        var gameObject
+
         for (var row = (this.xNumTiles - 1); row >= 0; row--) {
             for (var col = 0; col < this.yNumTiles; col++) {
 
-                var position = new PositionClient(row, col);
-
-                var mapObject = this.map[row][col];
+                const position = new PositionClient(row, col);
+                mapObject = this.map[row][col];
                 if (mapObject !== null) {
 
                     if (mapObject instanceof Array) {
@@ -163,7 +166,7 @@ class MapView extends Views {
                     }
                 }
 
-                var gameObject = this.objectMap[row][col];
+                gameObject = this.objectMap[row][col];
                 if (gameObject !== null) {
                     if (gameObject instanceof Array) {
                         gameObject.forEach(object => {
@@ -174,8 +177,6 @@ class MapView extends Views {
                 }
             };
         };
-
-        this.refreshDisplay();
     }
 
     /**
@@ -325,18 +326,11 @@ class MapView extends Views {
         for (let i = 0; i < this.clickableTiles.length; i++)
         {
             let elem = this.clickableTiles[i];
-            let screenPos = elem.getScreenPosition();
-            let screenPosOffset = elem.getScreenPositionOffset();
-            let image = elem.getObjectImage();
 
             //determines if mouse position on canvas is inside the asset image.
-            if (!(elem instanceof DoorView)
-                && canvasMousePos.x > screenPos.getCordX() + screenPosOffset.x
-                && canvasMousePos.x < screenPos.getCordX() + screenPosOffset.x + image.width
-                && canvasMousePos.y > screenPos.getCordY() + screenPosOffset.y
-                && canvasMousePos.y < screenPos.getCordY() + screenPosOffset.y + image.height)
+            if (!(elem instanceof DoorView) && elem.assetContains(canvasMousePos.x, canvasMousePos.y))
             {
-                if (elem.getClickMapValueWithGridCoords(canvasMousePos) === 1)
+                if (elem.contains(canvasMousePos.x, canvasMousePos.y))
                 {
                     if (isClicked)
                         elem.onclick(canvasMousePos);
@@ -447,7 +441,7 @@ class MapView extends Views {
                 let screenPos = new PositionClient(screenPosXY.x, screenPosXY.y);
 
                 object.updateScreenPos(screenPos);
-            })
+            });
         }
     }
 
