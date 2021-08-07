@@ -56,6 +56,7 @@ module.exports = class ServerController {
     #interval;
     #currentLecturesData;
     #roomFactory;
+    #moderatorIDs;
 
     //map from socket-id to ppant-id
     #socketMap;
@@ -115,6 +116,8 @@ module.exports = class ServerController {
 
         // Array to hold all participants
         this.#ppants = new Map();
+
+        this.#moderatorIDs = [];
 
 
         this.#init();
@@ -221,6 +224,11 @@ module.exports = class ServerController {
                     ppant.getChatList().forEach(chat => {
                         socket.join(chat.getId());
                     });
+
+                    //Add ppantID to moderator array
+                    if (ppant.getIsModerator() && !this.#moderatorIDs.includes(socket.ppantID)) {
+                        this.#moderatorIDs.push(socket.ppantID);
+                    }
 
                     //Add ppant to conference meeting instance, only relevant when this ppant joined the conference for the first time
                     this.#conferenceMeeting.addMember(ppant.getId());
@@ -1292,10 +1300,38 @@ module.exports = class ServerController {
                 if (!ppant)
                     return;
 
+                let chatListData = [];
+
+                // moderators get all group chats (chats from group instances), no matter if they are part of the group
+                if (Settings.MODS_SEE_EVERYTHING && ppant.getIsModerator()) {
+                    this.#groups.forEach(group => {
+                  
+                        let groupChat = group.getGroupChat();
+                        if (groupChat.getMessageList().length > 0) {
+                            let lastMessage = groupChat.getMessageList()[groupChat.getMessageList().length - 1];
+                            var previewText = lastMessage.getMessageText();
+                            var previewUsername = lastMessage.getUsername();
+                            var timestamp = lastMessage.getTimestamp();
+                        } else {
+                            var previewText = '';
+                            var previewUsername = '';
+                            var timestamp = '';
+                        }
+
+                        chatListData.push({
+                            title: groupChat.getChatName(),
+                            chatId: groupChat.getId(),
+                            timestamp: timestamp,
+                            previewUsername: previewUsername,
+                            previewMessage: previewText
+                        });
+                    })
+                }
+
                 let ppantUsername = ppant.getBusinessCard().getUsername();
 
                 let chatList = ppant.getChatList();
-                let chatListData = [];
+
                 chatList.forEach(chat => {
                     if (chat.getMessageList().length > 0) {
                         let lastMessage = chat.getMessageList()[chat.getMessageList().length - 1];
@@ -1313,13 +1349,16 @@ module.exports = class ServerController {
                         }
                         //check if chat is non empty group chat
                         else {
-                            chatListData.push({
-                                title: chat.getChatName(),
-                                chatId: chat.getId(),
-                                timestamp: lastMessage.getTimestamp(),
-                                previewUsername: lastMessage.getUsername(),
-                                previewMessage: previewText
-                            });
+                            //dont add group chat twice when ppant is moderator and part of a group
+                            if (!chatListData.some(chatObject => chatObject.chatId === chat.getId())) {
+                                chatListData.push({
+                                    title: chat.getChatName(),
+                                    chatId: chat.getId(),
+                                    timestamp: lastMessage.getTimestamp(),
+                                    previewUsername: lastMessage.getUsername(),
+                                    previewMessage: previewText
+                                });
+                            }
                         }
 
                     } else {
@@ -1335,13 +1374,16 @@ module.exports = class ServerController {
                         }
                         //check if chat is groupChat with empty msg list
                         else {
-                            chatListData.push({
-                                title: chat.getChatName(),
-                                chatId: chat.getId(),
-                                timestamp: '',
-                                previewUsername: '',
-                                previewMessage: ''
-                            });
+                            //dont add group chat twice when ppant is moderator and part of a group
+                            if (!chatListData.some(chatObject => chatObject.chatId === chat.getId())) {
+                                chatListData.push({
+                                    title: chat.getChatName(),
+                                    chatId: chat.getId(),
+                                    timestamp: '',
+                                    previewUsername: '',
+                                    previewMessage: ''
+                                });
+                            }
                         }
                     }
 
@@ -1361,7 +1403,7 @@ module.exports = class ServerController {
                 let meetListData = [];
 
                 // moderators get all group meetings, no matter what group they are part of
-                if (ppant.getIsModerator()) {
+                if (Settings.MODS_SEE_EVERYTHING && ppant.getIsModerator()) {
                     this.#groups.forEach(group => {
                         let groupMeeting = group.getMeeting();
                         meetListData.push({
@@ -1450,8 +1492,16 @@ module.exports = class ServerController {
                 if (!participant)
                     return;
 
-                if (participant.isMemberOfChat(chatID)) {
+                //moderators can see chat threads from groups, even if they aren't part of it
+                if ((Settings.MODS_SEE_EVERYTHING && participant.getIsModerator() && this.#isChatFromGroup(chatID)) 
+                    || participant.isMemberOfChat(chatID)) {
                     let chat = participant.getChat(chatID);
+
+                    //the case when ppant is a moderator who is not part of the chat
+                    if (chat === undefined) {
+                        chat = this.#getChatFromGroup(chatID);
+                    }
+
                     let messageInfoData = [];
                     chat.getMessageList().forEach((message) => {
                         messageInfoData.push({
@@ -1563,9 +1613,17 @@ module.exports = class ServerController {
                 let senderUsername = sender.getBusinessCard().getUsername();
                 msgText = msgText.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g, '<br/>');
 
-                if (sender.isMemberOfChat(chatId)) {
-                    //gets list of chat participants to which send the message to
-                    let chatPartnerIDList = sender.getChat(chatId).getParticipantList();
+                //moderators can send messages in chat threads from groups, even if they aren't part of it
+                if ((Settings.MODS_SEE_EVERYTHING && sender.getIsModerator() && this.#isChatFromGroup(chatId)) 
+                    || sender.isMemberOfChat(chatId)) {
+
+                    let chat = sender.getChat(chatId);
+
+                    //the case when sender is a moderator who is not part of the chat
+                    if (chat === undefined) {
+                        chat = this.#getChatFromGroup(chatId);
+                    }
+                    let chatPartnerIDList = chat.getParticipantList();
 
                     //creates a new chat message and stores it into DB.
                     ChatService.createChatMessage(chatId, senderId, senderUsername, msgText, Settings.CONFERENCE_ID, this.#db).then(msg => {
@@ -1581,6 +1639,12 @@ module.exports = class ServerController {
                             }
                         });
 
+                        //keep group chat instances of groups up to date
+                        let groupChat = this.#getChatFromGroup(chatId);
+                        if (groupChat !== undefined) {
+                            groupChat.addMessage(msg);
+                        }
+
                         var msgToEmit = {
                             senderUsername: msg.getUsername(),
                             msgId: msg.getMessageId(),
@@ -1592,6 +1656,18 @@ module.exports = class ServerController {
                         //distribute chat messages after joining the 1to1 chat 
                         socket.broadcast.to(chatId).emit('gotNewChatMessage', msg.getUsername(), chatId);
                         this.#io.in(chatId).emit('newChatMessage', chatId, msgToEmit);
+
+                        //distribute msg to all moderators 
+                        if (Settings.MODS_SEE_EVERYTHING && this.#isChatFromGroup(chatId)) {
+                            this.#moderatorIDs.forEach(moderatorID => {
+                                if (!groupChat.includesChatMember(moderatorID)) {
+                                    let socketID = this.getSocketId(moderatorID);
+                                    if (socketID !== undefined) {
+                                        this.#io.to(socketID).emit('newChatMessage', chatId, msgToEmit);
+                                    }
+                                }
+                            })
+                        }
                     });
                 }
             });
@@ -1612,9 +1688,17 @@ module.exports = class ServerController {
                 if (!requester)
                     return;
 
-                if (requester.isMemberOfChat(chatId)) {
-                    //gets list of chat participants to which send the message to
-                    let chatPartnerIDList = requester.getChat(chatId).getParticipantList();
+                //moderators can see the chat ppant list in chat threads from groups, even if they aren't part of it
+                if ((Settings.MODS_SEE_EVERYTHING && requester.getIsModerator() && this.#isChatFromGroup(chatId)) 
+                    || requester.isMemberOfChat(chatId)) {
+
+                    let chat = requester.getChat(chatId);
+
+                    //the case when requester is a moderator who is not part of the chat
+                    if (chat === undefined) {
+                        chat = this.#getChatFromGroup(chatId);
+                    }
+                    let chatPartnerIDList = chat.getParticipantList();
 
                     let chatParticipantList = [];
 
@@ -2028,7 +2112,7 @@ module.exports = class ServerController {
     };
 
     /**
-     * Gets ID of username based on its username. Only returns an ID if user is currently online
+     * Gets ID of participant based on its username. Only returns an ID if user is currently online
      * @method module:ServerController#getIdOfOnlineParticipant
      * 
      * @param {String} username username
@@ -2048,7 +2132,7 @@ module.exports = class ServerController {
     };
 
     /**
-     * Gets ID of username based on its username. It doesn't matter if user is online or not
+     * Gets ID of participant based on its username. It doesn't matter if user is online or not
      * @method module:ServerController#getIdOfParticipant
      * 
      * @param {String} username username
@@ -2070,6 +2154,29 @@ module.exports = class ServerController {
     }
 
     /**
+     * Gets username of participant based on its ID. It doesn't matter if user is online or not
+     * @method module:ServerController#getUsernameOfParticipant
+     * 
+     * @param {String} ppantID participant ID
+     * 
+     * @return {String|boolean} username, if user exists. False otherwise
+     */
+    async getUsernameOfParticipant(ppantID) {
+        TypeChecker.isString(ppantID);
+
+        let socketID = this.getSocketId(ppantID);
+
+        if (socketID !== undefined) {
+            let socket = this.getSocketObject(socketID);
+            return socket.username;
+
+        //User is currently offline or does not exist, try to get username from DB. Will return false if user was not found
+        } else {
+            return ParticipantService.getUsername(ppantID, Settings.CONFERENCE_ID, this.#db);
+        }
+    }
+
+    /**
      * Gets all rooms of current conference
      * @method module:ServerController#getRooms
      * 
@@ -2085,12 +2192,25 @@ module.exports = class ServerController {
      * @method module:ServerController#getGroups
      * 
      * @return {Group[]} groups
-     * 
      */
     getGroups() {
         return Array.from(this.#groups.values());
     }
 
+    /**
+     * Gets group instance with passed groupName 
+     * @method module:ServerController#getGroup
+     * 
+     * @param {String} groupName group name
+     * 
+     * @return {?Group} group, if group with passed name exists. Undefined otherwise
+     */
+    getGroup(groupName) {
+        TypeChecker.isString(groupName);
+        
+        return this.#groups.get(groupName);
+    }
+    
     /**
      * Gets all participant instances that are currently online
      * @method module:ServerController#getOnlineParticipants
@@ -2429,8 +2549,62 @@ module.exports = class ServerController {
                 //Emit to ppant that his mod state changed and notfiy him
                 if (modState) {
                     var msg = socket.messages.mod.youAreNowMod;
+                    this.#moderatorIDs.push(ppantID);
+
+                    if (Settings.MODS_SEE_EVERYTHING) {
+                        //ppant should now see chats and meetings of all groups, even if he is not part of
+                        this.#groups.forEach(group => {
+                            if (!group.includesGroupMember(ppantID)) {
+
+                                let groupChat = group.getGroupChat();
+                                if (groupChat.getMessageList().length > 0) {
+                                    let lastMessage = groupChat.getMessageList()[groupChat.getMessageList().length - 1];
+                                    var previewMessage = lastMessage.getMessageText();
+                                    var previewUsername = lastMessage.getUsername();
+                                } else {
+                                    var previewMessage = '';
+                                    var previewUsername = '';
+                                }
+                                let chatData = {
+                                    title: groupChat.getChatName(),
+                                    chatId: groupChat.getId(),
+                                    timestamp: '', //please dont change the timestamp here
+                                    previewUsername: previewUsername,
+                                    previewMessage: previewMessage,
+                                    areFriends: true,
+                                    friendRequestSent: true,
+                                    partnerId: undefined,
+                                    groupChat: true,
+                                    inviteButton: false,
+                                    leaveButton: false,
+                                    messages: []
+                                };
+                                socket.emit('newChat', chatData, false);
+
+                                let meeting = group.getMeeting();
+                                let meetingData = {
+                                    id: meeting.getId(),
+                                    domain: Settings.DEFAULT_MEETINGDOMAIN,
+                                    name: meeting.getName(),
+                                    password: meeting.getPassword(),
+                                };
+                                socket.emit('newMeeting', meetingData);
+                            }
+                        })
+                    }
                 } else {
                     var msg = socket.messages.mod.youAreNoLongerMod;
+                    this.#moderatorIDs.splice(this.#moderatorIDs.indexOf(ppantID), 1)
+
+                    if (Settings.MODS_SEE_EVERYTHING) {
+                        //ppant should no longer see chats and meetings he is not part of
+                        this.#groups.forEach(group => {
+                            if (!group.includesGroupMember(ppantID)) {
+                                socket.emit('leave chat', group.getGroupChat().getId());
+                                socket.emit('leave meeting', group.getMeeting().getId());
+                            }
+                        })
+                    }
                 }
                 this.sendNotification(socketID, msg);
                 socket.emit('your mod state changed', modState);
@@ -3060,6 +3234,12 @@ module.exports = class ServerController {
         
                             existingChatParticipantChat.addParticipant(newChatPartnerID);
                             existingChatParticipantChat.addMessage(msg);
+
+                            //keep group chat instances of groups up to date
+                            let groupChat = this.#getChatFromGroup(chatId);
+                            if (groupChat !== undefined) {
+                                groupChat.addMessage(msg);
+                            }
         
                             if (existingChatParticipantChat instanceof GroupChat) {
                                 this.#io.to(this.getSocketId(existingChatParticipantID)).emit('addToChatParticipantList', chatId, newChatPartnerUsername);
@@ -3138,6 +3318,12 @@ module.exports = class ServerController {
                     if (chatPartnerChat !== undefined) {
                         chatPartnerChat.addMessage(msg);
                         chatPartnerChat.removeParticipant(memberID);
+                    }
+
+                    //keep group chat instances of groups up to date
+                    let groupChat = this.#getChatFromGroup(chatID);
+                    if (groupChat !== undefined) {
+                        groupChat.addMessage(msg);
                     }
 
                     if (chatPartnerChat instanceof GroupChat) {
@@ -3220,6 +3406,23 @@ module.exports = class ServerController {
             }
         }
         return false;
+    }
+
+    /**
+     * @private Gets chat with chatId if chat is a chat from an existing group
+     * 
+     * @method module:ServerController#getChatFromGroup
+     * 
+     * @param {String} chatId chatId
+     * 
+     * @return {?GroupChat} group chat if chat with that Id is a group chat, undefined otherwise
+     */
+    #getChatFromGroup = function(chatId) {
+        for (const group of this.#groups.values()) {
+            if (group.getGroupChat().getId() === chatId) {
+                return group.getGroupChat();
+            }
+        }
     }
 
     /**
@@ -3504,21 +3707,19 @@ module.exports = class ServerController {
         let enterPosition = ppant.getPosition();
         let currentRoomId = enterPosition.getRoomId();
         let currentRoom = this.getRoomById(currentRoomId);
+        let targetRoom = this.getRoomById(targetRoomId);
 
         //prevents server to crash when client emits a non existing room ID
-        if (!this.getRoomById(targetRoomId)) {
+        if (!targetRoom) {
             console.log('Client emitted wrong Room-ID!');
             return;
         }
-
-        let targetRoom = this.getRoomById(targetRoomId);
-        let targetRoomType = targetRoom.getTypeOfRoom();
 
         //get door from current room to target room
         let door = currentRoom.getDoorTo(targetRoomId);
 
         if (!door) {
-            console.log('There is no door from ' + currentRoom.getTypeOfRoom() + ' to ' + targetRoomType + '!');
+            console.log('There is no door from ' + currentRoom.getRoomName() + ' to ' + targetRoom.getRoomName() + '!');
             return;
         }
 

@@ -44,6 +44,10 @@ button:focus {
   border-bottom-width: 0.125rem;
 }
 
+.form-control {
+  border: 0.0625rem solid #ced4da;
+}
+
 .form-control:focus {
   outline: none !important;
   -webkit-appearance:none !important;
@@ -92,14 +96,14 @@ button:focus {
 }
 
 .list-group-item:first-child { 
-  border-top: 1pt solid var(--white-color) !important;
+  border-top: 0.0625rem solid var(--white-color) !important;
 }
 
 .list-group-item {
   border-top: none !important;
   border-left: none !important;
   border-right: none !important;
-  border-bottom: 1pt solid var(--white-color) !important;
+  border-bottom: 0.0625rem solid var(--white-color) !important;
   border-radius: 0rem 0rem 0rem 0rem !important;
   background: none;
 }
@@ -208,9 +212,20 @@ button:focus {
   height: 3.125rem;
 }
 
+.tooltip {
+  overflow: hidden;
+}
+
 .tooltip-inner {
   background: none;
   color: var(--white-color);
+  max-width: 19.5rem;
+  max-height: 42vh;
+}
+
+.tooltip-top {
+  padding: 0 !important;
+  background: var(--black-color);
 }
 
 .carousel-control-prev-icon,

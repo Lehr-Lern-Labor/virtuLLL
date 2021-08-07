@@ -7,6 +7,7 @@
 class NotificationBar extends ViewWithLanguageData {
 
     eventManager;
+    notificationSound;
 
     /**
      * Creates an instance of NotificationBar
@@ -24,6 +25,7 @@ class NotificationBar extends ViewWithLanguageData {
         NotificationBar.instance = this;
 
         this.eventManager = eventManager;
+        this.notificationSound = new Audio('../client/audio/notification_sound.wav');
 
         $('#unreadNotif').text($("#notifBar > div").length);
 
@@ -218,32 +220,6 @@ class NotificationBar extends ViewWithLanguageData {
     }
 
     /**
-     * Gets minimized meeting notif id
-     * 
-     * @param {String} meetingId meeting id
-     * @returns minimized meeting notif id
-     */
-    getMinimizedMeetingId(meetingId) {
-        return 'runningMeeting' + meetingId;
-    }
-
-    /**
-     * Draws minimized meeting notification
-     * 
-     * @param {Object} meeting minimizedmeeting
-     */
-    drawMinimizedMeeting(meeting) {
-        const id = this.getMinimizedMeetingId(meeting.id);
-        this.addNewNotificationDiv(id, `${this.languageData.inCall.replace('meetingNamePlaceholder', meeting.name)}`, false);
-
-        $('#' + id).on('click', (e) => {
-            $('#meetingWindow').show();
-            $('#meetingWindowWait').show();
-            return this.eventManager.handleMeetingJoined(meeting);
-        });
-    }
-
-    /**
      * Adds new notification div to the notif bar
      * 
      * @param {String} id notification id
@@ -275,6 +251,7 @@ class NotificationBar extends ViewWithLanguageData {
         }
 
         $('#notifBar').scrollTop(0);
+        this.notificationSound.play();
     }
 
     removeNotifDiv(id) {

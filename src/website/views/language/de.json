@@ -83,6 +83,13 @@
         "sendMessage": "Nachricht senden"
     },
 
+    "aboutUs": {
+        "whatIsVimsu": "Was ist VIMSU?",
+        "thisIsVimsu": "VIMSU (Virtual Interactive Meeting SimUlator) ist eine als Reaktion auf die Coronapandemie enstandene Software, deren ursprüngliches Ziel es war, wissenschaftliche Konferenzen oder ähnliche Veranstaltungen virtuell mit Telepräsenz durchzuführen. In Zusammenarbeit mit dem Lehr-Lern-Labor wird es derzeit vor allem für Workshops, die Schülerinnen und Schüler Themen der Informatik näher bringen sollen, eingesetzt. Dies geschieht in Form eines interaktiven, virtuellen Veranstaltungsgeländes. Die Teilnehmerinnen und Teilnehmer steuern dabei in Echtzeit einen Avatar, der sie virtuell auf dem Gelände repräsentiert und mit dem es möglich ist, mit anderen Avataren und virtuellen Objekten zu interagieren.",
+        "whoAreWe": "Wer sind wir?",
+        "thisIsUs": "Wir sind 5 Informatikstudenten (Eric Ritte, Niklas Schmidt, Laura Traub, Klaudia Leo, Philipp Schumacher), die VIMSU als Teil unseres Bachelor Studiums im Zuge der Lehrveranstaltung „Praxis der Softwareentwicklung“ im Sommersemester 2020 am Chair of Dependable Nano Computing (CDNC), Karlsruher Institut für Technologie (KIT) entwickelt haben. Seit Februar 2021 arbeiten wir an einer Erweiterung für VIMSU, die den Einsatz im Kontext eines Workshops ermöglichen soll."
+    },
+
     "forgotPassword": {
         "linkSent": "Wir haben einen Link an your_email gesendet, mit dem du dein Passwort zurücksetzen können.",
         "resetPassword": "Passwort zurücksetzen"
@@ -343,7 +350,8 @@
                 "noMeetings": "Kein Meeting gefunden.",
                 "tooltips": {
                     "openMeeting": "Meeting öffnen",
-                    "minimizeMeeting": "Meeting minmieren, Sprachchat bleibt aktiv"
+                    "minimizeMeeting": "Meeting minimieren, Sprachchat bleibt aktiv",
+                    "maximizeMeeting": "Meeting maximieren"
                 }
             },
             "npcSays": "npcNamePlaceholder sagt...",
@@ -363,7 +371,7 @@
                         "\\door <command>\nFührt Türbefehl <command> aus. Verfügbare Befehle: close, closeallfor, closefor, log, open, openallfor, openfor, setcode.",
                         "\\global <message>\nSchickt eine Nachricht in den Global Chat. Diese Nachricht wird jedem Teilnehmer als Pop-Up angezeigt.",
                         "\\group\nZeigt eine Liste aller Gruppenbefehle mit Beschreibung an.",
-                        "\\group <command>\nFührt Gruppenbefehl <command> aus. Verfügbare Befehle: add, create, delete, deleteall, log, rm.",
+                        "\\group <command>\nFührt Gruppenbefehl <command> aus. Verfügbare Befehle: add, create, delete, deleteall, log, rm, userlog.",
                         "\\help\nDieser Befehl. Zeigt eine Liste aller Befehle mit Beschreibung an.",
                         "\\mod <username>\nSetzt einen normalen Nutzer mit Nutzernamen <username> als Moderator.",
                         "\\unmod <username>\nSetzt einen Moderator mit Nutzernamen <username> zu einem normalen Nutzer.",
@@ -396,7 +404,8 @@
                         "\\group delete <groupName>\nLöscht die Gruppe mit dem eindeutigen Namen <groupName>.",
                         "\\group deleteall\nLöscht alle derzeit existierenden Gruppen.",
                         "\\group log\nGibt einen Log aller existierenden Gruppen mit Gruppenname und Gruppenfarbe zurück.",
-                        "\\group rm <groupName> <list of usernames>\nEntfernt alle Nutzer mit Nutzername in <list of usernames> aus der Gruppe <groupName>, alle Nutzernamen getrennt durch ein Leerzeichen."]
+                        "\\group rm <groupName> <list of usernames>\nEntfernt alle Nutzer mit Nutzername in <list of usernames> aus der Gruppe <groupName>, alle Nutzernamen getrennt durch ein Leerzeichen.",
+                        "\\group userlog <groupName>\nZeigt eine Liste aller Gruppenmitglieder der Gruppe <groupName> mit ihrem Nutzernamen an."]
                     },
                 "listOfMessageCommands": {
                     "header": "Liste aller Message-Befehle",
@@ -521,7 +530,7 @@
                 }
             },
             "door": {
-                "unknownCoomand": {
+                "unknownCommand": {
                     "header": "Unbekannter Türbefehl",
                     "body": "Du hast einen unbekannten Befehl eingegeben. Du kannst '\\door' eingeben, um eine Übersicht über alle verfügbaren Türbefehle mit Beschreibung zu erhalten."
                 },
@@ -586,6 +595,10 @@
                 "invalidName": {
                     "header": "Ungültiger Gruppenname",
                     "body": "Der eingegebene Gruppenname ist schon vergeben. Bitte versuche es erneut."
+                },
+                "noNamePassed": {
+                    "header": "Kein Gruppenname übergeben",
+                    "body": "Vergiss nicht einen Gruppennamen zu übergeben. Bitte versuche es erneut."
                 },
                 "notExists": {
                     "header": "Gruppe existiert nicht",
@@ -676,6 +689,7 @@
                     "open": "geöffnet"
                 },
                 "group": {
+                    "userLogHeader": "Liste aller Teilnehmer in Gruppe groupNamePlaceholder",
                     "groupLogHeader": "Liste aller existierenden Gruppen",
                     "groupLogBodyPart": "Gruppe groupNamePlaceholder hat Gruppenfarbe colorPlaceholder."
                 },

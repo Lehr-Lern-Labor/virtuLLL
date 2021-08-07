@@ -83,6 +83,13 @@
         "sendMessage": "Send message"
     },
 
+    "aboutUs": {
+        "whatIsVimsu": "What is VIMSU?",
+        "thisIsVimsu": "VIMSU (Virtual Interactive Meeting SimUlator) is a software that was developed in response to the corona pandemic and originally was intended to allow scientific conferences and similar events to be held virtually with telepresence. In cooperation with Lehr-Lern-Labor, VIMSU currently mainly is used for workshops that have the purpose to get school students closer to computer science related topics. This takes place in the form of an interactive virtual event area. The participants are represented by virtual avatars that can be controlled in real-time. This makes it possible to interact with other avatars and virtual objects.",
+        "whoAreWe": "Who are we?",
+        "thisIsUs": "We are 5 computer science students (Eric Ritte, Niklas Schmidt, Laura Traub, Klaudia Leo, Philipp Schumacher) that developed VIMSU within the context of our bachelor degree as part of the course “Software Engineering Practice” in summer semester 2020 at the Chair of Dependable Nano Computing (CDNC), Karlsruher Institut für Technologie (KIT). Since february 2021, we have been working on an extension that makes it possible to use VIMSU in a workshop context."
+    },
+
     "forgotPassword": {
         "linkSent": "We have sent you a link to your_email to reset your password.",
         "resetPassword": "Reset Password"
@@ -343,7 +350,8 @@
                 "noMeetings": "No meetings found.",
                 "tooltips": {
                     "openMeeting": "Open meeting",
-                    "minimizeMeeting": "Minimize meeting, voice chat will stay active"
+                    "minimizeMeeting": "Minimize meeting, voice chat will stay active",
+                    "maximizeMeeting": "Maximize meeting"
                 }
             },
             "npcSays": "npcNamePlaceholder says...",
@@ -363,7 +371,7 @@
                         "\\door <command>\nExecutes door command <command>. Available commands: close, closeallfor, closefor, log, open, openallfor, openfor, setcode.",
                         "\\global <message>\nPost a message into the global chat. It will display in every participants game-view as a pop-up.",
                         "\\group\nDisplays a list of all group commands and how to use them.",
-                        "\\group <command>\nExecutes group command <command>. Available commands: add, create, delete, deleteall, log, rm.",
+                        "\\group <command>\nExecutes group command <command>. Available commands: add, create, delete, deleteall, log, rm, userlog.",
                         "\\help\nThis command. Displays a list of all commands and how to use them.",
                         "\\mod <username>\nSets a normal user with <username> to a moderator.",
                         "\\unmod <username>\nSets a moderator with <username> to a normal user.",
@@ -396,7 +404,8 @@
                         "\\group delete <groupName>\nDeletes group with the unique name <groupName>.",
                         "\\group deleteall\nDeletes all exisiting groups.",
                         "\\group log\nWill show a log of all existing groups with their group name and group color.",
-                        "\\group rm <groupName> <list of usernames>\nRemoves all users with username in <list of usernames> from group with name <groupName>, each username separated from the next one by a whitespace character."]
+                        "\\group rm <groupName> <list of usernames>\nRemoves all users with username in <list of usernames> from group with name <groupName>, each username separated from the next one by a whitespace character.",
+                        "\\group userlog <groupName>\nDisplays a list of all members of group <groupName> with their username."]
                 },
                 "listOfMessageCommands": {
                     "header": "List of Message Commands",
@@ -521,7 +530,7 @@
                 }
             },
             "door": {
-                "unknownCoomand": {
+                "unknownCommand": {
                     "header": "Unrecognized door command",
                     "body": "You entered an unrecognized command. Enter '\\door' to receive an overview of all door commands and how to use them."
                 },
@@ -586,6 +595,10 @@
                 "invalidName": {
                     "header": "Invalid group name",
                     "body": "The entered group name is already used by another group. Please try again."
+                },
+                "noNamePassed": {
+                    "header": "No group name passed",
+                    "body": "Don't forget to pass a group name. Please try again."
                 },
                 "notExists": {
                     "header": "Group does not exist",
@@ -676,6 +689,7 @@
                     "open": "open"
                 },
                 "group": {
+                    "userLogHeader": "List of all participants in group groupNamePlaceholder",
                     "groupLogHeader": "List of all existing groups",
                     "groupLogBodyPart": "Group groupNamePlaceholder has group color colorPlaceholder."
                 },

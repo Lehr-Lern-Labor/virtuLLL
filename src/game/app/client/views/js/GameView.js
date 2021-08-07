@@ -146,37 +146,46 @@ class GameView {
         $('#avatarCanvas').on('mousemove', (e) => {
 
             //Translates the current mouse position to the mouse position on the canvas.
-            var newPosition = this.gameEngine.translateMouseToCanvasPos(canvas, e);
+            let newPosition = this.gameEngine.translateMouseToCanvasPos(canvas, e);
 
-            var selectedTileCords = this.gameEngine.translateMouseToTileCord(newPosition);
+            let selectedTileCords = this.gameEngine.translateMouseToTileCord(newPosition);
 
-            if (selectedTileCords !== undefined && this.currentMapView.isCursorOnPlayGround(selectedTileCords.x, selectedTileCords.y)) {
-                canvas.style.cursor = (this.currentMapView.checkTileOrObjectIsClickable(selectedTileCords)) ? "pointer" : "default";
+            if (selectedTileCords !== undefined && this.currentMapView.isCursorOnPlayGround(selectedTileCords.x, selectedTileCords.y))
+            {
+                if (!this.currentMapView.selectionOnMap)
+                    this.currentMapView.selectionOnMap = true;
 
-                this.npcAvatarViews.forEach(npcView => {
-                    if (npcView.getGridPosition().getCordX() === selectedTileCords.x
-                        && npcView.getGridPosition().getCordY() === selectedTileCords.y - Settings.MAP_BLANK_TILES_LENGTH) {
-                        canvas.style.cursor = "pointer";
-                    }
-                });
+                this.currentMapView.updateSelectedTile(selectedTileCords);
 
-                this.getAnotherParticipantAvatarViews().forEach(ppantView => {
-                    if (ppantView.getGridPosition().getCordX() === selectedTileCords.x
-                        && ppantView.getGridPosition().getCordY() === selectedTileCords.y - Settings.MAP_BLANK_TILES_LENGTH) {
-                        canvas.style.cursor = "pointer";
-                    }
-                });
+                if (this.currentMapView.findClickableTileOrObject(selectedTileCords, false))
+                    return canvas.style.cursor = 'pointer';
 
-                this.currentMapView.selectionOnMap = true;
-            } else if (this.currentMapView.isCursorOutsidePlayGround(selectedTileCords.x, selectedTileCords.y)) {
-                this.currentMapView.selectionOnMap = false;
-                this.currentMapView.findClickableElementOutsideMap(newPosition, false, canvas);
-            } else {
-                this.currentMapView.selectionOnMap = false;
-                canvas.style.cursor = "default";
+                for (let i = 0, len = this.npcAvatarViews.length; i < len; i++)
+                {
+                    let npcView = this.npcAvatarViews[i];
+                    if (npcView.getGridPosition().getCordX() === selectedTileCords.x && npcView.getGridPosition().getCordY() === selectedTileCords.y - Settings.MAP_BLANK_TILES_LENGTH)
+                        return canvas.style.cursor = 'pointer';
+                }
+
+                for (let i = 0, len = this.anotherParticipantAvatarViews.length; i < len; i++)
+                {
+                    let ppantView = this.anotherParticipantAvatarViews[i];
+                    if (ppantView.getGridPosition().getCordX() === selectedTileCords.x && ppantView.getGridPosition().getCordY() === selectedTileCords.y - Settings.MAP_BLANK_TILES_LENGTH)
+                        return canvas.style.cursor = 'pointer';
+                }
             }
+            else
+            if (this.currentMapView.isCursorOutsidePlayGround(selectedTileCords.x, selectedTileCords.y))
+            {
+                if (this.currentMapView.selectionOnMap)
+                    this.currentMapView.selectionOnMap = false;
+                if (this.currentMapView.findClickableElementOutsideMap(newPosition, false))
+                    return canvas.style.cursor = 'pointer';
+            }
+            else
+                this.currentMapView.selectionOnMap = false;
 
-            this.currentMapView.updateSelectedTile(selectedTileCords);
+            canvas.style.cursor = 'default';
         });
 
         //Handles mouse click on canvas
@@ -196,7 +205,6 @@ class GameView {
 
             clearTimeout(timeout);
             if (tapLength < 500 && tapLength > 0) {
-                this.currentMapView.selectionOnMap = true;
                 e.pageX = e.changedTouches[e.changedTouches.length-1].pageX;
                 e.pageY = e.changedTouches[e.changedTouches.length-1].pageY;
 
@@ -229,7 +237,7 @@ class GameView {
         if (this.currentMapView.isCursorOnPlayGround(selectedTileCords.x, selectedTileCords.y)) {
          
             //first check if click is on door or clickable object in room (not existing at this point)
-            this.currentMapView.findAndClickTileOrObject(selectedTileCords, true, canvas);
+            this.currentMapView.findClickableTileOrObject(selectedTileCords, true);
 
             //then, check if there is an avatar at this position
             this.getAnotherParticipantAvatarViews().forEach(ppantView => {
@@ -248,7 +256,7 @@ class GameView {
             });
         }//check if clicked tile is outside the walkable area
         else if (this.currentMapView.isCursorOutsidePlayGround(selectedTileCords.x, selectedTileCords.y)) {
-            this.currentMapView.findClickableElementOutsideMap(newPosition, true, canvas);
+            this.currentMapView.findClickableElementOutsideMap(newPosition, true);
         }
     }
 
@@ -266,6 +274,8 @@ class GameView {
 
         //check if clicked tile is a valid walkable tile
         if (this.currentMapView.isCursorOnPlayGround(selectedTileCords.x, selectedTileCords.y)) {
+            if (!this.currentMapView.selectionOnMap) this.currentMapView.selectionOnMap = true;
+
             //update Position of tile selection marker. Needed for double touch event.
             this.currentMapView.updateSelectedTile(selectedTileCords);
 
@@ -291,17 +301,17 @@ class GameView {
     /**
      * Adds view instance to list of views to be updated steadily
      * 
-     * @param {Views} viewInstance view instance
+     * @param {AbstractView} viewInstance view instance
      */
     addToUpdateList = function (viewInstance) {
         if (viewInstance instanceof Array) {
             var i;
             for (i = 0; i < viewInstance.length; i++) {
-                TypeChecker.isInstanceOf(viewInstance[i], Views);
+                TypeChecker.isInstanceOf(viewInstance[i], AbstractView);
             }
         }
         else {
-            TypeChecker.isInstanceOf(viewInstance, Views);
+            TypeChecker.isInstanceOf(viewInstance, AbstractView);
         }
 
         if (!this.updateList.includes(viewInstance)) {
@@ -447,7 +457,7 @@ class GameView {
     }
 
     /**
-     * Initializes room view when participant enters Room
+     * Initializes room view when own avatar enters Room
      * 
      * @param {Object[]} assetPaths asset paths
      * @param {number[][]} map map
@@ -564,7 +574,6 @@ class GameView {
 
         this.anotherParticipantAvatarViews[index].updateWalking(isMoving);
         this.anotherParticipantAvatarViews[index].updateCurrentAnimation();
-        this.anotherParticipantAvatarViews[index].draw();
     }
 
     /**
@@ -1027,13 +1036,14 @@ class GameView {
      * Adds new chat to chat list
      * 
      * @param {Object} chat chat
-     * @param {*} openNow ture if open window now, otherwise false
+     * @param {boolean} openNow true if open window now, otherwise false
+     * @param {String} ownUsername current participant's username
      */
-    addNewChat(chat, openNow) {
+    addNewChat(chat, openNow, ownUsername) {
         if ($('#chatListModal').is(':visible')) {
             this.chatListView.addNewChat(chat);
         }
-        this.initChatThreadView(chat, openNow);
+        this.initChatThreadView(chat, openNow, ownUsername);
     };
 
     /**
@@ -1320,32 +1330,6 @@ class GameView {
         TypeChecker.isString(meetingName);
         TypeChecker.isString(meetingID);
         this.notifBar.drawNewMeeting(meetingName, meetingID);
-    }
-
-    /**
-     * Draws minimized meeting notification
-     * 
-     * @param {Object} meeting minimized meeting
-     */
-    drawMinimizedMeetingNotif(meeting) {
-        TypeChecker.isInstanceOf(meeting, Object);
-        TypeChecker.isString(meeting.id);
-        TypeChecker.isString(meeting.domain);
-        TypeChecker.isString(meeting.name);
-        TypeChecker.isString(meeting.password);
-
-        this.notifBar.drawMinimizedMeeting(meeting);
-    }
-
-    /**
-     * Removes minimized meeting notification
-     * 
-     * @param {String} meetingId previous minimized meeting id
-     */
-     removeMinimizedMeetingNotif(meetingId) {
-        TypeChecker.isString(meetingId);
-
-        this.notifBar.removeNotifDiv(this.notifBar.getMinimizedMeetingId(meetingId));
     }
 
     /**

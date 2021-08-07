@@ -4,7 +4,7 @@
  * @author Eric Ritte, Klaudia Leo, Laura Traub, Niklas Schmidt, Philipp Schumacher
  * @version 1.0.0
  */
-class MapView extends Views {
+class MapView extends AbstractView {
     map;
     objectMap;
     clickableTiles;
@@ -137,6 +137,7 @@ class MapView extends Views {
         this.gameObjectViewFactory = new GameObjectViewFactory(assetImages, this.gameEngine, this.eventManager);
 
         this.buildMap();
+        this.refreshDisplay();
     }
 
     /**
@@ -146,12 +147,14 @@ class MapView extends Views {
 
         this.tileIndicator = this.gameObjectViewFactory.createGameObjectView(GameObjectType.SELECTED_TILE, new PositionClient(0, 2), "tileselected_default", false, false);
 
+        var mapObject;
+        var gameObject
+
         for (var row = (this.xNumTiles - 1); row >= 0; row--) {
             for (var col = 0; col < this.yNumTiles; col++) {
 
-                var position = new PositionClient(row, col);
-
-                var mapObject = this.map[row][col];
+                const position = new PositionClient(row, col);
+                mapObject = this.map[row][col];
                 if (mapObject !== null) {
 
                     if (mapObject instanceof Array) {
@@ -163,7 +166,7 @@ class MapView extends Views {
                     }
                 }
 
-                var gameObject = this.objectMap[row][col];
+                gameObject = this.objectMap[row][col];
                 if (gameObject !== null) {
                     if (gameObject instanceof Array) {
                         gameObject.forEach(object => {
@@ -174,8 +177,6 @@ class MapView extends Views {
                 }
             };
         };
-
-        this.refreshDisplay();
     }
 
     /**
@@ -224,56 +225,59 @@ class MapView extends Views {
     }
 
     /**
-     * checks if tile or object is clickable at the selected position 
-     * 
-     * @param {Object} selectedTileCords selected tile coordinates
-     * 
-     * @return {boolean} true if the selected tile or object is clickable, false otherwise
-     */
-    checkTileOrObjectIsClickable(selectedTileCords) {
-        let tile = this.map[selectedTileCords.x][selectedTileCords.y];
-        let object = this.objectMap[selectedTileCords.x][selectedTileCords.y];
-        let result = false;
-
-        //This needs a rewrite if gameobjects are not static anymore.
-        if (tile instanceof Array) {
-            tile.forEach(tile => {
-                if ( tile !== null && (tile instanceof DoorClient || tile.getIsClickable()) )
-                    result = true;
-            });
-        } else if (object instanceof Array) {
-            object.forEach(object => {
-                if ( object !== null && object.getIsClickable() )
-                    result = true;
-            });
-        } else if ( tile !== null && (tile instanceof DoorClient || tile.getIsClickable()) || (object !== null && object.getIsClickable()) )
-                    result = true;
-        return result;
-    }
-
-    /**
-     * finds the tile/object in the list of clickable tiles/objects
+     * Checks if tile or object is clickable at the selected position.
+     * In case a click was performed, finds the tile/object in the list of clickable tiles/objects
      * and calls it's onclick function.
      * 
      * @param {Object} selectedTileCords selected tile coordinates
+     * @param {boolean} isClicked true if element is clicked
+     * 
+     * @return {boolean} true if the selected tile or object is clickable, false otherwise
      */
-    findAndClickTileOrObject(selectedTileCords) {
+    findClickableTileOrObject(selectedTileCords, isClicked) {
         let tile = this.map[selectedTileCords.x][selectedTileCords.y];
         let object = this.objectMap[selectedTileCords.x][selectedTileCords.y];
 
-        if (tile instanceof Array) {
-            tile.forEach(tile => {
+        if (tile instanceof Array)
+        {
+            for (let i = 0, len = tile.length; i < len; i++)
+            {
+                let elem = tile[i];
+                if (elem !== null && (elem instanceof DoorClient || elem.getIsClickable()))
+                {
+                    if (isClicked)
+                        this.findTileAndClick(elem);
+                    return true;
+                }
+            }
+        }
+        else if (tile !== null && (tile instanceof DoorClient || tile.getIsClickable()))
+        {
+            if(isClicked)
                 this.findTileAndClick(tile);
-            });
-        } else
-            this.findTileAndClick(tile);
+            return true;
+        }
 
-        if (object instanceof Array) {
-            object.forEach(obj => {
-                this.findObjectAndClick(obj);
-            });
-        } else
-            this.findObjectAndClick(object);
+        if (object instanceof Array)
+        {
+            for (let i = 0, len = object.length; i < len; i++)
+            {
+                let elem = object[i];
+                if (elem !== null && elem.getIsClickable())
+                {
+                    if(isClicked)
+                        this.findObjectAndClick(elem);
+                    return true;
+                }
+            }
+        }
+        else if (object !== null && object.getIsClickable())
+        {
+            if(isClicked)
+                this.findObjectAndClick(object);
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -282,19 +286,23 @@ class MapView extends Views {
      * @param {number} tile selected tile
      */
     findTileAndClick = function(tile) {
-        
-        if (tile !== null && (tile instanceof DoorClient || tile.getIsClickable())) {
-            this.clickableTiles.forEach(viewObject => {
-                let tileName = tile.getName();
-                let viewObjectName = viewObject.getName();
+        for (let i = 0, len = this.clickableTiles.length; i < len; i++)
+        {
+            let viewObject = this.clickableTiles[i];
+            let tileName = tile.getName();
+            let viewObjectName = viewObject.getName();
 
-                if (tile instanceof DoorClient && tileName === viewObjectName) {
+            if (tile instanceof DoorClient && tileName === viewObjectName) {
+                let correctPosition = tile.getMapPosition().getCordX() === viewObject.getGridPosition().getCordX() && 
+                    tile.getMapPosition().getCordY() + Settings.MAP_BLANK_TILES_WIDTH === viewObject.getGridPosition().getCordY();
+
+                    if (correctPosition) {
                         viewObject.onclick(tile.getTargetRoomId());
-                }
-                else if (tile instanceof GameObjectClient && tileName === viewObjectName) {
-                        viewObject.onclick();
-                }
-            });
+                    }
+            }
+            else
+                if (tile instanceof GameObjectClient && tileName === viewObjectName)
+                    viewObject.onclick();
         }
     }
 
@@ -304,15 +312,12 @@ class MapView extends Views {
      * @param {number} object selected object
      */
     findObjectAndClick = function(object) {
-        if (object !== null && object.getIsClickable()) {
+        let viewObject = this.clickableObjects.find(viewObject => {
+            return object instanceof GameObjectClient && object.getId() === viewObject.getGameObjectID();
+        });
 
-            let viewObject = this.clickableObjects.find(viewObject => {
-                return object instanceof GameObjectClient && object.getId() === viewObject.getGameObjectID();
-            });
-
-            if (viewObject != undefined) {
-                this.eventManager.handleMoveToObjectAndClick(viewObject);
-            }
+        if (viewObject != undefined) {
+            this.eventManager.handleMoveToObjectAndClick(viewObject);
         }
     }
 
@@ -321,27 +326,25 @@ class MapView extends Views {
      * 
      * @param {Object} canvasMousePos mouse position
      * @param {boolean} isClicked true if element is clicked
-     * @param {Canvas} canvas canvas
+     * @return {boolean} true if a clickable element outside map is found
      */
-    findClickableElementOutsideMap(canvasMousePos, isClicked, canvas) {
-        canvas.style.cursor = 'default';
-
-        this.clickableTiles.forEach(elem => {
-            let screenPos = elem.getScreenPosition();
-            let screenPosOffset = elem.getScreenPositionOffset();
-            let image = elem.getObjectImage();
+    findClickableElementOutsideMap(canvasMousePos, isClicked) {
+        for (let i = 0; i < this.clickableTiles.length; i++)
+        {
+            let elem = this.clickableTiles[i];
 
             //determines if mouse position on canvas is inside the asset image.
-            if (!(elem instanceof DoorView) && canvasMousePos.x > screenPos.getCordX() + screenPosOffset.x
-                && canvasMousePos.x < screenPos.getCordX() + screenPosOffset.x + image.width
-                && canvasMousePos.y > screenPos.getCordY() + screenPosOffset.y
-                && canvasMousePos.y < screenPos.getCordY() + screenPosOffset.y + image.height) {
+            if (!(elem instanceof DoorView) && elem.assetContains(canvasMousePos.x, canvasMousePos.y))
+            {
+                if (elem.contains(canvasMousePos.x, canvasMousePos.y))
+                {
                     if (isClicked)
                         elem.onclick(canvasMousePos);
-                    else
-                        canvas.style.cursor = (elem.getClickMapValueWithGridCoords(canvasMousePos) === 1) ? 'pointer' : 'default';
+                    return true;
+                }
             } 
-        });
+        }
+        return false;
     }
 
     /**
@@ -444,7 +447,7 @@ class MapView extends Views {
                 let screenPos = new PositionClient(screenPosXY.x, screenPosXY.y);
 
                 object.updateScreenPos(screenPos);
-            })
+            });
         }
     }
 

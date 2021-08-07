@@ -57,10 +57,12 @@ class EventManager {
 
         var walkPath = AStar.astarSearch(occupationMap, "manhattan", false);
 
-        if ( walkPath == null) {
+        if ( walkPath == null)
+        {
             this.handlingPlaygroundClicked = false;
             return 0;
-        } else
+        }
+        else
         {
             var prev = startPos;
 
@@ -102,7 +104,7 @@ class EventManager {
 
                 prev = next;
 
-            })
+            });
             return walkPath.length;
         }
     }
@@ -222,24 +224,6 @@ class EventManager {
      */
     handleMeetingJoined(meeting) {
         this.clientController.handleFromViewJoinMeeting(meeting);
-    }
-
-    /**
-     * called from view when a meeting is minimized
-     * 
-     * @param {Object} meeting minimized meeting
-     */
-     handleAddMinimizedMeetingNotif(meeting) {
-        this.clientController.handleFromViewAddMinimizedMeetingNotif(meeting);
-    }
-
-    /**
-     * called from view when a meeting is no more minimized
-     * 
-     * @param {String} meetingId previous minimized meeting id
-     */
-    handleRemoveMinimizedMeetingNotif(meetingId) {
-        this.clientController.handleFromViewRemoveMinimizedMeetingNotif(meetingId);
     }
 
     /**
@@ -517,6 +501,9 @@ class EventManager {
      * @param {GameObjectView} viewObject clickable object view
      */
     handleMoveToObjectAndClick(viewObject) {
+        if (this.handlingPlaygroundClicked)
+            return;
+
         let startPos = this.clientController.getOwnParticipantPosition();
         let targetPos = viewObject.getGridPosition();
 
