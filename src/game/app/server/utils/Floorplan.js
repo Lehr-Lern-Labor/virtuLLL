@@ -233,7 +233,11 @@ const Floorplan = Object.freeze({
         MAPELEMENTS: [
             {type: GameObjectType.CONFERENCELOGO, position: [2, -1]},
         ],
-        OBJECTS: [            
+        OBJECTS: [    
+            // Dooricons
+            {type: GameObjectType.LEFTDOORICON, position: [10, 0], variation: 2, isClickable: true, story: ["zum nächsten Raum"]},
+            {type: GameObjectType.RIGHTDOORICON, position: [24, 20]},
+            
             // Tables
             {type: GameObjectType.TABLE, position: [1,1],  isClickable: true, variation: 0},    // Table default
             
@@ -463,6 +467,8 @@ const Floorplan = Object.freeze({
             
         ],
         DOORS: [ 
+            {wallSide: GlobalStrings.LEFT, positionOfDoor: [10, -1], positionOnExit: [Settings.FOYER_ID, 24, 20], directionOnExit: Direction.DOWNLEFT},
+            {wallSide: GlobalStrings.RIGHT, positionOfDoor: [25, 20], positionOnExit: [Settings.FOYER_ID, 10, 0], directionOnExit: Direction.DOWNRIGHT}
         ],
         NPCS: [
         ]

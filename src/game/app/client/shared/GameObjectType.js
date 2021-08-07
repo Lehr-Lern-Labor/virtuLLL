@@ -58,6 +58,10 @@ const GameObjectType = Object.freeze({
         RIGHTCOUNTERTOP: 'RIGHTCOUNTERTOP',
         EXPLANATION: 'EXPLANATION',
         
+        // Icons
+        LEFTDOORICON: 'LEFTDOORICON',
+        RIGHTDOORICON: 'RIGHTDOORICON',
+        
         // Food & Drinks
         DRINKS: 'DRINKS',   
         SMALLFOOD: 'SMALLFOOD',
