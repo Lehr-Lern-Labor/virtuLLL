@@ -591,6 +591,46 @@ class GameObjectInfo {
                 "explanation_3",
             ],
         },
+        
+        // Icons
+        [GameObjectType.LEFTDOORICON]: {
+            hasVariation: true,
+            isSolid: false,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: [
+                "icon_door_left",
+                "icon_grouptable_left",
+                "icon_3d_left",
+                "icon_binary_left",
+                "icon_gears_left",
+                "icon_code_left",
+                "icon_labyrinth_left",
+                "icon_robot_left",
+                "icon_smartphone_left",
+                "icon_codegirl_left",
+                "icon_controller_left",
+            ],
+        },
+        [GameObjectType.RIGHTDOORICON]: {
+            hasVariation: true,
+            isSolid: false,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: [
+                "icon_door_right",
+                "icon_grouptable_right",
+                "icon_3d_right",
+                "icon_binary_right",
+                "icon_gears_right",
+                "icon_code_right",
+                "icon_labyrinth_right",
+                "icon_robot_right",
+                "icon_smartphone_right",
+                "icon_codegirl_right",
+                "icon_controller_right",
+            ],
+        },
 
         // Food & Drinks
         [GameObjectType.DRINKS]: {
