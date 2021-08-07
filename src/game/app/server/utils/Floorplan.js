@@ -235,8 +235,10 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.CONFERENCELOGO, position: [7, -1]}
         ],
         OBJECTS: [     
-            // Türen            
+            // Türen       
+            {type: GameObjectType.LEFTDOORICON, variation: 1, position: [1,0]},
             {type: GameObjectType.EXPLANATION, variation: 0, position: [2,0], isClickable: true, story: ["Hier geht es zu den Workshops.", "Wenn du dich für einen Workshop angemeldet hast, hast du ein Passwort bekommen. Damit kannst du eintreten.","Andernfalls wird die Türe rechtzeitig geöffnet."]},
+            {type: GameObjectType.LEFTDOORICON, variation: 2, position: [4,0]},
             {type: GameObjectType.EXPLANATION, variation: 0, position: [5,0], isClickable: true, story: ["Hier geht es zur Ausstellung.", "Denke daran, immer auf die passende Bodenfließe zu klicken, um mit Objekten oder anderen Personen zu interagieren."]},
             
             {type: GameObjectType.SEATINGAREA, position: [7,8], isClickable: true, iFrameData: {title: "Das Lehr-Lern-Labor Informatik Karlsruhe", url: "https://media.lehr-lern-labor.info/home/", width: 1000, height: 600 }},
@@ -274,11 +276,18 @@ const Floorplan = Object.freeze({
         WIDTH: 15,
         MAPELEMENTS: [],
         OBJECTS: [
-            // Themenräume
+            // Türen (Themenräume)
+            {type: GameObjectType.LEFTDOORICON, variation: 0, position: [1,0]},
+            
+            {type: GameObjectType.LEFTDOORICON, variation: 3, position: [4,0]},
             {type: GameObjectType.EXPLANATION, variation: 0, position: [ 5,0], isClickable: true, story: ["Das Binärsystem", "In diesem Raum erfährst du, wie ein Computer rechnet."]},
+            {type: GameObjectType.LEFTDOORICON, variation: 4, position: [7,0]},
             {type: GameObjectType.EXPLANATION, variation: 0, position: [ 8,0], isClickable: true, story: ["Logik", "In diesem Raum kannst du Rätsel lösen und einen eigenen Computer bauen."]},
+            {type: GameObjectType.LEFTDOORICON, variation: 5, position: [10,0]},
             {type: GameObjectType.EXPLANATION, variation: 0, position: [11,0], isClickable: true, story: ["Programmieren", "In diesem Raum geht es um Prgorammieren und wie du lernen kannst zu programmieren."]},
+            {type: GameObjectType.LEFTDOORICON, variation: 6, position: [13,0]},
             {type: GameObjectType.EXPLANATION, variation: 0, position: [14,0], isClickable: true, story: ["Algorithmen", "In diesem Raum erfährst du, wie Computer denken und was ein Kochrezept mit einem Computer zu tun hat."]},
+            {type: GameObjectType.RIGHTDOORICON, variation: 7, position: [14,1]},
             {type: GameObjectType.EXPLANATION, variation: 1, position: [14,2], isClickable: true, story: ["Robotik", "In diesem Raum erfährst du einige Dinge über Robotik, kannst einen Roboter fernsteuern und lernst ARMAR kennen."]},
             
             // Sitzbereiche
@@ -657,18 +666,31 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.CONFERENCELOGO, position: [3, -1]}
         ],
         OBJECTS: [
-            {type: GameObjectType.EXPLANATION, variation: 0, position: [11,0], isClickable: true, story: ["App-Entwicklung"]},
-            {type: GameObjectType.FLOORDECORATION, variation: 2, position: [12,0]},
+            // Doors
+            {type: GameObjectType.LEFTDOORICON, variation: 0, position: [1,0]},
             
-            {type: GameObjectType.FLOORDECORATION, variation: 2, position: [12,14]},
-            {type: GameObjectType.DRINKS, variation: 2, position: [12,12]},
+            {type: GameObjectType.LEFTDOORICON, variation: 8, position: [10,0]},
+            {type: GameObjectType.EXPLANATION, variation: 0, position: [11,0], isClickable: true, story: ["Workshop:<br><br><b>App-Entwicklung</b>"]},
             
+            
+            {type: GameObjectType.RIGHTDOORICON, variation: 9, position: [12,2]},
+            {type: GameObjectType.EXPLANATION, variation: 1, position: [12,3], isClickable: true, story: ["<b>Science Camp Informatik</b>"]},
+            
+            {type: GameObjectType.RIGHTDOORICON, variation: 10, position: [12,9]},
+            {type: GameObjectType.EXPLANATION, variation: 1, position: [12,10], isClickable: true, story: ["<b>Gamingarea</b>"]},
+            
+            // Chairs
             {type: GameObjectType.CHAIR, variation:  7, position: [ 3,[2,3,4,5,6,7]]},
             {type: GameObjectType.CHAIR, variation: 11, position: [ 5,[2,3,4,5,6,7]]},
             {type: GameObjectType.CHAIR, variation: 19, position: [ 7,[2,3,4,5,6,7]]},
             {type: GameObjectType.CHAIR, variation: 31, position: [ 9,[2,3,4,5,6,7]]},
             {type: GameObjectType.CHAIR, variation: 39, position: [11,[2,3,4,5,6,7]]},
             
+            // Decoration
+            {type: GameObjectType.FLOORDECORATION, variation: 2, position: [12,0]},
+            
+            {type: GameObjectType.FLOORDECORATION, variation: 2, position: [12,14]},
+            {type: GameObjectType.DRINKS, variation: 2, position: [12,12]},
             
             {type: GameObjectType.SEATINGAREA, position: [ 2,10]},
             {type: GameObjectType.SEATINGAREA, position: [ 5,13]},
@@ -680,9 +702,28 @@ const Floorplan = Object.freeze({
         DOORS: [
             {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.FOYER_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
             {wallSide: GlobalStrings.LEFT, positionOfDoor: [10, -1], positionOnExit: [Settings.WS_APP_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: false},
+            {wallSide: GlobalStrings.RIGHT, positionOfDoor: [13, 2], positionOnExit: [Settings.SC_INFO_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: false},
+            {wallSide: GlobalStrings.RIGHT, positionOfDoor: [13, 9], positionOnExit: [Settings.GAMING_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: false},
         ],
         NPCS: []
-     },
+    },
+     
+    GAMING: {
+        ID: Settings.GAMING_ID,
+        NAME: "Gamingarea",
+        TYPE: TypeOfRoom.CUSTOM,
+        LENGTH: 9,
+        WIDTH: 10,
+        MAPELEMENTS: [],
+        OBJECTS: [   
+            // Doors
+            {type: GameObjectType.LEFTDOORICON, variation: 0, position: [1,0]},
+        ],
+        DOORS: [
+            {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.LOUNGE_ID, 12, 9], directionOnExit: Direction.DOWNLEFT},
+        ],
+        NPCS: []
+    },
      
     WS_APP: {
         ID: Settings.WS_APP_ID,
@@ -782,6 +823,23 @@ const Floorplan = Object.freeze({
         ],
         NPCS: []
      },
+     
+    SC_INFO: {
+        ID: Settings.SC_INFO_ID,
+        NAME: "Science Camp Informatik",
+        TYPE: TypeOfRoom.CUSTOM,
+        LENGTH: 9,
+        WIDTH: 10,
+        MAPELEMENTS: [],
+        OBJECTS: [   
+            // Doors
+            {type: GameObjectType.LEFTDOORICON, variation: 0, position: [1,0]},
+        ],
+        DOORS: [
+            {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.LOUNGE_ID, 12, 2], directionOnExit: Direction.DOWNLEFT},
+        ],
+        NPCS: []
+    },
 })
 
 if (typeof module === 'object' && typeof exports === 'object') {

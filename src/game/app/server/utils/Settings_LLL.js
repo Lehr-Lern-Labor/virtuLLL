@@ -20,9 +20,11 @@ module.exports = Object.freeze({
     EXHIBITION_4_ID: 14,
     EXHIBITION_5_ID: 15,
     LOUNGE_ID: 20,
+    GAMING_ID: 200,
     WS_APP_ID: 21,
     WS_APP_1_ID: 211,
     WS_APP_2_ID: 212,
+    SC_INFO_ID: 22,    
 	
     /* Start-Position Constants */
     STARTROOM_ID: 0,	
