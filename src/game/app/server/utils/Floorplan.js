@@ -828,12 +828,52 @@ const Floorplan = Object.freeze({
         ID: Settings.SC_INFO_ID,
         NAME: "Science Camp Informatik",
         TYPE: TypeOfRoom.CUSTOM,
-        LENGTH: 9,
+        LENGTH: 10,
         WIDTH: 10,
-        MAPELEMENTS: [],
+        MAPELEMENTS: [
+            {type: GameObjectType.RIGHTWINDOW, position: [[10, [6,7,8]]]},            
+        ],
         OBJECTS: [   
             // Doors
             {type: GameObjectType.LEFTDOORICON, variation: 0, position: [1,0]},
+            
+            // Wochenplan
+            {type: GameObjectType.EXPLANATION, position: [3,0], isClickable: true, story: [
+                "<b>Montag</b><br><br>9 Uhr: Begrüßungsveranstaltung<br>15 Uhr: Meet-Up",
+                "<b>Dienstag</b><br><br>ab 9 Uhr: neue Aufgaben<br>15 Uhr: Meet-Up",
+                "<b>Mittwoch</b><br><br>9 Uhr: Studi-Café<br>15 Uhr: Meet-Up",
+                "<b>Donnerstag</b><br><br>ab 9 Uhr: neue Aufgaben<br>15 Uhr: Meet-Up",
+                "<b>Freitag</b><br><br>ab 9 Uhr: neue Aufgaben<br>15 Uhr: Abschlusspräsentation",
+            ]},
+            
+            // Counter
+            {type: GameObjectType.COUNTER, variation: 4, position: [0,6]},
+            {type: GameObjectType.COUNTER, variation: 5, position: [0,7]},
+            {type: GameObjectType.COUNTER, variation: 5, position: [0,8]},
+            {type: GameObjectType.COUNTER, variation: 8, position: [0,9]},
+            {type: GameObjectType.COUNTER, variation: 2, position: [1,9]},
+            {type: GameObjectType.COUNTER, variation: 2, position: [2,9]},
+            {type: GameObjectType.COUNTER, variation: 3, position: [3,9]},
+            
+            {type: GameObjectType.TABLEDECORATION, variation: 23, position: [0,7], isClickable: true, iFrameData: {title: "Linksammlung Science Camp Informatik", url: "https://media.lehr-lern-labor.info/collab/p/r.c94f2779adecc0d9be6553f505d350b3?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
+            {type: GameObjectType.TABLEDECORATION, variation: 14, position: [2,9], isClickable: true, iFrameData: {title: "Website Science Camp", url: "https://media.lehr-lern-labor.info/workshops/scinfo/", width: 1000, height: 600 }},
+            
+            // Library
+            {type: GameObjectType.CUPBOARD, variation: 2, position: [5,0]},
+            {type: GameObjectType.CUPBOARD, variation: 2, position: [6,0]},
+            {type: GameObjectType.CUPBOARD, variation: 0, position: [7,0]},
+            {type: GameObjectType.CUPBOARD, variation: 1, position: [8,0]},
+            {type: GameObjectType.CUPBOARD, variation:15, position: [9,0]},
+            {type: GameObjectType.CUPBOARD, variation: 7, position: [9,1]},
+            {type: GameObjectType.CUPBOARD, variation: 5, position: [9,2]},
+            {type: GameObjectType.CUPBOARD, variation: 6, position: [9,3]},
+            {type: GameObjectType.CUPBOARD, variation: 7, position: [9,4]},
+            
+            // Seating
+            {type: GameObjectType.SEATINGAREA, position: [7,7], isClickable: true, iFrameData: {title: "Pinnwand Science Camp Informatik", url: "https://media.lehr-lern-labor.info/collab/p/r.08860bfae92ea1f882a9b28b948ea949?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
+            {type: GameObjectType.TABLEDECORATION, variation: 4, position: [7,7]},
+            
+            
         ],
         DOORS: [
             {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.LOUNGE_ID, 12, 2], directionOnExit: Direction.DOWNLEFT},
