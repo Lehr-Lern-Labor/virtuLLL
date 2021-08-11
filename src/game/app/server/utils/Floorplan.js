@@ -712,17 +712,31 @@ const Floorplan = Object.freeze({
         ID: Settings.GAMING_ID,
         NAME: "Gamingarea",
         TYPE: TypeOfRoom.CUSTOM,
-        LENGTH: 9,
-        WIDTH: 10,
+        LENGTH: 11,
+        WIDTH: 11,
         MAPELEMENTS: [],
         OBJECTS: [   
             // Doors
             {type: GameObjectType.LEFTDOORICON, variation: 0, position: [1,0]},
+            
+            {type: GameObjectType.CARPET, variation: 0, position: [[3,4,5,6,7,8,9,10],1]},
+            {type: GameObjectType.CARPET, variation: 0, position: [[3,4,5,6,7,8,9,10],2]},
+            {type: GameObjectType.CARPET, variation: 0, position: [[3,4,5,6,7,8,9,10],3]},
+            {type: GameObjectType.CARPET, variation: 2, position: [[3,4,5,6,7,8,9,10],4]},
+            {type: GameObjectType.CARPET, variation: 2, position: [[3,4,5,6,7,8,9,10],5]},
+            {type: GameObjectType.CARPET, variation: 2, position: [[3,4,5,6,7,8,9,10],6]},
+            {type: GameObjectType.CARPET, variation: 5, position: [[3,4,5,6,7,8,9,10],7]},
+            {type: GameObjectType.CARPET, variation: 5, position: [[3,4,5,6,7,8,9,10],8]},
+            {type: GameObjectType.CARPET, variation: 5, position: [[3,4,5,6,7,8,9,10],9]},
         ],
         DOORS: [
             {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.LOUNGE_ID, 12, 9], directionOnExit: Direction.DOWNLEFT},
         ],
-        NPCS: []
+        NPCS: [
+            {name: "1", position: [10, 2], direction: Direction.DOWNLEFT, dialog: ["1"]},
+            {name: "2", position: [10, 5], direction: Direction.DOWNLEFT, dialog: ["2"]},
+            {name: "3", position: [10, 8], direction: Direction.DOWNLEFT, dialog: ["3"]},
+        ]
     },
      
     WS_APP: {
