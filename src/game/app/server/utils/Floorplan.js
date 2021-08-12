@@ -873,18 +873,18 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.TABLEDECORATION, variation: 14, position: [2,9], isClickable: true, iFrameData: {title: "Website Science Camp", url: "https://media.lehr-lern-labor.info/workshops/scinfo/", width: 1000, height: 600 }},
             
             // Library
-            {type: GameObjectType.CUPBOARD, variation: 2, position: [5,0]},
-            {type: GameObjectType.CUPBOARD, variation: 2, position: [6,0]},
+            {type: GameObjectType.CUPBOARD, variation: 3, position: [5,0], isClickable: true, iFrameData: {title: "Montag: Einführung & HTML", url: "https://www.youtube-nocookie.com/embed/U8xFYqEd6FE?rel=0&modestbranding=1&playlist=U8xFYqEd6FE,1Ckx4QT1KjA", width: 800, height: 450 }},
+            {type: GameObjectType.CUPBOARD, variation: 4, position: [6,0], isClickable: true, iFrameData: {title: "Dienstag: CSS", url: "https://www.youtube-nocookie.com/embed/YO8ddOxEMpY?rel=0&modestbranding=1&playlist=YO8ddOxEMpY,tDrwQYFvdgU", width: 800, height: 450 }},
             {type: GameObjectType.CUPBOARD, variation: 0, position: [7,0]},
             {type: GameObjectType.CUPBOARD, variation: 1, position: [8,0]},
-            {type: GameObjectType.CUPBOARD, variation:15, position: [9,0]},
-            {type: GameObjectType.CUPBOARD, variation: 7, position: [9,1]},
+            {type: GameObjectType.CUPBOARD, variation:15, position: [9,0], isClickable: true, iFrameData: {title: "Mittwoch: Programmieren & Robotik", url: "https://www.youtube-nocookie.com/embed/hcvdmISCBHg?rel=0&modestbranding=1&playlist=hcvdmISCBHg,A3fvCWi8aKg,mIP6MUoGlC4,mg7xsTjYKpg", width: 800, height: 450 }},
+            {type: GameObjectType.CUPBOARD, variation: 8, position: [9,1], isClickable: true, iFrameData: {title: "Donnerstag: JavaScript", url: "https://www.youtube-nocookie.com/embed/aZ08lPusehk?rel=0&modestbranding=1&playlist=aZ08lPusehk,lFhAOd5I3t4", width: 800, height: 450 }},
             {type: GameObjectType.CUPBOARD, variation: 5, position: [9,2]},
             {type: GameObjectType.CUPBOARD, variation: 6, position: [9,3]},
             {type: GameObjectType.CUPBOARD, variation: 7, position: [9,4]},
             
             // Seating
-            {type: GameObjectType.SEATINGAREA, position: [7,7], isClickable: true, iFrameData: {title: "Pinnwand Science Camp Informatik", url: "https://media.lehr-lern-labor.info/collab/p/r.08860bfae92ea1f882a9b28b948ea949?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
+            {type: GameObjectType.SEATINGAREA, position: [7,7], isClickable: true, iFrameData: {title: "Feedback", url: "https://media.lehr-lern-labor.info/collab/p/SCinfo-Feedback?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
             {type: GameObjectType.TABLEDECORATION, variation: 4, position: [7,7]},
             
             
