@@ -719,8 +719,8 @@ const Floorplan = Object.freeze({
             // Doors
             {type: GameObjectType.LEFTDOORICON, variation: 0, position: [1,0]},
             
-            {type: GameObjectType.FLOORDECORATION, variation: 2, position: [0,0], isClickable: true, iFrameData: {title: "Station 1", url: "https://talk.lehr-lern-labor.info/Station1", width: 800, height: 450 }},
-            {type: GameObjectType.FLOORDECORATION, variation: 2, position: [0,7], isClickable: true, iFrameData: {title: "Station 2", url: "https://talk.lehr-lern-labor.info/Station2", width: 800, height: 450 }},
+            {type: GameObjectType.FLOORDECORATION, variation: 2, position: [0,0], isClickable: true, story: ['<iframe allow="camera; microphone; fullscreen; display-capture; autoplay" src="https://talk.lehr-lern-labor.info//Station1" style="height: 100%; width: 100%; min-height: 200px; border: 0px;"></iframe>']},
+            {type: GameObjectType.FLOORDECORATION, variation: 2, position: [0,7], isClickable: true, story: ['<iframe allow="camera; microphone; fullscreen; display-capture; autoplay" src="https://talk.lehr-lern-labor.info//Station2" style="height: 100%; width: 100%; min-height: 200px; border: 0px;"></iframe>']},
             
             {type: GameObjectType.CARPET, variation: 0, position: [3,0], isClickable: true, story: ["X"]},
             {type: GameObjectType.CARPET, variation: 4, position: [4,0], isClickable: true, story: ["1","Wie viele Erbsen passen in ein leeres Glas?"]},
