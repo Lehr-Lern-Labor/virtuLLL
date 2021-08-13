@@ -233,6 +233,15 @@ AssetPaths = Object.freeze({
     "wallscreen_contact_left": "../client/assets/decoration/wallscreen_contact_left.png",
     "wallscreen_contact_right": "../client/assets/decoration/wallscreen_contact_right.png",
     
+    // Wallscreens SCinfo
+    "wallscreen_1": "../client/assets/special/wallscreen_carina.png",
+    "wallscreen_2": "../client/assets/special/wallscreen_clara.png",
+    "wallscreen_3": "../client/assets/special/wallscreen_ira.png",
+    "wallscreen_4": "../client/assets/special/wallscreen_nele.png",
+    "wallscreen_5": "../client/assets/special/wallscreen_sarah.png",
+    "wallscreen_6": "../client/assets/special/wallscreen_sydney.png",
+    "wallscreen_7": "../client/assets/special/wallscreen_taissia.png",
+    
     
     // Explanations
     "explanation_left": "../client/assets/decoration/explanation_left.png",

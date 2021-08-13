@@ -257,6 +257,7 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.COUNTER, position: [13, 7], variation: 8, isClickable: true, story: ["Klicke auf die Bodenfliese unter " + FloorplanConstants.NPCNAMES.tutorial + ". Er erklärt dir, was du tun kannst.","Auf geht's! <br>Herbert wartet auf dich!"]},
             {type: GameObjectType.COUNTER, position: [14, 7], variation: 3, isClickable: true, story: ["Klicke auf die Bodenfliese unter " + FloorplanConstants.NPCNAMES.tutorial + ". Er erklärt dir, was du tun kannst.","Auf geht's! <br>Herbert wartet auf dich!"]},
             {type: GameObjectType.TABLEDECORATION, position: [13, 5], variation: 23},
+
         ],
         DOORS: [ 
              {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.LOUNGE_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: false, codeToOpen: "Lehr-Lern-Labor"},
