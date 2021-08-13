@@ -446,6 +446,13 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.TABLEDECORATION, position: [23,24], variation:23},
             
             
+            {type: GameObjectType.LEFTWALLSCREEN, position: [12,0], variation:0, isClickable: true},
+            {type: GameObjectType.LEFTWALLSCREEN, position: [14,0], variation:1},
+            {type: GameObjectType.LEFTWALLSCREEN, position: [16,0], variation:2},
+            {type: GameObjectType.RIGHTWALLSCREEN, position: [24,13], variation:0},
+            {type: GameObjectType.RIGHTWALLSCREEN, position: [24,15], variation:1},
+            {type: GameObjectType.RIGHTWALLSCREEN, position: [24,17], variation:2, isClickable: true},
+            
             {type: GameObjectType.EXPLANATION, position: [0,0], variation:0},
             {type: GameObjectType.EXPLANATION, position: [24,24], variation:1},
             {type: GameObjectType.EXPLANATION, position: [20,15], variation:2},
@@ -567,6 +574,7 @@ const Floorplan = Object.freeze({
     }
     */
     
+
 })
 
 if (typeof module === 'object' && typeof exports === 'object') {

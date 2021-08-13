@@ -32,6 +32,8 @@ const GameObjectOffsets = Object.freeze({
     [GameObjectType.LEFTDOORICON]: { x: 0, y: -98 },
     [GameObjectType.RIGHTDOORICON]: { x: 32, y: -100 },
 
+    [GameObjectType.RIGHTWALLSCREEN]: { x: 32, y: 16 },
+    
     // Seating
     // [GameObjectType.CHAIR]: { x: 15, y: -6 },
     // [GameObjectType.SOFA]: { x: 0, y: -4 },
