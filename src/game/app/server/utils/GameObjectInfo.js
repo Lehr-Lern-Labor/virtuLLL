@@ -574,6 +574,31 @@ class GameObjectInfo {
             ]],
         },
         
+        // Wallscreen
+        [GameObjectType.LEFTWALLSCREEN]: {
+            hasVariation: true,
+            isSolid: false,
+            width: 2 * Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: [
+                "wallscreen_left", 
+                "wallscreen_LLL_left",
+                "wallscreen_contact_left",
+            ],
+        },
+        
+        [GameObjectType.RIGHTWALLSCREEN]: {
+            hasVariation: true,
+            isSolid: false,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: 2 * Settings.SMALL_OBJECT_LENGTH,
+            assetName: [
+                "wallscreen_right",
+                "wallscreen_LLL_right",
+                "wallscreen_contact_right",
+            ],
+        },
+        
         // Explanation
         [GameObjectType.EXPLANATION]: {
             hasVariation: true,

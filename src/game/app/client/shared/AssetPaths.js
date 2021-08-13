@@ -225,6 +225,15 @@ AssetPaths = Object.freeze({
     "tabledecoration_countertop_y_2": "../client/assets/decoration/tabledecoration_countertop_y_2.png",
     "tabledecoration_plates": "../client/assets/decoration/tabledecoration_plates.png",
     
+    // Wallscreens
+    "wallscreen_left": "../client/assets/decoration/wallscreen_left.png",
+    "wallscreen_right": "../client/assets/decoration/wallscreen_right.png",
+    "wallscreen_LLL_left": "../client/assets/decoration/wallscreen_LLL_left.png",
+    "wallscreen_LLL_right": "../client/assets/decoration/wallscreen_LLL_right.png",
+    "wallscreen_contact_left": "../client/assets/decoration/wallscreen_contact_left.png",
+    "wallscreen_contact_right": "../client/assets/decoration/wallscreen_contact_right.png",
+    
+    
     // Explanations
     "explanation_left": "../client/assets/decoration/explanation_left.png",
     "explanation_right": "../client/assets/decoration/explanation_right.png",

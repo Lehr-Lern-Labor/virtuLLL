@@ -793,6 +793,7 @@ const Floorplan = Object.freeze({
         NPCS: []
     },
     
+<<<<<<< HEAD
     // GAMING: {
         // ID: Settings.GAMING_ID,
         // NAME: "Gamingarea",
@@ -979,6 +980,9 @@ const Floorplan = Object.freeze({
         ],
         NPCS: []
     },
+=======
+
+>>>>>>> assets
 })
 
 if (typeof module === 'object' && typeof exports === 'object') {
