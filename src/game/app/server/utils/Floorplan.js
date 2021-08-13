@@ -992,7 +992,7 @@ const Floorplan = Object.freeze({
         NAME: "Science Camp Informatik",
         TYPE: TypeOfRoom.CUSTOM,
         LENGTH: 10,
-        WIDTH: 10,
+        WIDTH: 12,
         MAPELEMENTS: [],
         OBJECTS: [   
             // Doors
@@ -1001,6 +1001,13 @@ const Floorplan = Object.freeze({
             
             {type: GameObjectType.LEFTWALLSCREEN, variation: 1, position: [3,0], isClickable: true, iFrameData: {title: "Übersicht", url: "https://media.lehr-lern-labor.info/workshops/scinfo/ergebnisse/", width: 1000, height: 600 }},
             
+            {type: GameObjectType.LEFTWALLSCREEN, variation: 3, position: [5,0], isClickable: true, iFrameData: {title: "Carina", url: "https://media.lehr-lern-labor.info/workshops/scinfo/ergebnisse/Carina/", width: 1000, height: 600 }},
+            {type: GameObjectType.LEFTWALLSCREEN, variation: 4, position: [7,0], isClickable: true, iFrameData: {title: "Clara", url: "https://media.lehr-lern-labor.info/workshops/scinfo/ergebnisse/Clara/", width: 1000, height: 600 }},
+            {type: GameObjectType.RIGHTWALLSCREEN, variation: 5, position: [9,1], isClickable: true, iFrameData: {title: "Ira", url: "https://media.lehr-lern-labor.info/workshops/scinfo/ergebnisse/Ira/", width: 1000, height: 600 }},
+            {type: GameObjectType.RIGHTWALLSCREEN, variation: 6, position: [9,3], isClickable: true, iFrameData: {title: "Nele", url: "https://media.lehr-lern-labor.info/workshops/scinfo/ergebnisse/Nele/", width: 1000, height: 600 }},
+            {type: GameObjectType.RIGHTWALLSCREEN, variation: 7, position: [9,5], isClickable: true, iFrameData: {title: "Sarah", url: "https://media.lehr-lern-labor.info/workshops/scinfo/ergebnisse/Sarah/", width: 1000, height: 600 }},
+            {type: GameObjectType.RIGHTWALLSCREEN, variation: 8, position: [9,7], isClickable: true, iFrameData: {title: "Sydney", url: "https://media.lehr-lern-labor.info/workshops/scinfo/ergebnisse/Sydney/", width: 1000, height: 600 }},
+            {type: GameObjectType.RIGHTWALLSCREEN, variation: 9, position: [9,9], isClickable: true, iFrameData: {title: "Taissia", url: "https://media.lehr-lern-labor.info/workshops/scinfo/ergebnisse/Taissia/", width: 1000, height: 600 }},
             
             
         ],
