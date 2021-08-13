@@ -290,6 +290,9 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.RIGHTDOORICON, variation: 7, position: [14,1]},
             {type: GameObjectType.EXPLANATION, variation: 1, position: [14,2], isClickable: true, story: ["Robotik", "In diesem Raum erfährst du einige Dinge über Robotik, kannst einen Roboter fernsteuern und lernst ARMAR kennen."]},
             
+            {type: GameObjectType.RIGHTDOORICON, variation: 9, position: [14,8]},
+            {type: GameObjectType.EXPLANATION, variation: 1, position: [14,9], isClickable: true, story: ["Ausstellung<br><br><b>Science Camp Informatik</b><br><br>Im Sommer 2021", "In diesem Raum siehst du die fertigen Websites der Teilnehmerinnen des Science Camp Informatik im Sommer 2021."]},
+            
             // Sitzbereiche
             {type: GameObjectType.SEATINGAREA, position: [4,12]},
             {type: GameObjectType.TABLEDECORATION, position: [4,12], variation: 4},
@@ -306,6 +309,8 @@ const Floorplan = Object.freeze({
             {wallSide: GlobalStrings.LEFT,  positionOfDoor: [10, -1], positionOnExit: [Settings.EXHIBITION_3_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
             {wallSide: GlobalStrings.LEFT,  positionOfDoor: [13, -1], positionOnExit: [Settings.EXHIBITION_4_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
             {wallSide: GlobalStrings.RIGHT, positionOfDoor: [15,  1], positionOnExit: [Settings.EXHIBITION_5_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
+        
+            {wallSide: GlobalStrings.RIGHT, positionOfDoor: [15,  8], positionOnExit: [Settings.SC_INFO_EXHIBIT_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
         ],
         NPCS: [
             {name: FloorplanConstants.NPCNAMES.exhibit, position: [2, 0], direction: Direction.DOWNRIGHT, dialog: NPCDialog.exhibitionDialog},
@@ -793,7 +798,6 @@ const Floorplan = Object.freeze({
         NPCS: []
     },
     
-<<<<<<< HEAD
     // GAMING: {
         // ID: Settings.GAMING_ID,
         // NAME: "Gamingarea",
@@ -967,7 +971,7 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.CUPBOARD, variation: 8, position: [9,1], isClickable: true, iFrameData: {title: "Donnerstag: JavaScript", url: "https://www.youtube-nocookie.com/embed/aZ08lPusehk?rel=0&modestbranding=1&playlist=aZ08lPusehk,lFhAOd5I3t4", width: 800, height: 450 }},
             {type: GameObjectType.CUPBOARD, variation: 5, position: [9,2]},
             {type: GameObjectType.CUPBOARD, variation: 6, position: [9,3]},
-            {type: GameObjectType.CUPBOARD, variation: 7, position: [9,4]},
+            {type: GameObjectType.CUPBOARD, variation: 9, position: [9,4], isClickable: true, iFrameData: {title: "Freitag: Feedback", url: "https://forms.office.com/r/jDcN3MBYqC", width: 800, height: 450 }},
             
             // Seating
             {type: GameObjectType.SEATINGAREA, position: [7,7], isClickable: true, iFrameData: {title: "Feedback", url: "https://media.lehr-lern-labor.info/collab/p/SCinfo-Feedback?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
@@ -980,9 +984,31 @@ const Floorplan = Object.freeze({
         ],
         NPCS: []
     },
-=======
 
->>>>>>> assets
+    
+    SC_INFO_EXHIBIT: {
+        ID: Settings.SC_INFO_EXHIBIT_ID,
+        NAME: "Science Camp Informatik",
+        TYPE: TypeOfRoom.CUSTOM,
+        LENGTH: 10,
+        WIDTH: 10,
+        MAPELEMENTS: [],
+        OBJECTS: [   
+            // Doors
+            {type: GameObjectType.LEFTDOORICON, variation: 0, position: [1,0]},
+            
+            
+            {type: GameObjectType.LEFTWALLSCREEN, variation: 1, position: [3,0], isClickable: true, iFrameData: {title: "Übersicht", url: "https://media.lehr-lern-labor.info/workshops/scinfo/ergebnisse/", width: 1000, height: 600 }},
+            
+            
+            
+        ],
+        DOORS: [
+            {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.EXHIBITION_ID, 14, 8], directionOnExit: Direction.DOWNLEFT},
+        ],
+        NPCS: []
+        
+    }
 })
 
 if (typeof module === 'object' && typeof exports === 'object') {
