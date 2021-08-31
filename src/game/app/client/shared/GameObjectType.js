@@ -39,6 +39,9 @@ const GameObjectType = Object.freeze({
         CHAIR: 'CHAIR',
         SOFA: 'SOFA',
         SEATINGAREA: 'SEATINGAREA',
+        SEATINGAREAORANGE: 'SEATINGAREAORANGE',
+        SEATINGAREATOSCA: 'SEATINGAREATOSCA',
+        SEATINGAREAWHITE: 'SEATINGAREAWHITE',
         COMPUTER: 'COMPUTER',
         
         // Tables

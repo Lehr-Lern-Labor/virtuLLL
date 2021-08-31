@@ -712,7 +712,7 @@ const Floorplan = Object.freeze({
             {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.FOYER_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
             {wallSide: GlobalStrings.LEFT, positionOfDoor: [10, -1], positionOnExit: [Settings.WS_APP_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: false},
             {wallSide: GlobalStrings.RIGHT, positionOfDoor: [13, 2], positionOnExit: [Settings.SC_INFO_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: false},
-            {wallSide: GlobalStrings.RIGHT, positionOfDoor: [13, 4], positionOnExit: [Settings.SC_SE_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: false},
+            {wallSide: GlobalStrings.RIGHT, positionOfDoor: [13, 4], positionOnExit: [Settings.SC_SE_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: true}, //SCSE-Door
             {wallSide: GlobalStrings.RIGHT, positionOfDoor: [13, 9], positionOnExit: [Settings.GAMING_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: false},
         ],
         NPCS: []
@@ -1006,10 +1006,10 @@ const Floorplan = Object.freeze({
             // Wochenplan
             {type: GameObjectType.EXPLANATION, position: [3,0], isClickable: true, story: [
                 "<b>Montag</b><br><br>9 Uhr: Begrüßungsveranstaltung<br>17 Uhr: Meet-Up",
-                "<b>Dienstag</b><br><br><br>17 Uhr: Meet-Up",
-                "<b>Mittwoch</b><br><br><br>17 Uhr: Meet-Up",
-                "<b>Donnerstag</b><br><br><br>17 Uhr: Studi-Café",
-                "<b>Freitag</b><br><br><br>17 Uhr: Abschlusspräsentation",
+                "<b>Dienstag</b><br><br>Stand-Up-Meeting<br><i>9 Uhr: Team White<br>9:30 Uhr: Team Blue<br>10 Uhr: Team Orange</i><br><br>17 Uhr: Meet-Up",
+                "<b>Mittwoch</b><br><br>Stand-Up-Meeting<br><i>9 Uhr: Team White<br>9:30 Uhr: Team Blue<br>10 Uhr: Team Orange</i><br><br>17 Uhr: Meet-Up",
+                "<b>Donnerstag</b><br><br>Stand-Up-Meeting<br><i>9 Uhr: Team White<br>9:30 Uhr: Team Blue<br>10 Uhr: Team Orange</i><br><br>17 Uhr: Studi-Café",
+                "<b>Freitag</b><br><br>Stand-Up-Meeting<br><i>9 Uhr: Team White<br>9:30 Uhr: Team Blue<br>10 Uhr: Team Orange</i><br><br>17 Uhr: Abschlusspräsentation",
             ]},
             
             // Counter
@@ -1021,23 +1021,81 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.COUNTER, variation: 2, position: [2,9]},
             {type: GameObjectType.COUNTER, variation: 3, position: [3,9]},
             
-            {type: GameObjectType.TABLEDECORATION, variation: 14, position: [2,9], isClickable: true, iFrameData: {title: "Linksammlung Science Camp Softwareentwicklung", url: "https://media.lehr-lern-labor.info/collab/p/r.3b61740f6afab916eeb3cbc3492c761e?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
-            {type: GameObjectType.TABLEDECORATION, variation: 23, position: [0,7], isClickable: true, iFrameData: {title: "GitHub Organization", url: "https://github.com/Science-Camp-Softwareentwicklung-08-21", width: 1000, height: 600 }},
+            {type: GameObjectType.TABLEDECORATION, variation: 23, position: [0,7], isClickable: true, iFrameData: {
+                title: "Linksammlung Science Camp Softwareentwicklung", 
+                url: "https://media.lehr-lern-labor.info/collab/p/r.3b61740f6afab916eeb3cbc3492c761e?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", 
+                width: 1000, 
+                height: 600 
+            }},
+            {type: GameObjectType.TABLEDECORATION, variation: 14, position: [2,9], isClickable: true, iFrameData: {
+                title: "Ideen, Fragen und Anregungen", 
+                url: "https://media.lehr-lern-labor.info/collab/p/SCSE?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", 
+                width: 1000, 
+                height: 600 
+            }},
             
             // Library
-            {type: GameObjectType.CUPBOARD, variation: 3, position: [5,0], isClickable: true, iFrameData: {title: "Montag", url: "https://www.youtube.com/embed/videoseries?list=PLQZMbpPKaFQ-wwBqQFktPV6YRQpm6V98P&rel=0&modestbranding=1", width: 800, height: 450 }},
-            {type: GameObjectType.CUPBOARD, variation: 2, position: [6,0], isClickable: false, iFrameData: {title: "Dienstag: CSS", url: "https://www.youtube-nocookie.com/embed/YO8ddOxEMpY?rel=0&modestbranding=1&playlist=YO8ddOxEMpY,tDrwQYFvdgU", width: 800, height: 450 }},
+            {type: GameObjectType.CUPBOARD, variation: 3, position: [5,0], isClickable: true, iFrameData: {
+                title: "Montag", 
+                url: "https://www.youtube.com/embed/videoseries?list=PLQZMbpPKaFQ-wwBqQFktPV6YRQpm6V98P&rel=0&modestbranding=1", 
+                width: 800, 
+                height: 450 
+            }},
+            {type: GameObjectType.CUPBOARD, variation: 4, position: [6,0], isClickable: true, iFrameData: {
+                title: "Dienstag", 
+                url: "https://www.youtube.com/embed/videoseries?list=PLQZMbpPKaFQ-DTFLCpeK-Uuhl3RKchg3V&rel=0&modestbranding=1",  
+                width: 800, 
+                height: 450 
+            }},
             {type: GameObjectType.CUPBOARD, variation: 0, position: [7,0]},
             {type: GameObjectType.CUPBOARD, variation: 1, position: [8,0]},
-            {type: GameObjectType.CUPBOARD, variation:15, position: [9,0], isClickable: false, iFrameData: {title: "Mittwoch: Programmieren & Robotik", url: "https://www.youtube-nocookie.com/embed/hcvdmISCBHg?rel=0&modestbranding=1&playlist=hcvdmISCBHg,A3fvCWi8aKg,mIP6MUoGlC4,mg7xsTjYKpg", width: 800, height: 450 }},
-            {type: GameObjectType.CUPBOARD, variation: 7, position: [9,1], isClickable: false, iFrameData: {title: "Donnerstag: JavaScript", url: "https://www.youtube-nocookie.com/embed/aZ08lPusehk?rel=0&modestbranding=1&playlist=aZ08lPusehk,lFhAOd5I3t4", width: 800, height: 450 }},
+            {type: GameObjectType.CUPBOARD, variation:15, position: [9,0], isClickable: true, iFrameData: {
+                title: "Mittwoch", 
+                url: "https://www.youtube.com/embed/videoseries?list=PLQZMbpPKaFQ-Vrjm_bToTwZPtp5z-MywA&rel=0&modestbranding=1", 
+                width: 800, 
+                height: 450 
+            }},
+            {type: GameObjectType.CUPBOARD, variation: 8, position: [9,1], isClickable: true, iFrameData: {
+                title: "Donnerstag", 
+                url: "https://www.youtube.com/embed/videoseries?list=PLQZMbpPKaFQ_mdSRXou2-8q3mAfCjN2AS&rel=0&modestbranding=1", 
+                width: 800, 
+                height: 450 
+            }},
             {type: GameObjectType.CUPBOARD, variation: 5, position: [9,2]},
             {type: GameObjectType.CUPBOARD, variation: 6, position: [9,3]},
-            {type: GameObjectType.CUPBOARD, variation: 7, position: [9,4], isClickable: false, iFrameData: {title: "Freitag: Feedback", url: "https://forms.office.com/r/jDcN3MBYqC", width: 800, height: 450 }},
+            {type: GameObjectType.CUPBOARD, variation: 9, position: [9,4], isClickable: true, iFrameData: {
+                title: "Freitag",
+                url: "https://www.youtube.com/embed/videoseries?list=PLQZMbpPKaFQ-wvPyYntBt8M7jP2yd4-Oi&rel=0&modestbranding=1", 
+                width: 800, 
+                height: 450 
+            }},
             
             // Seating
-            {type: GameObjectType.SEATINGAREA, position: [7,7], isClickable: true, iFrameData: {title: "Ideen, Fragen und Anregungen", url: "https://media.lehr-lern-labor.info/collab/p/SCSE?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
-            {type: GameObjectType.TABLEDECORATION, variation: 4, position: [7,7]},
+            {type: GameObjectType.SEATINGAREATOSCA, position: [7,7], isClickable: true, iFrameData: {
+                title: "Team Blue", 
+                url: "https://media.lehr-lern-labor.info/collab/p/TeamBlue?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", 
+                width: 1000, 
+                height: 600 
+            }},
+            {type: GameObjectType.TABLEDECORATION, variation: 17, position: [7,7]},
+            
+            
+            {type: GameObjectType.SEATINGAREAORANGE, position: [6,3], isClickable: true, iFrameData: {
+                title: "Team Orange", 
+                url: "https://media.lehr-lern-labor.info/collab/p/TeamOrange?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", 
+                width: 1000, 
+                height: 600 
+            }},
+            {type: GameObjectType.TABLEDECORATION, variation: 6, position: [6,3]},
+            
+            
+            {type: GameObjectType.SEATINGAREAWHITE, position: [2,2], isClickable: true, iFrameData: {
+                title: "Team White", 
+                url: "https://media.lehr-lern-labor.info/collab/p/TeamWhite?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", 
+                width: 1000, 
+                height: 600 
+            }},
+            {type: GameObjectType.TABLEDECORATION, variation: 4, position: [2,2]},
             
             
         ],
