@@ -168,6 +168,7 @@ AssetPaths = Object.freeze({
     "cupboard_corner_front": "../client/assets/cupboards/cupboard_corner_front.png",
     "cupboard_corner_right": "../client/assets/cupboards/cupboard_corner_right.png",
     "cupboard_corner_back": "../client/assets/cupboards/cupboard_corner_back.png",
+    "cupboard_corner_back_shelf": "../client/assets/cupboards/cupboard_corner_back_shelf.png",
     
     "sideboard_left": "../client/assets/cupboards/sideboard_left.png",
     "sideboard_left_alt": "../client/assets/cupboards/sideboard_left_alt.png",

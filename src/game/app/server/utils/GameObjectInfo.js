@@ -516,6 +516,7 @@ class GameObjectInfo {
                 "cupboard_corner_front",
                 "cupboard_corner_right",
                 "cupboard_corner_back",
+                "cupboard_corner_back_shelf",
             ],
         },
         [GameObjectType.SIDEBOARD]: {
