@@ -399,6 +399,48 @@ class GameObjectInfo {
             ],
         },
         
+        [GameObjectType.SEATINGAREAORANGE]: {
+            hasAdditionalParts: true,
+            isSolid: true,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: "table_default",
+            parts: [                
+                {type: GameObjectType.CHAIR, variation: 2 * 4 + 0, offset_y: -1, offset_x: 0},
+                {type: GameObjectType.CHAIR, variation: 2 * 4 + 1, offset_x: -1, offset_y: 0},
+                {type: GameObjectType.CHAIR, variation: 2 * 4 + 2, offset_y:  1, offset_x: 0},
+                {type: GameObjectType.CHAIR, variation: 2 * 4 + 3, offset_x:  1, offset_y: 0},
+            ],
+        },
+        
+        [GameObjectType.SEATINGAREATOSCA]: {
+            hasAdditionalParts: true,
+            isSolid: true,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: "table_default",
+            parts: [                
+                {type: GameObjectType.CHAIR, variation: 7 * 4 + 0, offset_y: -1, offset_x: 0},
+                {type: GameObjectType.CHAIR, variation: 7 * 4 + 1, offset_x: -1, offset_y: 0},
+                {type: GameObjectType.CHAIR, variation: 7 * 4 + 2, offset_y:  1, offset_x: 0},
+                {type: GameObjectType.CHAIR, variation: 7 * 4 + 3, offset_x:  1, offset_y: 0},
+            ],
+        },
+        
+        [GameObjectType.SEATINGAREAWHITE]: {
+            hasAdditionalParts: true,
+            isSolid: true,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: "table_default",
+            parts: [                
+                {type: GameObjectType.CHAIR, variation: 9 * 4 + 0, offset_y: -1, offset_x: 0},
+                {type: GameObjectType.CHAIR, variation: 9 * 4 + 1, offset_x: -1, offset_y: 0},
+                {type: GameObjectType.CHAIR, variation: 9 * 4 + 2, offset_y:  1, offset_x: 0},
+                {type: GameObjectType.CHAIR, variation: 9 * 4 + 3, offset_x:  1, offset_y: 0},
+            ],
+        },
+        
         [GameObjectType.COMPUTER]: {
             hasAdditionalParts: true,
             isSolid: true,
@@ -474,6 +516,7 @@ class GameObjectInfo {
                 "cupboard_corner_front",
                 "cupboard_corner_right",
                 "cupboard_corner_back",
+                "cupboard_corner_back_shelf",
             ],
         },
         [GameObjectType.SIDEBOARD]: {

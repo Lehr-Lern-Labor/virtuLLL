@@ -294,6 +294,7 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.CUPBOARD, position: [18, 6],  isClickable: true, variation: 13},
             {type: GameObjectType.CUPBOARD, position: [24, 6],  isClickable: true, variation: 14},
             {type: GameObjectType.CUPBOARD, position: [24, 0],  isClickable: true, variation: 15},
+            {type: GameObjectType.CUPBOARD, position: [21, 3],  isClickable: true, variation: 16},
             
             {type: GameObjectType.CUPBOARD, position: [18, [1,5]],  isClickable: true, variation: 11},
             {type: GameObjectType.CUPBOARD, position: [[19,23], 6],  isClickable: true, variation: 10},
