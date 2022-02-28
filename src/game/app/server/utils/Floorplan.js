@@ -1149,7 +1149,7 @@ const Floorplan = Object.freeze({
                 width: 800, 
                 height: 450 
             }},
-            {type: GameObjectType.CUPBOARD, variation: 4, position: [6,0], isClickable: true, iFrameData: {
+            {type: GameObjectType.CUPBOARD, variation: 2, position: [6,0], isClickable: true, iFrameData: {//var 4
                 title: "Dienstag", 
                 url: "https://www.youtube.com/embed/videoseries?list=PLQZMbpPKaFQ-DTFLCpeK-Uuhl3RKchg3V&rel=0&modestbranding=1",  
                 width: 800, 
@@ -1157,13 +1157,13 @@ const Floorplan = Object.freeze({
             }},
             {type: GameObjectType.CUPBOARD, variation: 0, position: [7,0]},
             {type: GameObjectType.CUPBOARD, variation: 1, position: [8,0]},
-            {type: GameObjectType.CUPBOARD, variation:15, position: [9,0], isClickable: true, iFrameData: {
+            {type: GameObjectType.CUPBOARD, variation:16, position: [9,0], isClickable: true, iFrameData: {//var 15
                 title: "Mittwoch", 
                 url: "https://www.youtube.com/embed/videoseries?list=PLQZMbpPKaFQ-Vrjm_bToTwZPtp5z-MywA&rel=0&modestbranding=1", 
                 width: 800, 
                 height: 450 
             }},
-            {type: GameObjectType.CUPBOARD, variation: 8, position: [9,1], isClickable: true, iFrameData: {
+            {type: GameObjectType.CUPBOARD, variation: 7, position: [9,1], isClickable: true, iFrameData: {//var 8
                 title: "Donnerstag", 
                 url: "https://www.youtube.com/embed/videoseries?list=PLQZMbpPKaFQ_mdSRXou2-8q3mAfCjN2AS&rel=0&modestbranding=1", 
                 width: 800, 
@@ -1171,7 +1171,7 @@ const Floorplan = Object.freeze({
             }},
             {type: GameObjectType.CUPBOARD, variation: 5, position: [9,2]},
             {type: GameObjectType.CUPBOARD, variation: 6, position: [9,3]},
-            {type: GameObjectType.CUPBOARD, variation: 9, position: [9,4], isClickable: true, iFrameData: {
+            {type: GameObjectType.CUPBOARD, variation: 7, position: [9,4], isClickable: true, iFrameData: {//var 9
                 title: "Freitag",
                 url: "https://www.youtube.com/embed/videoseries?list=PLQZMbpPKaFQ-wvPyYntBt8M7jP2yd4-Oi&rel=0&modestbranding=1", 
                 width: 800, 
