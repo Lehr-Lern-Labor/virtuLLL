@@ -27,6 +27,7 @@ module.exports = Object.freeze({
     SC_INFO_ID: 22,  
     SC_INFO_EXHIBIT_ID: 221,    
     SC_SE_ID: 23,  
+    SC_DIGI_ID: 24,  
 	
     /* Start-Position Constants */
     STARTROOM_ID: 0,	
