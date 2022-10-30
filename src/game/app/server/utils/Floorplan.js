@@ -1076,7 +1076,7 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.COUNTER, variation: 2, position: [2,9]},
             {type: GameObjectType.COUNTER, variation: 3, position: [3,9]},
             
-            {type: GameObjectType.TABLEDECORATION, variation: 23, position: [0,7], isClickable: true, iFrameData: {title: "Linksammlung Science Camp Digital", url: "https://media.lehr-lern-labor.info/collab/p/r.5a6b3ce74d5eab31bdd7252fc72c16?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
+            {type: GameObjectType.TABLEDECORATION, variation: 23, position: [0,7], isClickable: true, iFrameData: {title: "Linksammlung Science Camp Digital", url: "https://media.lehr-lern-labor.info/collab/p/r.5a6b3ce74d5eab31bdd7252fc72c164b?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
             {type: GameObjectType.TABLEDECORATION, variation: 14, position: [2,9], isClickable: true, iFrameData: {title: "Website Science Camp", url: "https://media.lehr-lern-labor.info/workshops/scinfo/", width: 1000, height: 600 }},
             
             // Library
