@@ -376,27 +376,37 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.CHAIR, position: [15,11],  isClickable: true, variation:10 * 4 + 3},
             
             {type: GameObjectType.SEATINGAREA, position: [21,10], isClickable: true},
-            
+
+            {type: GameObjectType.SEATINGAREAYELLOW, position: [10,13], isClickable: true},
+            {type: GameObjectType.SEATINGAREAORANGE, position: [10,16], isClickable: true},
+            {type: GameObjectType.SEATINGAREARED, position: [10,19], isClickable: true},
+            {type: GameObjectType.SEATINGAREAPINK, position: [13,13], isClickable: true},
+            {type: GameObjectType.SEATINGAREAPURPLE, position: [13,16], isClickable: true},
+            {type: GameObjectType.SEATINGAREABLUE, position: [13,19], isClickable: true},
+            {type: GameObjectType.SEATINGAREATOSCA, position: [16,13], isClickable: true},
+            {type: GameObjectType.SEATINGAREAGREEN, position: [16,16], isClickable: true},
+            {type: GameObjectType.SEATINGAREAWHITE, position: [16,19], isClickable: true},
+
             // Sofas
-            {type: GameObjectType.SOFA, position: [10,13],  isClickable: true, variation: 0},
-            {type: GameObjectType.SOFA, position: [11,13],  isClickable: true, variation: 1},
-            {type: GameObjectType.SOFA, position: [12,13],  isClickable: true, variation: 1},
-            {type: GameObjectType.SOFA, position: [13,13],  isClickable: true, variation: 2},
+            {type: GameObjectType.SOFA, position: [ 3,13],  isClickable: true, variation: 0},
+            {type: GameObjectType.SOFA, position: [ 4,13],  isClickable: true, variation: 1},
+            {type: GameObjectType.SOFA, position: [ 5,13],  isClickable: true, variation: 1},
+            {type: GameObjectType.SOFA, position: [ 6,13],  isClickable: true, variation: 2},
             
-            {type: GameObjectType.SOFA, position: [ 9,14],  isClickable: true, variation: 3},
-            {type: GameObjectType.SOFA, position: [ 9,15],  isClickable: true, variation: 4},
-            {type: GameObjectType.SOFA, position: [ 9,16],  isClickable: true, variation: 4},
-            {type: GameObjectType.SOFA, position: [ 9,17],  isClickable: true, variation: 5},
+            {type: GameObjectType.SOFA, position: [ 2,14],  isClickable: true, variation: 3},
+            {type: GameObjectType.SOFA, position: [ 2,15],  isClickable: true, variation: 4},
+            {type: GameObjectType.SOFA, position: [ 2,16],  isClickable: true, variation: 4},
+            {type: GameObjectType.SOFA, position: [ 2,17],  isClickable: true, variation: 5},
             
-            {type: GameObjectType.SOFA, position: [10,18],  isClickable: true, variation: 6},
-            {type: GameObjectType.SOFA, position: [11,18],  isClickable: true, variation: 7},
-            {type: GameObjectType.SOFA, position: [12,18],  isClickable: true, variation: 7},
-            {type: GameObjectType.SOFA, position: [13,18],  isClickable: true, variation: 8},
+            {type: GameObjectType.SOFA, position: [ 3,18],  isClickable: true, variation: 6},
+            {type: GameObjectType.SOFA, position: [ 4,18],  isClickable: true, variation: 7},
+            {type: GameObjectType.SOFA, position: [ 5,18],  isClickable: true, variation: 7},
+            {type: GameObjectType.SOFA, position: [ 6,18],  isClickable: true, variation: 8},
             
-            {type: GameObjectType.SOFA, position: [14,14],  isClickable: true, variation: 9},
-            {type: GameObjectType.SOFA, position: [14,15],  isClickable: true, variation:10},
-            {type: GameObjectType.SOFA, position: [14,16],  isClickable: true, variation:10},
-            {type: GameObjectType.SOFA, position: [14,17],  isClickable: true, variation:11},
+            {type: GameObjectType.SOFA, position: [ 7,14],  isClickable: true, variation: 9},
+            {type: GameObjectType.SOFA, position: [ 7,15],  isClickable: true, variation:10},
+            {type: GameObjectType.SOFA, position: [ 7,16],  isClickable: true, variation:10},
+            {type: GameObjectType.SOFA, position: [ 7,17],  isClickable: true, variation:11},
             
             // Barriers
             {type: GameObjectType.BARRIER, position: [18,16], variation: 3},
@@ -410,12 +420,12 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.BARRIER, position: [20,18], variation: 0},
             
             // Decoration
-            {type: GameObjectType.FLOORDECORATION, position: [ 9,20], variation: 0},
-            {type: GameObjectType.FLOORDECORATION, position: [10,20], variation: 1},
-            {type: GameObjectType.FLOORDECORATION, position: [11,20], variation: 2},
-            {type: GameObjectType.FLOORDECORATION, position: [12,20], variation: 3},
-            {type: GameObjectType.FLOORDECORATION, position: [13,20], variation: 4},
-            {type: GameObjectType.FLOORDECORATION, position: [14,20], variation: 5},
+            {type: GameObjectType.FLOORDECORATION, position: [ 2,20], variation: 0},
+            {type: GameObjectType.FLOORDECORATION, position: [ 3,20], variation: 1},
+            {type: GameObjectType.FLOORDECORATION, position: [ 4,20], variation: 2},
+            {type: GameObjectType.FLOORDECORATION, position: [ 5,20], variation: 3},
+            {type: GameObjectType.FLOORDECORATION, position: [ 6,20], variation: 4},
+            {type: GameObjectType.FLOORDECORATION, position: [ 7,20], variation: 5},
             
             {type: GameObjectType.TABLE, position: [0,24],  isClickable: true, variation: 1},
             {type: GameObjectType.TABLE, position: [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],24],  isClickable: true, variation: 2},
