@@ -468,7 +468,7 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.TABLEDECORATION, variation:5, position: [10,4]},
             {type: GameObjectType.TABLEDECORATION, variation:14, position: [ 4,4]},
             
-            
+
             {type: GameObjectType.SOFA, variation: 0, position: [7, 5]},
             {type: GameObjectType.SOFA, variation: 1, position: [8, 5]},
             {type: GameObjectType.SOFA, variation: 2, position: [9, 5]},
@@ -1175,10 +1175,10 @@ const Floorplan = Object.freeze({
             // Wochenplan
             {type: GameObjectType.EXPLANATION, position: [3,0], isClickable: true, story: [
                 "<b>Montag    </b><br><br>9 Uhr: Begrüßungsveranstaltung<br>16 Uhr: Meet-Up",
-                "<b>Dienstag  </b><br><br>Stand-Up-Meeting<br><!--i>9 Uhr: Team White<br>9:30 Uhr: Team Blue<br>10 Uhr: Team Orange</i--><br><br>16 Uhr: Meet-Up",
-                "<b>Mittwoch  </b><br><br>Stand-Up-Meeting<br><!--i>9 Uhr: Team White<br>9:30 Uhr: Team Blue<br>10 Uhr: Team Orange</i--><br><br>16 Uhr: Meet-Up",
-                "<b>Donnerstag</b><br><br>Stand-Up-Meeting<br><!--i>9 Uhr: Team White<br>9:30 Uhr: Team Blue<br>10 Uhr: Team Orange</i--><br><br>16 Uhr: Studi-Café & Spieleabend",
-                "<b>Freitag   </b><br><br>Stand-Up-Meeting<br><!--i>9 Uhr: Team White<br>9:30 Uhr: Team Blue<br>10 Uhr: Team Orange</i--><br><br>16 Uhr: Abschlusspräsentation",
+                "<b>Dienstag  </b><br><br>Stand-Up-Meeting<br><i>9:00 Uhr: Team Gelb<br>9:30 Uhr: Team Orange<br>10:00 Uhr: Team Pink<br>10:30 Uhr: Team Blau<br>11:00 Uhr: Team Weiß</i><br><br>16 Uhr: Meet-Up",
+                "<b>Mittwoch  </b><br><br>Stand-Up-Meeting<br><i>9:00 Uhr: Team Gelb<br>9:30 Uhr: Team Orange<br>10:00 Uhr: Team Pink<br>10:30 Uhr: Team Blau<br>11:00 Uhr: Team Weiß</i><br><br>16 Uhr: Meet-Up",
+                "<b>Donnerstag</b><br><br>Stand-Up-Meeting<br><i>9:00 Uhr: Team Gelb<br>9:30 Uhr: Team Orange<br>10:00 Uhr: Team Pink<br>10:30 Uhr: Team Blau<br>11:00 Uhr: Team Weiß</i><br><br>16 Uhr: Studi-Café & Spieleabend",
+                "<b>Freitag   </b><br><br>Stand-Up-Meeting<br><i>9:00 Uhr: Team Gelb<br>9:30 Uhr: Team Orange<br>10:00 Uhr: Team Pink<br>10:30 Uhr: Team Blau<br>11:00 Uhr: Team Weiß</i><br><br>16 Uhr: Abschlusspräsentation",
             ]},
             
             // Counter
@@ -1210,7 +1210,7 @@ const Floorplan = Object.freeze({
                 width: 800, 
                 height: 450 
             }},
-            {type: GameObjectType.CUPBOARD, variation: 2, position: [6,0], isClickable: false, iFrameData: {//var 4
+            {type: GameObjectType.CUPBOARD, variation: 4, position: [6,0], isClickable: true, iFrameData: {//var 4
                 title: "Dienstag", 
                 url: "https://www.youtube.com/embed/videoseries?list=PLQZMbpPKaFQ-DTFLCpeK-Uuhl3RKchg3V&rel=0&modestbranding=1",  
                 width: 800, 
@@ -1218,7 +1218,7 @@ const Floorplan = Object.freeze({
             }},
             {type: GameObjectType.CUPBOARD, variation: 0, position: [7,0]},
             {type: GameObjectType.CUPBOARD, variation: 1, position: [8,0]},
-            {type: GameObjectType.CUPBOARD, variation:16, position: [9,0], isClickable: false, iFrameData: {//var 15
+            {type: GameObjectType.CUPBOARD, variation:15, position: [9,0], isClickable: true, iFrameData: {//var 15
                 title: "Mittwoch", 
                 url: "https://www.youtube.com/embed/videoseries?list=PLQZMbpPKaFQ-Vrjm_bToTwZPtp5z-MywA&rel=0&modestbranding=1", 
                 width: 800, 
@@ -1240,31 +1240,49 @@ const Floorplan = Object.freeze({
             }},
             
             // Seating
-            {type: GameObjectType.SEATINGAREATOSCA, position: [7,7], isClickable: false, iFrameData: {
+            {type: GameObjectType.SEATINGAREATOSCA, position: [7,7], isClickable: true, iFrameData: {
                 title: "Team Blue", 
-                url: "https://media.lehr-lern-labor.info/collab/p/TeamBlue?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", 
+                url: "https://media.lehr-lern-labor.info/collab/p/2302TeamBlau?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false",
                 width: 1000, 
                 height: 600 
             }},
             {type: GameObjectType.TABLEDECORATION, variation: 17, position: [7,7]},
             
             
-            {type: GameObjectType.SEATINGAREAORANGE, position: [6,3], isClickable: false, iFrameData: {
+            {type: GameObjectType.SEATINGAREAORANGE, position: [7,4], isClickable: true, iFrameData: {
                 title: "Team Orange", 
-                url: "https://media.lehr-lern-labor.info/collab/p/TeamOrange?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", 
+                url: "https://media.lehr-lern-labor.info/collab/p/2302TeamOrange?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false",
                 width: 1000, 
                 height: 600 
             }},
-            {type: GameObjectType.TABLEDECORATION, variation: 6, position: [6,3]},
+            {type: GameObjectType.TABLEDECORATION, variation: 6, position: [7,4]},
             
             
-            {type: GameObjectType.SEATINGAREAWHITE, position: [2,2], isClickable: false, iFrameData: {
+            {type: GameObjectType.SEATINGAREAWHITE, position: [2,2], isClickable: true, iFrameData: {
                 title: "Team White", 
-                url: "https://media.lehr-lern-labor.info/collab/p/TeamWhite?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", 
+                url: "https://media.lehr-lern-labor.info/collab/p/2302TeamWeiss?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false",
                 width: 1000, 
                 height: 600 
             }},
             {type: GameObjectType.TABLEDECORATION, variation: 4, position: [2,2]},
+
+
+            {type: GameObjectType.SEATINGAREAPINK, position: [5,2], isClickable: true, iFrameData: {
+                title: "Team Pink",
+                url: "https://media.lehr-lern-labor.info/collab/p/2302TeamPink?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false",
+                width: 1000,
+                height: 600
+            }},
+            {type: GameObjectType.TABLEDECORATION, variation: 14, position: [5,2]},
+
+
+            {type: GameObjectType.SEATINGAREAYELLOW, position: [4,5], isClickable: true, iFrameData: {
+                title: "Team Gelb",
+                url: "https://media.lehr-lern-labor.info/collab/p/2302TeamGelb?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false",
+                width: 1000,
+                height: 600
+            }},
+            {type: GameObjectType.TABLEDECORATION, variation: 11, position: [4,5]},
             
             
         ],
