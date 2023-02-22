@@ -398,7 +398,21 @@ class GameObjectInfo {
                 {type: GameObjectType.CHAIR, variation: 8 * 4 + 3, offset_x:  1, offset_y: 0},
             ],
         },
-        
+
+        [GameObjectType.SEATINGAREAYELLOW]: {
+            hasAdditionalParts: true,
+            isSolid: true,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: "table_default",
+            parts: [
+                {type: GameObjectType.CHAIR, variation: 1 * 4 + 0, offset_y: -1, offset_x: 0},
+                {type: GameObjectType.CHAIR, variation: 1 * 4 + 1, offset_x: -1, offset_y: 0},
+                {type: GameObjectType.CHAIR, variation: 1 * 4 + 2, offset_y:  1, offset_x: 0},
+                {type: GameObjectType.CHAIR, variation: 1 * 4 + 3, offset_x:  1, offset_y: 0},
+            ],
+        },
+
         [GameObjectType.SEATINGAREAORANGE]: {
             hasAdditionalParts: true,
             isSolid: true,
@@ -412,7 +426,63 @@ class GameObjectInfo {
                 {type: GameObjectType.CHAIR, variation: 2 * 4 + 3, offset_x:  1, offset_y: 0},
             ],
         },
-        
+
+        [GameObjectType.SEATINGAREARED]: {
+            hasAdditionalParts: true,
+            isSolid: true,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: "table_default",
+            parts: [
+                {type: GameObjectType.CHAIR, variation: 3 * 4 + 0, offset_y: -1, offset_x: 0},
+                {type: GameObjectType.CHAIR, variation: 3 * 4 + 1, offset_x: -1, offset_y: 0},
+                {type: GameObjectType.CHAIR, variation: 3 * 4 + 2, offset_y:  1, offset_x: 0},
+                {type: GameObjectType.CHAIR, variation: 3 * 4 + 3, offset_x:  1, offset_y: 0},
+            ],
+        },
+
+        [GameObjectType.SEATINGAREAPINK]: {
+            hasAdditionalParts: true,
+            isSolid: true,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: "table_default",
+            parts: [
+                {type: GameObjectType.CHAIR, variation: 4 * 4 + 0, offset_y: -1, offset_x: 0},
+                {type: GameObjectType.CHAIR, variation: 4 * 4 + 1, offset_x: -1, offset_y: 0},
+                {type: GameObjectType.CHAIR, variation: 4 * 4 + 2, offset_y:  1, offset_x: 0},
+                {type: GameObjectType.CHAIR, variation: 4 * 4 + 3, offset_x:  1, offset_y: 0},
+            ],
+        },
+
+        [GameObjectType.SEATINGAREAPURPLE]: {
+            hasAdditionalParts: true,
+            isSolid: true,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: "table_default",
+            parts: [
+                {type: GameObjectType.CHAIR, variation: 5 * 4 + 0, offset_y: -1, offset_x: 0},
+                {type: GameObjectType.CHAIR, variation: 5 * 4 + 1, offset_x: -1, offset_y: 0},
+                {type: GameObjectType.CHAIR, variation: 5 * 4 + 2, offset_y:  1, offset_x: 0},
+                {type: GameObjectType.CHAIR, variation: 5 * 4 + 3, offset_x:  1, offset_y: 0},
+            ],
+        },
+
+        [GameObjectType.SEATINGAREABLUE]: {
+            hasAdditionalParts: true,
+            isSolid: true,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: "table_default",
+            parts: [
+                {type: GameObjectType.CHAIR, variation: 6 * 4 + 0, offset_y: -1, offset_x: 0},
+                {type: GameObjectType.CHAIR, variation: 6 * 4 + 1, offset_x: -1, offset_y: 0},
+                {type: GameObjectType.CHAIR, variation: 6 * 4 + 2, offset_y:  1, offset_x: 0},
+                {type: GameObjectType.CHAIR, variation: 6 * 4 + 3, offset_x:  1, offset_y: 0},
+            ],
+        },
+
         [GameObjectType.SEATINGAREATOSCA]: {
             hasAdditionalParts: true,
             isSolid: true,
@@ -426,7 +496,21 @@ class GameObjectInfo {
                 {type: GameObjectType.CHAIR, variation: 7 * 4 + 3, offset_x:  1, offset_y: 0},
             ],
         },
-        
+
+        [GameObjectType.SEATINGAREAGREEN]: {
+            hasAdditionalParts: true,
+            isSolid: true,
+            width: Settings.SMALL_OBJECT_WIDTH,
+            length: Settings.SMALL_OBJECT_LENGTH,
+            assetName: "table_default",
+            parts: [
+                {type: GameObjectType.CHAIR, variation: 8 * 4 + 0, offset_y: -1, offset_x: 0},
+                {type: GameObjectType.CHAIR, variation: 8 * 4 + 1, offset_x: -1, offset_y: 0},
+                {type: GameObjectType.CHAIR, variation: 8 * 4 + 2, offset_y:  1, offset_x: 0},
+                {type: GameObjectType.CHAIR, variation: 8 * 4 + 3, offset_x:  1, offset_y: 0},
+            ],
+        },
+
         [GameObjectType.SEATINGAREAWHITE]: {
             hasAdditionalParts: true,
             isSolid: true,
@@ -440,6 +524,8 @@ class GameObjectInfo {
                 {type: GameObjectType.CHAIR, variation: 9 * 4 + 3, offset_x:  1, offset_y: 0},
             ],
         },
+
+
         
         [GameObjectType.COMPUTER]: {
             hasAdditionalParts: true,
