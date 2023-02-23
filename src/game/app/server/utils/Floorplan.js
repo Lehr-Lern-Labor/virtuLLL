@@ -1202,6 +1202,13 @@ const Floorplan = Object.freeze({
                 width: 1000, 
                 height: 600 
             }},
+
+            {type: GameObjectType.FLOORDECORATION, variation: 3, position: [4,0], isClickable: true, iFrameData: {
+                title: "♫ Happy Birthday To You ♫",
+                url: "https://media.lehr-lern-labor.info/collab/p/HappyBirthdayElias?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false",
+                width: 1000,
+                height: 600
+            }},
             
             // Library
             {type: GameObjectType.CUPBOARD, variation: 3, position: [5,0], isClickable: true, iFrameData: {
@@ -1224,9 +1231,10 @@ const Floorplan = Object.freeze({
                 width: 800, 
                 height: 450 
             }},
-            {type: GameObjectType.CUPBOARD, variation: 7, position: [9,1], isClickable: false, iFrameData: {//var 8
+            {type: GameObjectType.CUPBOARD, variation: 8, position: [9,1], isClickable: true, iFrameData: {//var 8
                 title: "Donnerstag", 
-                url: "https://www.youtube.com/embed/videoseries?list=PLQZMbpPKaFQ_mdSRXou2-8q3mAfCjN2AS&rel=0&modestbranding=1", 
+                //url: "https://www.youtube.com/embed/videoseries?list=PLQZMbpPKaFQ_mdSRXou2-8q3mAfCjN2AS&rel=0&modestbranding=1",
+                url: "https://media.lehr-lern-labor.info/workshops/projektarbeit/",
                 width: 800, 
                 height: 450 
             }},
