@@ -252,6 +252,9 @@ class NotificationBar extends ViewWithLanguageData {
 
         $('#notifBar').scrollTop(0);
         this.notificationSound.play();
+        if(typeof onNotification !== 'undefined') {
+            onNotification(text);
+        }
     }
 
     removeNotifDiv(id) {
