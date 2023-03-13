@@ -93,6 +93,7 @@ module.exports = Object.freeze({
     DEFAULT_LANGUAGE: "de",
 
     /* Decides whether or not moderators have the power to see chats and meetings 
-       from all exisiting groups, even if they are not part of them */
-    MODS_SEE_EVERYTHING: true
+       from all existing groups, even if they are not part of them and if they hear all alerts*/
+    MODS_SEE_EVERYTHING: true,
+    MODS_HEAR_EVERYTHING: true
 });

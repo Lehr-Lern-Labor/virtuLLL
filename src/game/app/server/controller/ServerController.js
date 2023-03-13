@@ -1664,6 +1664,9 @@ module.exports = class ServerController {
                                     let socketID = this.getSocketId(moderatorID);
                                     if (socketID !== undefined) {
                                         this.#io.to(socketID).emit('newChatMessage', chatId, msgToEmit);
+                                        if (Settings.MODS_HEAR_EVERYTHING) {
+                                            this.#io.to(socketID).emit('gotNewChatMessage', msg.getUsername(), chatId);
+                                        }
                                     }
                                 }
                             })
