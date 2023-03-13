@@ -57,13 +57,13 @@ const Settings = Object.freeze({
     // Skin color, e.g. White|Dark|Black
     AVATAR_BODY: 'White',
     // Type of Shirt, e.g. Shirt|Sleeveless|SweaterShirt|Sweatshirt|T-Shirt
-    AVATAR_TOP: 'Sweatshirt', //color is added separately
+    AVATAR_TOP: 'SweaterShirt', //color is added separately
     // Type + Color of Trousers, e.g. Trousers|Shorts + Black|Brown|Blue
     AVATAR_BOTTOM: 'TrousersBlack',
     // Type + Color of Shoes, e.g. (Shoes + Black|Brown|Blue)|(Sneakers + DefaultColors)
     AVATAR_SHOES: 'ShoesBrown',
     // Type + Color of Hair, e.g. Afro|Bob|Long|Ponytail|Short|Undercut + Blonde|Brown|Dark|Red
-    AVATAR_HAIR: 'AfroDark',
+    AVATAR_HAIR: 'AfroBrown',
 
 
 
