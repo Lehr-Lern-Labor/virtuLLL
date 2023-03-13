@@ -1446,7 +1446,7 @@ module.exports = class ServerController {
                     return;
                 }
 
-                if (!Settings.CHATMEETING_ACIVATED) return;
+                if (!Settings.CHATMEETING_ACTIVATED) return;
 
                 let requesterId = socket.ppantID;
                 let participant = this.#ppants.get(requesterId);
@@ -1524,7 +1524,7 @@ module.exports = class ServerController {
                                 groupChat: false,
                                 inviteButton: false,
                                 leaveButton: true,
-                                meetingButton: Settings.CHATMEETING_ACIVATED,
+                                meetingButton: Settings.CHATMEETING_ACTIVATED,
                                 messages: messageInfoData
                             }
 
@@ -1540,7 +1540,7 @@ module.exports = class ServerController {
                                 groupChat: false,
                                 inviteButton: false,
                                 leaveButton: true,
-                                meetingButton: Settings.CHATMEETING_ACIVATED,
+                                meetingButton: Settings.CHATMEETING_ACTIVATED,
                                 messages: messageInfoData
                             }
                         }
@@ -1548,7 +1548,7 @@ module.exports = class ServerController {
                     } else {
                         let leaveButton = true;
                         let inviteButton = true;
-                        let meetingButton = Settings.CHATMEETING_ACIVATED;
+                        let meetingButton = Settings.CHATMEETING_ACTIVATED;
 
                         if (this.#isChatFromGroup(chat.getId())) {
                             leaveButton = false;

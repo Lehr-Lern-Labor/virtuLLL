@@ -139,7 +139,7 @@ module.exports = class NPCService {
             // is a string that can be used as a key in the
             // NPCDialog file
             TypeChecker.isString(dialog);
-            let npcDialog = (NPCDialog[dialog] !== undefined) ? NPCDialog[dialog] : ["I wasn't given anyting to say."];
+            let npcDialog = (NPCDialog[dialog] !== undefined) ? NPCDialog[dialog] : ["I wasn't given anything to say."];
             return new NPC(this.#generateNpcID(), name, new Position(roomId, xPos, yPos), direction, npcDialog);
         }
     }

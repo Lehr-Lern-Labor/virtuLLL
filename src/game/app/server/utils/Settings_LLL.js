@@ -72,11 +72,11 @@ module.exports = Object.freeze({
     DEFAULT_SHIRTCOLOR_PPANT: ShirtColor.BLUE,
     DEFAULT_SHIRTCOLOR_NPC: ShirtColor.RED,
 
-    /* Decides wheter video storage is needed or not */
+    /* Decides whether video storage is needed or not */
     VIDEOSTORAGE_ACTIVATED: false,
 
-    /* Decides wheter chat meeting is allowed or not */
-    CHATMEETING_ACIVATED: false,
+    /* Decides whether chat meeting is allowed or not */
+    CHATMEETING_ACTIVATED: false,
 
     /* Decides which registration system is used */
     /* Advanced registration system includes username, title, surname, forename, job, company, email */
