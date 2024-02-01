@@ -43,7 +43,7 @@ class ExternalWebsiteView extends WindowView {
         $('#externalWebsiteWindowTitle' + gameObjectID).text(iFrameData.title);
 
         $('#externalWebsiteWindowBody' + gameObjectID).append(`
-            <iframe id="iframe${gameObjectID}" class="iframeclass" frameborder="1" src=${iFrameData.url} width=${width} height=${height} 
+            <iframe id="iframe${gameObjectID}" class="iframeclass" frameborder="0" src=${iFrameData.url} width=${width} height=${height}
                 allowfullscreen scrolling="yes" sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-presentation allow-downloads"></iframe>
         `);
 
