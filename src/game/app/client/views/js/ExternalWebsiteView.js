@@ -44,7 +44,7 @@ class ExternalWebsiteView extends WindowView {
 
         $('#externalWebsiteWindowBody' + gameObjectID).append(`
             <iframe id="iframe${gameObjectID}" class="iframeclass" frameborder="0" src=${iFrameData.url} width=${width} height=${height}
-                allowfullscreen scrolling="yes" sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-presentation allow-downloads"></iframe>
+                allowfullscreen scrolling="yes" sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-presentation allow-downloads allow-popups-to-escape-sandbox"></iframe>
         `);
 
         const handleClose = () => {
