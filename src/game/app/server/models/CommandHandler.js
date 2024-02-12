@@ -238,7 +238,13 @@ module.exports = class CommandHandler {
         this.#checkParamTypes(context, commandArgs);
         let username = socket.username;
 
-        if (commandArgs.length > 0) {
+        if (commandArgs.length == 1 && commandArgs[0] == "restart") {
+            this.#serverController.sendGlobalAnnouncement(username,
+                "Der Server wird in Kürze neu gestartet. "+
+                "Aktualisiere anschließend die Seite und logge dich neu ein."
+                );
+        }
+        else if (commandArgs.length > 0) {
             var text = commandArgs[0];
             for (var i = 1; i < commandArgs.length; i++) {
                 text += " " + commandArgs[i];
