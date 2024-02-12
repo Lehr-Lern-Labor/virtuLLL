@@ -285,6 +285,7 @@
                 "selectAtLeastOne": "Silahkan pilih minimal satu teman!"
             },
             "externalWebsite": {
+                "popout": "Buka di tab baru",
                 "fullscreenMode": "Beralih ke fullscreen",
                 "normalMode": "Kembali ke ukuran normal"
             },

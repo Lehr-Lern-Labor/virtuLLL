@@ -59,6 +59,12 @@ class ExternalWebsiteView extends WindowView {
             $('#externalWebsiteWindow' + gameObjectID).hide();
         };
 
+        $('#popoutBtn' + gameObjectID).off();
+        $('#popoutBtn' + gameObjectID).on('click', (event) => {
+            event.preventDefault();
+            window.open(`${iFrameData.url}`, '_blank');
+        });
+
         $('#fullscreenBtn' + gameObjectID).off();
         $('#fullscreenBtn' + gameObjectID).on('click', (event) => {
             event.preventDefault();
@@ -142,7 +148,10 @@ class ExternalWebsiteView extends WindowView {
                 <div class="window" id="externalWebsiteWindow${gameObjectID}" style="z-index: 1050; max-width: 100%; max-height: 100%">
                     <div class="p-3 d-flex window-header">
                         <div id="externalWebsiteWindowTitle${gameObjectID}"></div>
-                        <button id="fullscreenBtn${gameObjectID}" title="${this.languageData.fullscreenMode}" class="close btn ml-auto pl-2 pr-2">
+                        <button id="popoutBtn${gameObjectID}" title="${this.languageData.popout}" class="close btn ml-auto pl-1 pr-1">
+                            <i id="popoutBtn${gameObjectID}" class="fa fa-sign-out" style="transform: scale(0.8);"></i>
+                        </button>
+                        <button id="fullscreenBtn${gameObjectID}" title="${this.languageData.fullscreenMode}" class="close btn pl-1 pr-1">
                             <i id="fullscreenBtnImage${gameObjectID}" class="fa fa-window-maximize" style="transform: scale(0.8);"></i>
                         </button>
                         <button id="closeBtn${gameObjectID}" class="close btn pl-1 pr-1">

@@ -285,6 +285,7 @@
                 "selectAtLeastOne": "Bitte wähle mindestens einen Freund aus!"
             },
             "externalWebsite": {
+                "popout": "In neuem Tab öffnen",
                 "fullscreenMode": "Zu Vollbild wechseln",
                 "normalMode": "Zu normaler Größe zurückwechseln"
             },

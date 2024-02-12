@@ -285,6 +285,7 @@
                 "selectAtLeastOne": "Please select at least one friend!"
             },
             "externalWebsite": {
+                "popout": "Open in new Tab",
                 "fullscreenMode": "Switch to fullscreen",
                 "normalMode": "Switch back to normal size"
             },
