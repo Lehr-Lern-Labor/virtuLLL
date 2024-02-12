@@ -1060,8 +1060,8 @@ const Floorplan = Object.freeze({
             // Wochenplan
             {type: GameObjectType.EXPLANATION, position: [3,0], isClickable: true, story: [
                 "<b>Montag</b><br><br>9 Uhr: Begrüßungsveranstaltung<br>15 Uhr: Meet-Up",
-                //"<b>Dienstag</b><br><br>ab 9 Uhr: neue Aufgaben<br>15 Uhr: Meet-Up",
-                "<b>Dienstag - Feiertag</b><br><br>ab 9 Uhr: Bonus-Aufgaben",
+                "<b>Dienstag</b><br><br>ab 9 Uhr: neue Aufgaben<br>15 Uhr: Meet-Up",
+                //"<b>Dienstag - Feiertag</b><br><br>ab 9 Uhr: Bonus-Aufgaben",
                 "<b>Mittwoch</b><br><br>9 Uhr: Studi-Café<br>15 Uhr: Meet-Up",
                 "<b>Donnerstag</b><br><br>ab 9 Uhr: neue Aufgaben<br>15 Uhr: Meet-Up",
                 "<b>Freitag</b><br><br>ab 9 Uhr: neue Aufgaben<br>15 Uhr: Abschlusspräsentation",
@@ -1076,22 +1076,22 @@ const Floorplan = Object.freeze({
             {type: GameObjectType.COUNTER, variation: 2, position: [2,9]},
             {type: GameObjectType.COUNTER, variation: 3, position: [3,9]},
             
-            {type: GameObjectType.TABLEDECORATION, variation: 23, position: [0,7], isClickable: true, iFrameData: {title: "Linksammlung Science Camp Digital", url: "https://media.lehr-lern-labor.info/collab/p/r.5a6b3ce74d5eab31bdd7252fc72c164b?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
-            {type: GameObjectType.TABLEDECORATION, variation: 14, position: [2,9], isClickable: true, iFrameData: {title: "Website Science Camp", url: "https://media.lehr-lern-labor.info/workshops/scinfo/", width: 1000, height: 600 }},
+            {type: GameObjectType.TABLEDECORATION, variation: 23, position: [0,7], isClickable: true, iFrameData: {title: "Linksammlung Science Camp Digital", url: "https://pad.lehr-lern-labor.info/p/r.bb77e45181748918c9175a85fae095c5", width: 1000, height: 600 }},
+            {type: GameObjectType.TABLEDECORATION, variation: 14, position: [2,9], isClickable: true, iFrameData: {title: "Website Science Camp", url: "https://files.lehr-lern-labor.info/scdigi/", width: 1000, height: 600 }},
             
             // Library
             {type: GameObjectType.CUPBOARD, variation: 3, position: [5,0], isClickable: true, iFrameData: {title: "Montag: Einführung & HTML", url: "https://www.youtube-nocookie.com/embed/1Ckx4QT1KjA", width: 800, height: 450 }},
-            {type: GameObjectType.CUPBOARD, variation: 2, position: [6,0], isClickable: false, iFrameData: {title: "Dienstag: Programmieren & Robotik", url: "https://www.youtube-nocookie.com/embed/hcvdmISCBHg?rel=0&modestbranding=1&playlist=hcvdmISCBHg,A3fvCWi8aKg,mIP6MUoGlC4,mg7xsTjYKpg", width: 800, height: 450 }},
+            {type: GameObjectType.CUPBOARD, variation: 2, position: [6,0], isClickable: false, iFrameData: {title: "Mittwoch: CSS", url: "https://www.youtube-nocookie.com/embed/YO8ddOxEMpY?rel=0&modestbranding=1&playlist=YO8ddOxEMpY,tDrwQYFvdgU", width: 800, height: 450 }},
             {type: GameObjectType.CUPBOARD, variation: 0, position: [7,0]},
             {type: GameObjectType.CUPBOARD, variation: 1, position: [8,0]},
-            {type: GameObjectType.CUPBOARD, variation:16, position: [9,0], isClickable: false, iFrameData: {title: "Mittwoch: CSS", url: "https://www.youtube-nocookie.com/embed/YO8ddOxEMpY?rel=0&modestbranding=1&playlist=YO8ddOxEMpY,tDrwQYFvdgU", width: 800, height: 450 }},
+            {type: GameObjectType.CUPBOARD, variation:16, position: [9,0], isClickable: false, iFrameData: {title: "Dienstag: Programmieren & Robotik", url: "https://www.youtube-nocookie.com/embed/hcvdmISCBHg?rel=0&modestbranding=1&playlist=hcvdmISCBHg,A3fvCWi8aKg,mIP6MUoGlC4,mg7xsTjYKpg", width: 800, height: 450 }},
             {type: GameObjectType.CUPBOARD, variation: 7, position: [9,1], isClickable: false, iFrameData: {title: "Donnerstag: JavaScript", url: "https://www.youtube-nocookie.com/embed/aZ08lPusehk?rel=0&modestbranding=1&playlist=aZ08lPusehk,lFhAOd5I3t4", width: 800, height: 450 }},
             {type: GameObjectType.CUPBOARD, variation: 5, position: [9,2]},
             {type: GameObjectType.CUPBOARD, variation: 6, position: [9,3]},
-            {type: GameObjectType.CUPBOARD, variation: 7, position: [9,4], isClickable: false, iFrameData: {title: "Freitag: Feedback", url: "https://forms.office.com/r/LS9Vvf5hyd", width: 800, height: 450 }},
+            {type: GameObjectType.CUPBOARD, variation: 7, position: [9,4], isClickable: false, iFrameData: {title: "Freitag: Feedback", url: "https://forms.office.com/e/8XX2Qz3D05", width: 800, height: 450 }},
             
             // Seating
-            {type: GameObjectType.SEATINGAREA, position: [7,7], isClickable: true, iFrameData: {title: "Feedback", url: "https://media.lehr-lern-labor.info/collab/p/SCdigi-Feedback?showControls=false&showChat=false&showLineNumbers=false&useMonospaceFont=false&noColors=true&chatAndUsers=false", width: 1000, height: 600 }},
+            {type: GameObjectType.SEATINGAREA, position: [7,7], isClickable: true, iFrameData: {title: "Feedback", url: "https://pad.lehr-lern-labor.info/p/scdigi_feedback", width: 1000, height: 600 }},
             {type: GameObjectType.TABLEDECORATION, variation: 4, position: [7,7]},
             
             
