@@ -687,6 +687,9 @@ const Floorplan = Object.freeze({
             
             {type: GameObjectType.RIGHTDOORICON, variation: 1, position: [12,4]},
             {type: GameObjectType.EXPLANATION, variation: 1, position: [12,5], isClickable: true, story: ["<b>Science Camp Softwareentwicklung</b>"]},
+
+            {type: GameObjectType.RIGHTDOORICON, variation: 1, position: [12,6]},
+            {type: GameObjectType.EXPLANATION, variation: 1, position: [12,7], isClickable: true, story: ["<b>AG</b>"]},
             
             {type: GameObjectType.RIGHTDOORICON, variation: 10, position: [12,9]},
             {type: GameObjectType.EXPLANATION, variation: 1, position: [12,10], isClickable: true, story: ["<b>Gamingarea</b>"]},
@@ -715,7 +718,8 @@ const Floorplan = Object.freeze({
             {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.FOYER_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT},
             {wallSide: GlobalStrings.LEFT, positionOfDoor: [10, -1], positionOnExit: [Settings.WS_APP_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: false},
             {wallSide: GlobalStrings.RIGHT, positionOfDoor: [13, 2], positionOnExit: [Settings.SC_DIGI_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: false}, // SCdigi / SCinfo
-            {wallSide: GlobalStrings.RIGHT, positionOfDoor: [13, 4], positionOnExit: [Settings.SC_SE_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: true},    // SCSE-Door
+            {wallSide: GlobalStrings.RIGHT, positionOfDoor: [13, 4], positionOnExit: [Settings.SC_SE_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: false},    // SCSE-Door
+            {wallSide: GlobalStrings.RIGHT, positionOfDoor: [13, 6], positionOnExit: [Settings.AG, 1, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: false},
             {wallSide: GlobalStrings.RIGHT, positionOfDoor: [13, 9], positionOnExit: [Settings.GAMING_ID, 1, 0], directionOnExit: Direction.DOWNRIGHT, isOpen: false},
         ],
         NPCS: []
@@ -944,6 +948,59 @@ const Floorplan = Object.freeze({
             // {name: "3", position: [10, 8], direction: Direction.DOWNLEFT, dialog: ["3"]},
         // ]
     // },
+
+    AG: {
+        ID: Settings.AG,
+        NAME: "AG",
+        TYPE: TypeOfRoom.CUSTOM,
+        LENGTH: 10,
+        WIDTH: 10,
+        MAPELEMENTS: [
+            {type: GameObjectType.RIGHTWINDOW, position: [[10, [6,7,8]]]},            
+        ],
+        OBJECTS: [   
+            // Doors
+            {type: GameObjectType.LEFTDOORICON, variation: 0, position: [1,0]},
+            
+            // Wochenplan
+            {type: GameObjectType.EXPLANATION, position: [3,0], isClickable: true, story: [
+                "KI @ Lender"
+            ]},
+            
+            // Counter
+            {type: GameObjectType.COUNTER, variation: 4, position: [0,6]},
+            {type: GameObjectType.COUNTER, variation: 5, position: [0,7]},
+            {type: GameObjectType.COUNTER, variation: 5, position: [0,8]},
+            {type: GameObjectType.COUNTER, variation: 8, position: [0,9]},
+            {type: GameObjectType.COUNTER, variation: 2, position: [1,9]},
+            {type: GameObjectType.COUNTER, variation: 2, position: [2,9]},
+            {type: GameObjectType.COUNTER, variation: 3, position: [3,9]},
+            
+            {type: GameObjectType.TABLEDECORATION, variation: 23, position: [0,7], isClickable: true, iFrameData: {title: "Linksammlung KI @ Lender", url: "https://s.kit.edu/lender", width: 1000, height: 600 }},
+            {type: GameObjectType.TABLEDECORATION, variation: 14, position: [2,9], isClickable: false, iFrameData: {title: "Website Science Camp", url: "https://files.lehr-lern-labor.info/scdigi/", width: 1000, height: 600 }},
+            
+            // Library
+            {type: GameObjectType.CUPBOARD, variation: 3, position: [5,0], isClickable: true, iFrameData: {title: "Montag: Einführung & HTML", url: "https://genius-g.github.io/marimo-LLL-SCKI/notebooks/Neuronale_Netze%20numpy.html", width: 800, height: 450 }},
+            {type: GameObjectType.CUPBOARD, variation: 2, position: [6,0], isClickable: false, iFrameData: {title: "Mittwoch: CSS", url: "https://www.youtube-nocookie.com/embed/YO8ddOxEMpY?rel=0&modestbranding=1&playlist=YO8ddOxEMpY,tDrwQYFvdgU", width: 800, height: 450 }},
+            {type: GameObjectType.CUPBOARD, variation: 0, position: [7,0]},
+            {type: GameObjectType.CUPBOARD, variation: 1, position: [8,0]},
+            {type: GameObjectType.CUPBOARD, variation:16, position: [9,0], isClickable: false, iFrameData: {title: "Dienstag: Programmieren & Robotik", url: "https://www.youtube-nocookie.com/embed/hcvdmISCBHg?rel=0&modestbranding=1&playlist=hcvdmISCBHg,A3fvCWi8aKg,mIP6MUoGlC4,mg7xsTjYKpg", width: 800, height: 450 }},
+            {type: GameObjectType.CUPBOARD, variation: 7, position: [9,1], isClickable: false, iFrameData: {title: "Donnerstag: JavaScript", url: "https://www.youtube-nocookie.com/embed/aZ08lPusehk?rel=0&modestbranding=1&playlist=aZ08lPusehk,lFhAOd5I3t4", width: 800, height: 450 }},
+            {type: GameObjectType.CUPBOARD, variation: 5, position: [9,2]},
+            {type: GameObjectType.CUPBOARD, variation: 6, position: [9,3]},
+            {type: GameObjectType.CUPBOARD, variation: 7, position: [9,4], isClickable: false, iFrameData: {title: "Freitag: Feedback", url: "https://forms.office.com/e/8XX2Qz3D05", width: 800, height: 450 }},
+            
+            // Seating
+            {type: GameObjectType.SEATINGAREA, position: [7,7], isClickable: false, iFrameData: {title: "Feedback", url: "https://pad.lehr-lern-labor.info/p/scdigi_feedback", width: 1000, height: 600 }},
+            {type: GameObjectType.TABLEDECORATION, variation: 4, position: [7,7]},
+            
+            
+        ],
+        DOORS: [
+            {wallSide: GlobalStrings.LEFT, positionOfDoor: [1, -1], positionOnExit: [Settings.LOUNGE_ID, 12, 6], directionOnExit: Direction.DOWNLEFT},
+        ],
+        NPCS: []
+    },
      
     WS_APP: {
         ID: Settings.WS_APP_ID,
